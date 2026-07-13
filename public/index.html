@@ -99,12 +99,15 @@ tailwind.config = {
     .daypill{ transition:all .15s ease; }
     body{ max-width:900px; margin:0 auto; }
     @media (min-width:1024px){
-        body{ max-width:1100px; }
-        .desktop-2col{ display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+        body{ max-width:1200px; }
     }
     @media (min-width:1400px){
-        body{ max-width:1300px; }
+        body{ max-width:1400px; }
     }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    .details-chevron { transition: transform 0.2s ease; }
+    details[open] .details-chevron { transform: rotate(180deg); }
 </style>
 </head>
 <body class="bg-surface-cream text-on-surface font-body-md selection:bg-secondary-fixed-dim">
@@ -1190,10 +1193,8 @@ function renderDay(){
     </div>`;
   }).join('');
 
-  const nightSection = "";
-
   const optionalHtml = (d.optional && d.optional.length) ? `
-    <section class="px-6 py-8">
+    <div>
       <h3 class="font-headline-md text-headline-md text-primary mb-4 border-l-4 border-tertiary-fixed-dim pl-4">Templos opcionales — si te da tiempo</h3>
       <div class="grid grid-cols-1 gap-3">
         ${d.optional.map(([icon,name,desc,how]) => `
@@ -1208,9 +1209,22 @@ function renderDay(){
           </div>
         </div>`).join('')}
       </div>
-    </section>` : '';
+    </div>` : '';
 
-  const curiosHtml = '';
+  const curiosHtml = (d.curiosities && d.curiosities.length) ? `
+    <div>
+      <h3 class="font-headline-md text-headline-md text-primary mb-4 border-l-4 border-secondary pl-4">¿Sabías que...?</h3>
+      <div class="space-y-2">
+        ${d.curiosities.map(([title, text]) => `
+        <details class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between gap-2 px-4 py-3 cursor-pointer hover:bg-surface-container">
+            <span class="font-bold text-sm text-on-surface">${title}</span>
+            <span class="material-symbols-outlined text-ink-subtle flex-none details-chevron !text-xl">expand_more</span>
+          </summary>
+          <p class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed">${text}</p>
+        </details>`).join('')}
+      </div>
+    </div>` : '';
 
   wrap.innerHTML = `
     <section class="px-6 pt-8 pb-4">
@@ -1220,18 +1234,21 @@ function renderDay(){
       ${goshuinBadge}
     </section>
 
-    <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-      ${photoBento(d)}
-    </section>
-
-    <section class="px-6">
-      <h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-4 border-secondary pl-4">Itinerario del día</h3>
-      <div class="space-y-0 lg:max-w-2xl">${timeline}</div>
-    </section>
-
-    ${optionalHtml}
-
-    ${nightSection}
+    <div class="lg:grid lg:grid-cols-[5fr_3fr] lg:gap-8 lg:items-start lg:px-6 lg:pb-8">
+      <div>
+        <section class="px-6 lg:px-0 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+          ${photoBento(d)}
+        </section>
+        <section class="px-6 lg:px-0 pb-8">
+          <h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-4 border-secondary pl-4">Itinerario del día</h3>
+          <div class="space-y-0">${timeline}</div>
+        </section>
+      </div>
+      <div class="px-6 lg:px-0 pb-8 space-y-6 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto scroll-hide">
+        ${optionalHtml}
+        ${curiosHtml}
+      </div>
+    </div>
   `;
 }
 
