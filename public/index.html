@@ -99,19 +99,21 @@ tailwind.config = {
     .daypill{ transition:all .15s ease; }
     body{ max-width:900px; margin:0 auto; }
     @media (min-width:1024px){
-        body{ max-width:1200px; }
+        body{ max-width:1100px; }
+        .desktop-2col{ display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
     }
     @media (min-width:1400px){
-        body{ max-width:1400px; }
+        body{ max-width:1300px; }
     }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-    .details-chevron { transition: transform 0.2s ease; }
-    details[open] .details-chevron { transform: rotate(180deg); }
 </style>
 </head>
 <body class="bg-surface-cream text-on-surface font-body-md selection:bg-secondary-fixed-dim">
 
+<header class="w-full flex items-center justify-between px-4 h-16 bg-surface-cream border-b border-outline-variant/10">
+  <span class="material-symbols-outlined text-primary">arrow_back</span>
+  <h1 class="font-headline-md text-headline-md text-primary">Itinerario Japón</h1>
+  <span class="material-symbols-outlined text-primary">more_vert</span>
+</header>
 
 <main class="pb-24">
 
@@ -218,9 +220,10 @@ const dayData = [
       optional: [] },
     { key: 'd2', num: '02', place: 'Tokio', title: 'El corazón de Asakusa y la gran torre',
       poi: [
-        ['🚃','Traslado','Tren a Akihabara','línea Ginza, ~15 min desde Asakusa'],
-        ['技','Actividad','Yodobashi-Akiba','cámara profesional, tienda insignia'],
-        ['🚃','Traslado','Regreso a Asakusa','línea Ginza, ~15 min'],
+        ['🚃','Traslado','Tren a Shinjuku','línea Ginza/Marunouchi, ~20 min desde Asakusa'],
+        ['技','Actividad','BicCamera Shinjuku','cámara profesional — tax-free + cupón de descuento'],
+        ['本','Recorrido','Book-Off Shinjuku','libros, manga y artículos usados, misma zona'],
+        ['🚃','Traslado','Regreso a Asakusa','línea Ginza/Marunouchi, ~20 min'],
         ['帳','Actividad','Comprar goshuincho','libreta especial para coleccionar sellos caligrafiados de templos y santuarios'],
         ['寺','Templo','Templo Senso-ji','el templo más antiguo de Tokio — sello goshuin disponible'],
         ['門','Foto','Puerta Kaminarimon','la gran linterna roja, foto obligatoria'],
@@ -241,27 +244,28 @@ const dayData = [
         ['🎁','Recorrido','Gachapon y tiendas 24h','cápsulas coleccionables antes de dormir']
       ],
       steps: [
-        ['08:00', 'Tren a Akihabara — línea Ginza, ~15 min desde Asakusa'],
-        ['08:15', 'Yodobashi-Akiba — cámara profesional, tienda insignia'],
-        ['09:00', 'Regreso a Asakusa — línea Ginza, ~15 min'],
-        ['09:15', 'Comprar goshuincho — libreta especial para coleccionar sellos caligrafiados de templos y santuarios'],
-        ['09:30', 'Templo Senso-ji — el templo más antiguo de Tokio — sello goshuin disponible'],
-        ['10:20', 'Puerta Kaminarimon — la gran linterna roja, foto obligatoria'],
-        ['10:50', 'Nakamise-dori — calle de snacks y souvenirs'],
-        ['11:30', 'Tren a Nihonbashi — línea Ginza/Asakusa, ~10 min desde Asakusa'],
-        ['11:40', 'Comida en Pokémon Café — Nihonbashi, ~8 min en tren desde Asakusa, reserva necesaria'],
-        ['13:10', 'Regreso a Asakusa — línea Ginza/Asakusa, ~10 min'],
-        ['13:20', 'Tokyo Skytree — mirador con vistas de toda la ciudad'],
-        ['14:20', 'Asakusa Hanayashiki — el parque de atracciones más antiguo de Japón'],
-        ['15:20', 'Paseo en barco — crucero corto por el río Sumida'],
-        ['16:10', 'Parque Sumida — cerezos junto al río, vista a la torre'],
-        ['16:40', 'Denboin-dori — callejón tradicional con menos turistas'],
-        ['17:20', 'Tempura en Daikokuya — clásico de Asakusa desde 1887'],
-        ['18:20', 'Cena en Solamachi — centro comercial en la base de la torre'],
-        ['19:20', 'Tokyo Tower de noche — otra torre icónica, iluminada distinto al Skytree'],
-        ['19:50', 'Ramen nocturno en Asakusa — cierre de noche con un tazón caliente'],
-        ['20:50', 'Arcade en Asakusa — máquinas clásicas y modernas hasta tarde'],
-        ['21:40', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir']
+        ['08:00', 'Tren a Shinjuku — línea Ginza/Marunouchi, ~20 min desde Asakusa'],
+        ['08:20', 'BicCamera Shinjuku — cámara profesional — tax-free + cupón de descuento'],
+        ['09:05', 'Book-Off Shinjuku — libros, manga y artículos usados, misma zona'],
+        ['09:35', 'Regreso a Asakusa — línea Ginza/Marunouchi, ~20 min'],
+        ['09:55', 'Comprar goshuincho — libreta especial para coleccionar sellos caligrafiados de templos y santuarios'],
+        ['10:10', 'Templo Senso-ji — el templo más antiguo de Tokio — sello goshuin disponible'],
+        ['11:00', 'Puerta Kaminarimon — la gran linterna roja, foto obligatoria'],
+        ['11:30', 'Nakamise-dori — calle de snacks y souvenirs'],
+        ['12:10', 'Tren a Nihonbashi — línea Ginza/Asakusa, ~10 min desde Asakusa'],
+        ['12:20', 'Comida en Pokémon Café — Nihonbashi, ~8 min en tren desde Asakusa, reserva necesaria'],
+        ['13:50', 'Regreso a Asakusa — línea Ginza/Asakusa, ~10 min'],
+        ['14:00', 'Tokyo Skytree — mirador con vistas de toda la ciudad'],
+        ['15:00', 'Asakusa Hanayashiki — el parque de atracciones más antiguo de Japón'],
+        ['16:00', 'Paseo en barco — crucero corto por el río Sumida'],
+        ['16:50', 'Parque Sumida — cerezos junto al río, vista a la torre'],
+        ['17:20', 'Denboin-dori — callejón tradicional con menos turistas'],
+        ['18:00', 'Tempura en Daikokuya — clásico de Asakusa desde 1887'],
+        ['19:00', 'Cena en Solamachi — centro comercial en la base de la torre'],
+        ['20:00', 'Tokyo Tower de noche — otra torre icónica, iluminada distinto al Skytree'],
+        ['20:30', 'Ramen nocturno en Asakusa — cierre de noche con un tazón caliente'],
+        ['21:30', 'Arcade en Asakusa — máquinas clásicas y modernas hasta tarde'],
+        ['22:20', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir']
       ],
       curiosities: [
         ['Asakusa Hanayashiki','Al lado de Senso-ji está el Asakusa Hanayashiki: abierto en 1853, es el parque de atracciones más antiguo de Japón.'],
@@ -278,7 +282,7 @@ const dayData = [
         ['El piso de cristal','En el mirador de 445m hay un tramo de piso de vidrio desde el que se ve directo hacia la calle, cientos de metros más abajo.'],
         ['Fama desde el periodo Edo','Asakusa era ya una zona de entretenimiento popular durante el periodo Edo, mucho antes de que existieran los rascacielos de Tokio.']
       ],
-      photos: ['Yodobashi-Akiba','Templo Senso-ji','Goshuincho','Puerta Kaminarimon','Nakamise-dori','Pokémon Café','Tokyo Skytree','Río Sumida','Cena en Solamachi','Tokyo Tower de noche'],
+      photos: ['BicCamera Shinjuku','Book-Off Shinjuku','Templo Senso-ji','Goshuincho','Puerta Kaminarimon','Nakamise-dori','Pokémon Café','Tokyo Skytree','Río Sumida','Cena en Solamachi','Tokyo Tower de noche'],
       optional: [
         ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara','10 min caminando desde Yodobashi-Akiba'],
         ['社','Ueno Toshogu','santuario dorado dentro del Parque Ueno','línea Ginza hasta Ueno, ~20 min desde Asakusa']
@@ -412,6 +416,7 @@ const dayData = [
         ['灯','Foto','Hozenji Yokocho','callejón de piedra con templo cubierto de musgo'],
         ['購','Actividad','America-mura','moda urbana y tiendas vintage'],
         ['船','Actividad','Crucero por Dotonbori','el canal desde el agua, de noche'],
+        ['塔','Foto','Abeno Harukas','el rascacielos más alto de Japón, mirador panorámico'],
         ['塔','Foto','Umeda Sky Building','mirador flotante entre dos torres, vista nocturna de Osaka'],
         ['食','Comida','Segunda ronda de street food','kushikatsu extra antes de dormir'],
         ['🕹','Actividad','Arcade en Dotonbori','máquinas y UFO catchers hasta tarde'],
@@ -434,10 +439,11 @@ const dayData = [
         ['21:00', 'Hozenji Yokocho — callejón de piedra con templo cubierto de musgo'],
         ['21:30', 'America-mura — moda urbana y tiendas vintage'],
         ['22:20', 'Crucero por Dotonbori — el canal desde el agua, de noche'],
-        ['23:10', 'Umeda Sky Building — mirador flotante entre dos torres, vista nocturna de Osaka'],
-        ['23:50', 'Segunda ronda de street food — kushikatsu extra antes de dormir'],
-        ['00:50', 'Arcade en Dotonbori — máquinas y UFO catchers hasta tarde'],
-        ['01:40', 'Purikura con amigos — fotos instantáneas estilo japonés']
+        ['23:10', 'Abeno Harukas — el rascacielos más alto de Japón, mirador panorámico'],
+        ['23:55', 'Umeda Sky Building — mirador flotante entre dos torres, vista nocturna de Osaka'],
+        ['00:35', 'Segunda ronda de street food — kushikatsu extra antes de dormir'],
+        ['01:35', 'Arcade en Dotonbori — máquinas y UFO catchers hasta tarde'],
+        ['02:25', 'Purikura con amigos — fotos instantáneas estilo japonés']
       ],
       curiosities: [
         ['El santuario que se traga la mala suerte','El Santuario Namba Yasaka tiene un escenario con forma de cabeza de león de 12 metros: su boca abierta se traga la mala suerte, según la tradición.'],
@@ -454,7 +460,7 @@ const dayData = [
         ['El picante que llegó del puerto','El curry japonés se popularizó primero en Osaka gracias a su papel como puerto comercial con contacto extranjero temprano.'],
         ['Neones que nunca se apagan','Dotonbori mantiene su iluminación encendida toda la noche desde hace décadas, de los primeros distritos en adoptar ese estilo en Japón.']
       ],
-      photos: ['Shinkansen a Osaka','Templo Katsuo-ji','Postal de sellos Katsuo-ji','Neones de Dotonbori','Glico Man','Shinsaibashi-suji','Mercado Kuromon','Takoyaki callejero','Hozenji Yokocho','Umeda Sky Building'],
+      photos: ['Shinkansen a Osaka','Templo Katsuo-ji','Postal de sellos Katsuo-ji','Neones de Dotonbori','Glico Man','Shinsaibashi-suji','Mercado Kuromon','Takoyaki callejero','Hozenji Yokocho','Umeda Sky Building','Abeno Harukas'],
       optional: [
         ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI)','línea Tanimachi, ~15 min desde Namba']
       ] },
@@ -834,6 +840,8 @@ const dayData = [
         ['🍰','Comida','PEANUTS Café','junto al museo, postres temáticos'],
         ['🚃','Traslado','Regreso a Shinjuku','línea Odakyu, ~40 min'],
         ['宿','Traslado','Check-in en Shinjuku','llegada al hotel antes de salir de noche'],
+        ['城','Recorrido','Kokyo (Palacio Imperial de Tokio)','jardines y foso del antiguo castillo de Edo'],
+        ['店','Recorrido','Ikebukuro','tiendas de anime, Sunshine City y ambiente otaku'],
         ['光','Foto','Shinjuku de noche','pantallas y neones del distrito'],
         ['店','Comida','Omoide Yokocho','callejones diminutos con brochetas'],
         ['猫','Foto','Gato gigante de Shinjuku','pantalla LED 3D hiperrealista'],
@@ -855,18 +863,20 @@ const dayData = [
         ['12:45', 'PEANUTS Café — junto al museo, postres temáticos'],
         ['13:30', 'Regreso a Shinjuku — línea Odakyu, ~40 min'],
         ['14:10', 'Check-in en Shinjuku — llegada al hotel antes de salir de noche'],
-        ['14:30', 'Shinjuku de noche — pantallas y neones del distrito'],
-        ['15:00', 'Omoide Yokocho — callejones diminutos con brochetas'],
-        ['16:00', 'Gato gigante de Shinjuku — pantalla LED 3D hiperrealista'],
-        ['16:30', 'Kabukicho — el barrio de entretenimiento más animado'],
-        ['17:10', 'Golden Gai — más de 200 bares diminutos'],
-        ['17:50', 'Mirador gratuito — edificio del gobierno metropolitano'],
-        ['18:20', 'Shinjuku Gyoen — jardín tradicional, si hay tiempo'],
-        ['19:10', 'Yakitori callejero — brochetas a la parrilla en Omoide Yokocho'],
-        ['20:10', 'Estación de Shinjuku — la más transitada del mundo'],
-        ['20:40', 'Última ronda en Omoide Yokocho — yakitori y cerveza para cerrar la noche'],
-        ['21:40', 'Arcade en Kabukicho — máquinas hasta la madrugada'],
-        ['22:30', 'Ramen de madrugada — último antojo antes de dormir']
+        ['14:30', 'Kokyo (Palacio Imperial de Tokio) — jardines y foso del antiguo castillo de Edo'],
+        ['15:10', 'Ikebukuro — tiendas de anime, Sunshine City y ambiente otaku'],
+        ['16:05', 'Shinjuku de noche — pantallas y neones del distrito'],
+        ['16:35', 'Omoide Yokocho — callejones diminutos con brochetas'],
+        ['17:35', 'Gato gigante de Shinjuku — pantalla LED 3D hiperrealista'],
+        ['18:05', 'Kabukicho — el barrio de entretenimiento más animado'],
+        ['18:45', 'Golden Gai — más de 200 bares diminutos'],
+        ['19:25', 'Mirador gratuito — edificio del gobierno metropolitano'],
+        ['19:55', 'Shinjuku Gyoen — jardín tradicional, si hay tiempo'],
+        ['20:45', 'Yakitori callejero — brochetas a la parrilla en Omoide Yokocho'],
+        ['21:45', 'Estación de Shinjuku — la más transitada del mundo'],
+        ['22:15', 'Última ronda en Omoide Yokocho — yakitori y cerveza para cerrar la noche'],
+        ['23:15', 'Arcade en Kabukicho — máquinas hasta la madrugada'],
+        ['00:05', 'Ramen de madrugada — último antojo antes de dormir']
       ],
       curiosities: [
         ['El gato que nunca duerme del todo','La pantalla LED 3D del gato gigante de Shinjuku maúlla e interactúa con la gente durante el día y se acurruca a dormir de noche.'],
@@ -883,7 +893,7 @@ const dayData = [
         ['Brillo bajo regulación','La ciudad regula el brillo y horario de algunas pantallas gigantes de Shinjuku y Shibuya para reducir contaminación lumínica.'],
         ['Una entrada poco común','A diferencia de la mayoría de parques públicos en Japón, Shinjuku Gyoen cobra una entrada simbólica para mantener sus jardines.']
       ],
-      photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku'],
+      photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku','Kokyo','Ikebukuro'],
       optional: [
         ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower','5 min caminando desde Tokyo Tower']
       ] },
@@ -897,9 +907,12 @@ const dayData = [
         ['像','Foto','Figuras y coleccionables','vitrinas de edición limitada'],
         ['🚃','Traslado','Yurikamome a Odaiba','tren automatizado Yurikamome, ~25 min'],
         ['台','Foto','Odaiba','isla artificial con vistas a la bahía'],
+        ['美','Actividad','The National Art Center, Tokyo','museo de arte en Roppongi, cerca de Azabudai Hills'],
+        ['珈','Comida','Hekkelun','café retro de pudín en Shinbashi/Toranomon'],
         ['技','Actividad','teamLab Borderless','arte digital inmersivo, Azabudai Hills'],
         ['像','Foto','Estatua de Gundam','a tamaño real, en Odaiba'],
         ['橋','Foto','Rainbow Bridge','vista nocturna desde Odaiba'],
+        ['本','Recorrido','BOOKOFF Akihabara','manga, videojuegos y electrónica usada'],
         ['店','Comida','Tiendas de videojuegos usados','clásicos de importación y retro'],
         ['🎮','Actividad','Round1','arcade, bowling y purikura — cierre de noche'],
         ['麺','Comida','Ramen nocturno en Akihabara','cierre de noche antes de volver al hotel'],
@@ -916,15 +929,18 @@ const dayData = [
         ['11:43', 'Figuras y coleccionables — vitrinas de edición limitada'],
         ['12:13', 'Yurikamome a Odaiba — tren automatizado Yurikamome, ~25 min'],
         ['12:38', 'Odaiba — isla artificial con vistas a la bahía'],
-        ['13:08', 'teamLab Borderless — arte digital inmersivo, Azabudai Hills'],
-        ['14:48', 'Estatua de Gundam — a tamaño real, en Odaiba'],
-        ['15:18', 'Rainbow Bridge — vista nocturna desde Odaiba'],
-        ['15:48', 'Tiendas de videojuegos usados — clásicos de importación y retro'],
-        ['16:48', 'Round1 — arcade, bowling y purikura — cierre de noche'],
-        ['19:48', 'Ramen nocturno en Akihabara — cierre de noche antes de volver al hotel'],
-        ['20:48', 'Segunda vuelta por tiendas de anime — piso por piso, buscando ediciones limitadas'],
-        ['21:28', 'Gundam iluminado de noche — la estatua de tamaño real en DiverCity Tokyo Plaza'],
-        ['21:58', 'Maid café en Akihabara — experiencia temática única del barrio otaku']
+        ['13:08', 'The National Art Center, Tokyo — museo de arte en Roppongi, cerca de Azabudai Hills'],
+        ['14:18', 'Hekkelun — café retro de pudín en Shinbashi/Toranomon'],
+        ['14:53', 'teamLab Borderless — arte digital inmersivo, Azabudai Hills'],
+        ['16:33', 'Estatua de Gundam — a tamaño real, en Odaiba'],
+        ['17:03', 'Rainbow Bridge — vista nocturna desde Odaiba'],
+        ['17:33', 'BOOKOFF Akihabara — manga, videojuegos y electrónica usada'],
+        ['18:03', 'Tiendas de videojuegos usados — clásicos de importación y retro'],
+        ['19:03', 'Round1 — arcade, bowling y purikura — cierre de noche'],
+        ['22:03', 'Ramen nocturno en Akihabara — cierre de noche antes de volver al hotel'],
+        ['23:03', 'Segunda vuelta por tiendas de anime — piso por piso, buscando ediciones limitadas'],
+        ['23:43', 'Gundam iluminado de noche — la estatua de tamaño real en DiverCity Tokyo Plaza'],
+        ['00:13', 'Maid café en Akihabara — experiencia temática única del barrio otaku']
       ],
       curiosities: [
         ['El "Electric Town" de posguerra','Akihabara nació como mercado de repuestos electrónicos tras la Segunda Guerra Mundial, antes de volverse el centro otaku que es hoy.'],
@@ -941,7 +957,7 @@ const dayData = [
         ['Pisos dedicados a una sola franquicia','Algunas tiendas destinan pisos completos a una sola serie, desde figuras coleccionables hasta cartas.'],
         ['Ayer y hoy en la misma cuadra','Es común ver tiendas de electrónica de los años 80 junto a locales con la última tecnología en videojuegos.']
       ],
-      photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Arcade retro','teamLab Borderless','Odaiba','Estatua de Gundam','Rainbow Bridge','Round1','Ramen nocturno Akihabara','Gundam iluminado de noche'],
+      photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Arcade retro','teamLab Borderless','Odaiba','Estatua de Gundam','Rainbow Bridge','The National Art Center, Tokyo','Round1','Ramen nocturno Akihabara','Gundam iluminado de noche','Hekkelun','BOOKOFF Akihabara'],
       optional: [] },
     { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora',
       poi: [
@@ -1188,8 +1204,10 @@ function renderDay(){
     </div>`;
   }).join('');
 
+  const nightSection = "";
+
   const optionalHtml = (d.optional && d.optional.length) ? `
-    <div>
+    <section class="px-6 py-8">
       <h3 class="font-headline-md text-headline-md text-primary mb-4 border-l-4 border-tertiary-fixed-dim pl-4">Templos opcionales — si te da tiempo</h3>
       <div class="grid grid-cols-1 gap-3">
         ${d.optional.map(([icon,name,desc,how]) => `
@@ -1204,22 +1222,9 @@ function renderDay(){
           </div>
         </div>`).join('')}
       </div>
-    </div>` : '';
+    </section>` : '';
 
-  const curiosHtml = (d.curiosities && d.curiosities.length) ? `
-    <div>
-      <h3 class="font-headline-md text-headline-md text-primary mb-4 border-l-4 border-secondary pl-4">¿Sabías que...?</h3>
-      <div class="space-y-2">
-        ${d.curiosities.map(([title, text]) => `
-        <details class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-2 px-4 py-3 cursor-pointer hover:bg-surface-container">
-            <span class="font-bold text-sm text-on-surface">${title}</span>
-            <span class="material-symbols-outlined text-ink-subtle flex-none details-chevron !text-xl">expand_more</span>
-          </summary>
-          <p class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed">${text}</p>
-        </details>`).join('')}
-      </div>
-    </div>` : '';
+  const curiosHtml = '';
 
   wrap.innerHTML = `
     <section class="px-6 pt-8 pb-4">
@@ -1229,21 +1234,18 @@ function renderDay(){
       ${goshuinBadge}
     </section>
 
-    <div class="lg:grid lg:grid-cols-[5fr_3fr] lg:gap-8 lg:items-start lg:px-6 lg:pb-8">
-      <div>
-        <section class="px-6 lg:px-0 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-          ${photoBento(d)}
-        </section>
-        <section class="px-6 lg:px-0 pb-8">
-          <h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-4 border-secondary pl-4">Itinerario del día</h3>
-          <div class="space-y-0">${timeline}</div>
-        </section>
-      </div>
-      <div class="px-6 lg:px-0 pb-8 space-y-6 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto scroll-hide">
-        ${optionalHtml}
-        ${curiosHtml}
-      </div>
-    </div>
+    <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+      ${photoBento(d)}
+    </section>
+
+    <section class="px-6">
+      <h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-4 border-secondary pl-4">Itinerario del día</h3>
+      <div class="space-y-0 lg:max-w-2xl">${timeline}</div>
+    </section>
+
+    ${optionalHtml}
+
+    ${nightSection}
   `;
 }
 
