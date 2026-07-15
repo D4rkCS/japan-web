@@ -1311,8 +1311,8 @@ function transportSummary(d){
   if (!legs.length) return '';
   const routeMap = (d.route && d.route.length >= 2) ? `
     <div class="mt-4">
-      <p class="font-label-caps text-[11px] text-ink-subtle mb-2">MAPA DEL DÍA — ${d.route[0]} → ${d.route[d.route.length-1]}</p>
-      <div id="dayMapContainer" class="w-full h-64 rounded-lg border border-outline-variant/20 bg-surface-variant flex items-center justify-center text-xs text-ink-subtle">Cargando mapa…</div>
+      <p class="font-label-caps text-[11px] text-ink-subtle mb-2">MAPA DEL DÍA — ${d.route.length} paradas</p>
+      <div id="dayMapContainer" class="w-full h-72 rounded-lg border border-outline-variant/20 bg-surface-variant flex items-center justify-center text-xs text-ink-subtle">Cargando mapa…</div>
     </div>` : '';
   return `
     <section class="px-6 mb-6">
@@ -1359,19 +1359,46 @@ async function geocodePlace(query){
   return coords;
 }
 
+function dayMapMarkerEl(label, kind){
+  const el = document.createElement('div');
+  el.style.width = '26px';
+  el.style.height = '26px';
+  el.style.borderRadius = '50%';
+  el.style.display = 'flex';
+  el.style.alignItems = 'center';
+  el.style.justifyContent = 'center';
+  el.style.fontSize = '12px';
+  el.style.fontWeight = 'bold';
+  el.style.color = '#fff';
+  el.style.border = '2px solid #fff';
+  el.style.boxShadow = '0 1px 4px rgba(0,0,0,0.35)';
+  el.style.background = kind === 'start' ? '#2a2521' : (kind === 'end' ? '#aa3529' : '#7e756f');
+  el.style.cursor = 'pointer';
+  if (kind === 'start') {
+    el.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">flag</span>';
+  } else if (kind === 'end') {
+    el.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">location_on</span>';
+  } else {
+    el.textContent = label;
+  }
+  return el;
+}
+
 async function renderDayMap(d){
   if (currentDayMap) { currentDayMap.remove(); currentDayMap = null; }
   if (!d.route || d.route.length < 2) return;
   const requestedDay = d.key;
 
   try {
-    const originQuery = d.route[0];
-    const destQuery = d.route[d.route.length - 1];
-    const [originCoord, destCoord] = await Promise.all([geocodePlace(originQuery), geocodePlace(destQuery)]);
+    const coords = await Promise.all(d.route.map(q => geocodePlace(q)));
     if (activeDay !== requestedDay) return;
-    if (!originCoord || !destCoord) { return; }
+    const stops = d.route
+      .map((label, idx) => ({ label, coord: coords[idx] }))
+      .filter(s => s.coord);
+    if (stops.length < 2) return;
 
-    const dirUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${originCoord[0]},${originCoord[1]};${destCoord[0]},${destCoord[1]}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+    const coordStr = stops.map(s => `${s.coord[0]},${s.coord[1]}`).join(';');
+    const dirUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${coordStr}?geometries=geojson&overview=full&access_token=${mapboxgl.accessToken}`;
     const dirRes = await fetch(dirUrl);
     const dirData = await dirRes.json();
     if (activeDay !== requestedDay) return;
@@ -1384,7 +1411,7 @@ async function renderDayMap(d){
     const map = new mapboxgl.Map({
       container,
       style: 'mapbox://styles/mapbox/light-v11',
-      center: originCoord,
+      center: stops[0].coord,
       zoom: 10,
     });
     currentDayMap = map;
@@ -1393,15 +1420,29 @@ async function renderDayMap(d){
     map.on('load', () => {
       if (routeGeo) {
         map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: routeGeo, properties: {} } });
-        map.addLayer({ id: 'route-line', type: 'line', source: 'route', paint: { 'line-color': '#aa3529', 'line-width': 4 } });
+        map.addLayer({
+          id: 'route-line-casing', type: 'line', source: 'route',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: { 'line-color': '#ffffff', 'line-width': 7 },
+        });
+        map.addLayer({
+          id: 'route-line', type: 'line', source: 'route',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: { 'line-color': '#aa3529', 'line-width': 4 },
+        });
       }
-      new mapboxgl.Marker({ color: '#2a2521' }).setLngLat(originCoord).addTo(map);
-      new mapboxgl.Marker({ color: '#aa3529' }).setLngLat(destCoord).addTo(map);
 
       const bounds = new mapboxgl.LngLatBounds();
-      bounds.extend(originCoord);
-      bounds.extend(destCoord);
-      map.fitBounds(bounds, { padding: 50, maxZoom: 14 });
+      stops.forEach((s, i) => {
+        const kind = i === 0 ? 'start' : (i === stops.length - 1 ? 'end' : 'stop');
+        const el = dayMapMarkerEl(String(i + 1), kind);
+        new mapboxgl.Marker({ element: el })
+          .setLngLat(s.coord)
+          .setPopup(new mapboxgl.Popup({ offset: 16 }).setText(s.label.split(',')[0]))
+          .addTo(map);
+        bounds.extend(s.coord);
+      });
+      map.fitBounds(bounds, { padding: 40, maxZoom: 13 });
     });
   } catch (err) {
     console.error('No se pudo cargar el mapa de Mapbox', err);
