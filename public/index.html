@@ -1307,11 +1307,12 @@ function transportSummary(d){
     .map((p, i) => ({ p, step: d.steps[i], i }))
     .filter(({p}) => p[1] === "Traslado");
   if (!legs.length) return '';
-  const url = mapsRouteUrl(d.route);
-  const routeBtn = url ? `
-    <a href="${url}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary">
-      <span class="material-symbols-outlined !text-lg">map</span> Abrir ruta completa del día en Google Maps
-    </a>` : '';
+  const routeEmbed = mapsEmbedUrl(d.route);
+  const routeMap = routeEmbed ? `
+    <div class="mt-4">
+      <p class="font-label-caps text-[11px] text-ink-subtle mb-2">MAPA DEL DÍA — ${(d.route && d.route[0]) || ''} → ${(d.route && d.route[d.route.length-1]) || ''}</p>
+      <iframe class="w-full h-64 rounded-lg border border-outline-variant/20" src="${routeEmbed}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>` : '';
   return `
     <section class="px-6 mb-6">
       <div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10">
@@ -1332,9 +1333,16 @@ function transportSummary(d){
             </div>`;
           }).join('')}
         </div>
-        ${routeBtn}
+        ${routeMap}
       </div>
     </section>`;
+}
+
+function mapsEmbedUrl(route){
+  if (!route || route.length < 2) return '';
+  const origin = route[0];
+  const destination = route[route.length - 1];
+  return `https://maps.google.com/maps?saddr=${encodeURIComponent(origin)}&daddr=${encodeURIComponent(destination)}&output=embed`;
 }
 
 function mapsSearchUrl(place){
