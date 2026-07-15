@@ -209,6 +209,7 @@ const dayData = [
         ['23:55', 'Don Quijote Asakusa — compras de última hora, abierto 24h']
       ],
       route: ['Narita International Airport, Japan','Asakusa, Taito, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Kirby Cafe TOKYO, Sumida, Tokyo, Japan','Sumida River Park, Tokyo, Japan','Don Quijote Asakusa, Tokyo, Japan'],
+      legRoutes: { 4: ['Narita International Airport, Japan','Asakusa, Taito, Tokyo, Japan'] },
       photos: ['Aterrizaje en Narita','Narita Express','Llegada a Asakusa','Uniqlo Asakusa','Senso-ji de noche','Kaminarimon iluminada','Kirby Café','Skytree a la distancia','Río Sumida de noche'],
       optional: [] },
     { key: 'd2', num: '02', place: 'Tokio', title: 'El corazón de Asakusa y la gran torre', mealZone: 'asakusa',
@@ -274,6 +275,12 @@ const dayData = [
         ['22:20', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir']
       ],
       route: ['Asakusa, Taito, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Pokemon Cafe, Nihonbashi, Tokyo, Japan','Tokyo Skytree, Tokyo, Japan','Sumida Park, Tokyo, Japan','Daikokuya Tempura, Asakusa, Tokyo, Japan','Tokyo Solamachi, Tokyo, Japan','Tokyo Tower, Japan'],
+      legRoutes: {
+        0: ['Asakusa, Taito, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
+        3: ['Shinjuku Station, Tokyo, Japan','Asakusa, Taito, Tokyo, Japan'],
+        8: ['Asakusa, Taito, Tokyo, Japan','Nihonbashi, Tokyo, Japan'],
+        10: ['Nihonbashi, Tokyo, Japan','Asakusa, Taito, Tokyo, Japan'],
+      },
       photos: ['BicCamera Shinjuku','Book-Off Shinjuku','Templo Senso-ji','Goshuincho','Puerta Kaminarimon','Nakamise-dori','Pokémon Café','Tokyo Skytree','Río Sumida','Cena en Solamachi','Tokyo Tower de noche'],
       optional: [
         ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara','10 min caminando desde Yodobashi-Akiba'],
@@ -334,6 +341,11 @@ const dayData = [
         ['20:28', 'Ramen de madrugada en Yokohama — última parada antes del tren de regreso']
       ],
       route: ['Kamakura Station, Japan','Kotoku-in Great Buddha, Kamakura, Japan','Komachi-dori, Kamakura, Japan','Tsurugaoka Hachimangu, Kamakura, Japan','Yuigahama Beach, Kamakura, Japan','Hase-dera Temple, Kamakura, Japan','Enoshima Island, Japan','Cosmo Clock 21, Yokohama, Japan','Minato Mirai, Yokohama, Japan','Yokohama Chinatown, Japan'],
+      legRoutes: {
+        0: ['Asakusa, Taito, Tokyo, Japan','Kamakura Station, Japan'],
+        12: ['Enoshima Island, Japan','Yokohama Station, Japan'],
+        15: ['Yokohama Station, Japan','Asakusa, Taito, Tokyo, Japan'],
+      },
       photos: ['Tren a Kamakura','Gran Buda de Kamakura','Komachi-dori','Tsurugaoka Hachimangu','Playa de Yuigahama','Tren Enoden','Bosque de bambú Hokoku-ji','Isla de Enoshima','Atardecer en Enoshima','Cosmo Clock 21 de noche','Bahía de Minato Mirai','Chinatown de Yokohama'],
       optional: [
         ['寺','Kenchō-ji','el templo zen más antiguo de Japón, en Kita-Kamakura','1 estación en tren desde Kamakura'],
@@ -378,6 +390,10 @@ const dayData = [
         ['21:10', 'Arcade en Shinjuku — cierre de noche al llegar de Kawaguchiko']
       ],
       route: ['Shinjuku Station, Tokyo, Japan','Fuji-Q Highland, Fujiyoshida, Japan','Lake Kawaguchiko, Japan','Kachi Kachi Ropeway, Fujiyoshida, Japan','Chureito Pagoda, Fujiyoshida, Japan','Kubota Itchiku Art Museum, Japan','Shinjuku Station, Tokyo, Japan'],
+      legRoutes: {
+        0: ['Shinjuku Station, Tokyo, Japan','Kawaguchiko Station, Japan'],
+        10: ['Kawaguchiko Station, Japan','Shinjuku Station, Tokyo, Japan'],
+      },
       photos: ['Autobús a Kawaguchiko','Fuji-Q Highland','Fujiyama','Fuji desde Kawaguchiko','Teleférico Kachi Kachi','Mirador Chureito','Onsen con vista al Fuji'],
       optional: [
         ['社','Santuario Fuji Sengen (Kitaguchi Hongu)','el santuario principal dedicado al Monte Fuji, punto de partida de la ruta de peregrinación','10 min caminando desde Fuji-Q Highland']
@@ -443,6 +459,11 @@ const dayData = [
         ['02:25', 'Purikura con amigos — fotos instantáneas estilo japonés']
       ],
       route: ['Asakusa, Tokyo, Japan','Shin-Osaka Station, Japan','Katsuo-ji Temple, Minoh, Japan','Dotonbori, Osaka, Japan','Shinsaibashi-suji, Osaka, Japan','Namba Yasaka Shrine, Osaka, Japan','Kuromon Ichiba Market, Osaka, Japan','Hozenji Yokocho, Osaka, Japan','Abeno Harukas, Osaka, Japan','Umeda Sky Building, Osaka, Japan'],
+      legRoutes: {
+        1: ['Tokyo Station, Japan','Shin-Osaka Station, Japan'],
+        3: ['Namba, Osaka, Japan','Katsuo-ji Temple, Minoh, Japan'],
+        5: ['Katsuo-ji Temple, Minoh, Japan','Namba, Osaka, Japan'],
+      },
       photos: ['Shinkansen a Osaka','Templo Katsuo-ji','Postal de sellos Katsuo-ji','Neones de Dotonbori','Glico Man','Shinsaibashi-suji','Mercado Kuromon','Takoyaki callejero','Hozenji Yokocho','Umeda Sky Building','Abeno Harukas'],
       optional: [
         ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI)','línea Tanimachi, ~15 min desde Namba']
@@ -502,6 +523,10 @@ const dayData = [
         ['21:40', 'Ramen de madrugada en Namba — última parada antes de dormir']
       ],
       route: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan','Universal CityWalk Osaka, Japan','Namba Station, Osaka, Japan'],
+      legRoutes: {
+        0: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan'],
+        11: ['Universal Studios Japan, Osaka, Japan','Namba Station, Osaka, Japan'],
+      },
       photos: ['Tren a USJ','Super Nintendo World','Mundo de Harry Potter','Jurassic Park The Ride','Minion Park','CityWalk','Universal Wonderland','Castillo iluminado de noche'],
       optional: [] },
     { key: 'd7', num: '07', place: 'Osaka', title: 'Nara y el Castillo de Osaka', mealZone: 'namba',
@@ -559,6 +584,7 @@ const dayData = [
         ['20:50', 'Purikura en Namba — fotos instantáneas estilo japonés']
       ],
       route: ['Namba Station, Osaka, Japan','Nara Park, Japan','Todai-ji Temple, Nara, Japan','Kasuga Taisha, Nara, Japan','Kofuku-ji Temple, Nara, Japan','Nakatanidou, Nara, Japan','Osaka Castle, Japan','Shinsekai, Osaka, Japan','Dotonbori, Osaka, Japan','Umeda Sky Building, Osaka, Japan'],
+      legRoutes: { 5: ['Nara Park, Japan','Namba Station, Osaka, Japan'] },
       photos: ['Venados de Nara','Todai-ji','Kasuga Taisha','Mochi de Nakatanidou','Castillo de Osaka','Shinsekai de noche','Umeda Sky Building'],
       optional: [
         ['社','Sumiyoshi Taisha','santuario shinto de estilo arquitectónico único, muy fotogénico','línea Nankai, ~20 min desde Namba']
@@ -622,6 +648,7 @@ const dayData = [
         ['20:48', 'Tienda 24h antes de dormir — snacks para el día siguiente']
       ],
       route: ['Shin-Osaka Station, Japan','Kyoto Station, Japan','Kiyomizu-dera Temple, Kyoto, Japan','Sannenzaka, Kyoto, Japan','Higashiyama, Kyoto, Japan','Yasaka Pagoda, Kyoto, Japan','Pokemon Center Kyoto, Japan','Kyoto Tower, Japan'],
+      legRoutes: { 1: ['Shin-Osaka Station, Japan','Kyoto Station, Japan'] },
       photos: ['Tren Osaka-Kioto','Kiyomizu-dera','Escenario de madera','Sannenzaka','Pagoda Yasaka','Higashiyama','Pokémon Center Kyoto','Kimono en Higashiyama','Kyoto Tower de noche','Higashiyama de noche'],
       optional: [] },
     { key: 'd9', num: '09', place: 'Kioto', title: 'El bosque de bambú de Arashiyama', mealZone: 'kyoto',
@@ -681,6 +708,7 @@ const dayData = [
         ['20:28', 'Arcade en el centro de Kioto — poca oferta, pero abierto hasta tarde']
       ],
       route: ['Kyoto Station, Japan','Arashiyama Bamboo Grove, Kyoto, Japan','Tenryu-ji Temple, Kyoto, Japan','Togetsukyo Bridge, Kyoto, Japan','Nishiki Market, Kyoto, Japan','Otagi Nenbutsu-ji, Kyoto, Japan','Iwatayama Monkey Park, Kyoto, Japan','Pontocho Alley, Kyoto, Japan'],
+      legRoutes: { 0: ['Kyoto Station, Japan','Arashiyama Station, Kyoto, Japan'] },
       photos: ['Tren a Arashiyama','Bosque de bambú','Templo Tenryu-ji','Puente Togetsukyo','Jardín de musgo','Mercado de Nishiki','Monkey Park','Mercado de Nishiki','Pontocho de noche','Teramachi de noche'],
       optional: [
         ['寺','Nanzen-ji','templo zen con un acueducto de ladrillo dentro del complejo','cerca de Ginkaku-ji, ~15 min en autobús desde Arashiyama']
@@ -744,6 +772,10 @@ const dayData = [
         ['20:48', 'Compras nocturnas de último minuto — ']
       ],
       route: ['Kyoto Station, Japan','Fushimi Inari Taisha, Kyoto, Japan','Kinkaku-ji Temple, Kyoto, Japan','Kyoto Station, Japan'],
+      legRoutes: {
+        0: ['Kyoto Station, Japan','Fushimi Inari Station, Kyoto, Japan'],
+        5: ['Fushimi Inari Taisha, Kyoto, Japan','Kinkaku-ji Temple, Kyoto, Japan'],
+      },
       photos: ['Tren a Fushimi Inari','Fushimi Inari','Senda de toriis','Zorros de piedra','Kinkaku-ji','Estanque del espejo','Jardín de Kinkaku-ji','Kyoto Station de noche','Río Kamo de noche'],
       optional: [
         ['寺','Ginkaku-ji (Pabellón de Plata)','el \'hermano\' de Kinkaku-ji, jardín de arena zen','20 min en autobús desde Kinkaku-ji'],
@@ -804,6 +836,7 @@ const dayData = [
         ['20:10', 'Arcade en Kawaramachi — cierre de noche en el centro de Kioto']
       ],
       route: ['Nijo Castle, Kyoto, Japan','Gion, Kyoto, Japan','Hanamikoji Street, Kyoto, Japan','Yasaka Shrine, Kyoto, Japan','Gion Corner, Kyoto, Japan','Pontocho Alley, Kyoto, Japan'],
+      legRoutes: { 1: ['Nijo Castle, Kyoto, Japan','Gion, Kyoto, Japan'] },
       photos: ['Castillo de Nijo','Distrito de Gion','Hanami-koji','Pontocho Alley','Río Kamo','Santuario Yasaka','Puentes sobre el Kamo','Shirakawa de noche','Kawaramachi de noche'],
       optional: [
         ['寺','Sanjusangendo','salón con 1,001 estatuas doradas de Kannon','cerca de Kiyomizu-dera, ~10 min caminando']
@@ -868,6 +901,11 @@ const dayData = [
         ['00:05', 'Ramen de madrugada — último antojo antes de dormir']
       ],
       route: ['Kyoto Station, Japan','Tokyo Station, Japan','Snoopy Museum, Machida, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Tokyo Imperial Palace, Japan','Omoide Yokocho, Shinjuku, Tokyo, Japan','Kabukicho, Tokyo, Japan','Golden Gai, Tokyo, Japan','Shinjuku Gyoen, Tokyo, Japan'],
+      legRoutes: {
+        1: ['Kyoto Station, Japan','Tokyo Station, Japan'],
+        2: ['Tokyo Station, Japan','Machida Station, Tokyo, Japan'],
+        5: ['Machida Station, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
+      },
       photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku','Kokyo','Ikebukuro'],
       optional: [
         ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower','5 min caminando desde Tokyo Tower']
@@ -931,6 +969,10 @@ const dayData = [
         ['00:13', 'Maid café en Akihabara — experiencia temática única del barrio otaku']
       ],
       route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Odaiba, Tokyo, Japan','The National Art Center Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Gundam Base Tokyo, Odaiba, Japan','Round1 Akihabara, Japan','Akihabara, Tokyo, Japan'],
+      legRoutes: {
+        0: ['Shinjuku Station, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
+        6: ['Akihabara Station, Tokyo, Japan','Odaiba, Tokyo, Japan'],
+      },
       photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Arcade retro','teamLab Borderless','Odaiba','Estatua de Gundam','Rainbow Bridge','The National Art Center, Tokyo','Round1','Ramen nocturno Akihabara','Gundam iluminado de noche','Hekkelun','BOOKOFF Akihabara'],
       optional: [] },
     { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora', mealZone: 'shinjuku',
@@ -988,6 +1030,10 @@ const dayData = [
         ['20:38', 'Arcade en Shibuya — última parada de la noche']
       ],
       route: ['Toyosu, Tokyo, Japan','Meiji Jingu, Tokyo, Japan','Takeshita Street, Harajuku, Tokyo, Japan','Shibuya Crossing, Tokyo, Japan','Hachiko Statue, Shibuya, Tokyo, Japan','Shibuya Sky, Tokyo, Japan'],
+      legRoutes: {
+        0: ['Shinjuku Station, Tokyo, Japan','Toyosu, Tokyo, Japan'],
+        2: ['Toyosu, Tokyo, Japan','Harajuku Station, Tokyo, Japan'],
+      },
       photos: ['Tren a Toyosu','teamLab Planets','Meiji Jingu','Takeshita-dori','Cruce de Shibuya','Estatua de Hachiko','Shibuya Sky','Crepes de Harajuku','Shibuya de noche','Karaoke en Shibuya'],
       optional: [
         ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico','10 min en tren desde Harajuku']
@@ -1031,6 +1077,10 @@ const dayData = [
         ['20:30', 'Última vuelta de arcade en Shinjuku — cierre de noche antes de dormir']
       ],
       route: ['Shinjuku Station, Tokyo, Japan','Ghibli Museum, Mitaka, Japan','Jindaiji Temple, Chofu, Japan','Shinjuku Station, Tokyo, Japan'],
+      legRoutes: {
+        0: ['Shinjuku Station, Tokyo, Japan','Mitaka Station, Tokyo, Japan'],
+        2: ['Mitaka Station, Tokyo, Japan','Jindaiji Temple, Chofu, Tokyo, Japan'],
+      },
       photos: ['Tren a Mitaka','Museo Ghibli','Templo Jindaiji','Última compra','Lugar favorito revisitado','Última cena japonesa','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
       optional: [] },
     { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'shinjuku',
@@ -1060,6 +1110,7 @@ const dayData = [
         ['10:35', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
       ],
       route: ['Shinjuku Station, Tokyo, Japan','Narita International Airport, Japan'],
+      legRoutes: { 2: ['Shinjuku Station, Tokyo, Japan','Narita International Airport, Japan'] },
       photos: ['Último desayuno','Check-out del hotel','Narita Express','Terminal del aeropuerto','Duty-free','Onigiri de despedida'],
       optional: [] }
   ];
@@ -1251,14 +1302,15 @@ function mapsRouteUrl(route){
 }
 
 function transportSummary(d){
+  const legRoutes = d.legRoutes || {};
   const legs = d.poi
-    .map((p, i) => ({ p, step: d.steps[i] }))
+    .map((p, i) => ({ p, step: d.steps[i], i }))
     .filter(({p}) => p[1] === "Traslado");
   if (!legs.length) return '';
   const url = mapsRouteUrl(d.route);
   const routeBtn = url ? `
     <a href="${url}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary">
-      <span class="material-symbols-outlined !text-lg">map</span> Abrir ruta del día en Google Maps
+      <span class="material-symbols-outlined !text-lg">map</span> Abrir ruta completa del día en Google Maps
     </a>` : '';
   return `
     <section class="px-6 mb-6">
@@ -1267,12 +1319,18 @@ function transportSummary(d){
           <span class="material-symbols-outlined text-secondary">train</span>
           <h3 class="font-headline-md text-body-lg font-bold text-primary">Cómo moverte hoy</h3>
         </div>
-        <div class="space-y-2">
-          ${legs.map(({p, step}) => `
+        <div class="space-y-3">
+          ${legs.map(({p, step, i}) => {
+            const legUrl = mapsRouteUrl(legRoutes[i]);
+            return `
             <div class="flex gap-3 items-start">
               <span class="font-label-caps text-[11px] text-ink-subtle w-10 flex-none pt-0.5">${step[0]}</span>
-              <p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">${p[2]}</span> — ${p[3]}</p>
-            </div>`).join('')}
+              <div>
+                <p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">${p[2]}</span> — ${p[3]}</p>
+                ${legUrl ? `<a href="${legUrl}" target="_blank" rel="noopener" class="text-[11px] font-bold text-secondary">📍 Ver este tramo en Google Maps</a>` : ''}
+              </div>
+            </div>`;
+          }).join('')}
         </div>
         ${routeBtn}
       </div>
