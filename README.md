@@ -41,7 +41,14 @@ Ejemplo: para poner tu foto del Gran Buda de Kamakura, guárdala como `public/im
 1. Sube esta carpeta a un repositorio de **GitHub**.
 2. Entra a [render.com](https://render.com) → **New +** → **Web Service** → conecta el repositorio.
 3. Render detecta automáticamente `render.yaml` (build: `npm install`, start: `npm start`).
-4. En 2-3 minutos tendrás tu URL pública.
+4. En **Environment** agrega la variable `MAPBOX_TOKEN` con tu access token público de Mapbox (así el mapa interactivo del día funciona; el token nunca queda en el código ni en GitHub, solo vive en esta variable de entorno).
+5. En 2-3 minutos tendrás tu URL pública.
+
+### Correr en tu computadora
+Para probar localmente, define la variable de entorno antes de arrancar:
+```
+MAPBOX_TOKEN=tu_token_aqui npm start
+```
 
 ## Opción B — "Static Site" (más simple, sin servidor, nunca se duerme)
 

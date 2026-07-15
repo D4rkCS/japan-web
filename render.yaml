@@ -6,3 +6,6 @@ services:
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
+    envVars:
+      - key: MAPBOX_TOKEN
+        sync: false

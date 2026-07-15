@@ -5,6 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Itinerario Japón - Guía Premium</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet"/>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -1307,11 +1309,10 @@ function transportSummary(d){
     .map((p, i) => ({ p, step: d.steps[i], i }))
     .filter(({p}) => p[1] === "Traslado");
   if (!legs.length) return '';
-  const routeEmbed = mapsEmbedUrl(d.route);
-  const routeMap = routeEmbed ? `
+  const routeMap = (d.route && d.route.length >= 2) ? `
     <div class="mt-4">
-      <p class="font-label-caps text-[11px] text-ink-subtle mb-2">MAPA DEL DÍA — ${(d.route && d.route[0]) || ''} → ${(d.route && d.route[d.route.length-1]) || ''}</p>
-      <iframe class="w-full h-64 rounded-lg border border-outline-variant/20" src="${routeEmbed}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="font-label-caps text-[11px] text-ink-subtle mb-2">MAPA DEL DÍA — ${d.route[0]} → ${d.route[d.route.length-1]}</p>
+      <div id="dayMapContainer" class="w-full h-64 rounded-lg border border-outline-variant/20 bg-surface-variant flex items-center justify-center text-xs text-ink-subtle">Cargando mapa…</div>
     </div>` : '';
   return `
     <section class="px-6 mb-6">
@@ -1338,15 +1339,73 @@ function transportSummary(d){
     </section>`;
 }
 
-function mapsEmbedUrl(route){
-  if (!route || route.length < 2) return '';
-  const origin = route[0];
-  const destination = route[route.length - 1];
-  return `https://maps.google.com/maps?saddr=${encodeURIComponent(origin)}&daddr=${encodeURIComponent(destination)}&output=embed`;
-}
-
 function mapsSearchUrl(place){
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
+}
+
+let currentDayMap = null;
+const geocodeCache = {};
+
+async function geocodePlace(query){
+  if (geocodeCache[query]) return geocodeCache[query];
+  // country=jp + proximity a Tokio: todo el itinerario es en Japón, y sin esto
+  // Mapbox a veces ubica mal nombres cortos (ej. "Narita" lo mandaba a Miyagi
+  // en vez de Chiba, cerca del aeropuerto real).
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?limit=1&country=jp&proximity=139.6917,35.6895&access_token=${mapboxgl.accessToken}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  const coords = (data.features && data.features[0]) ? data.features[0].center : null;
+  geocodeCache[query] = coords;
+  return coords;
+}
+
+async function renderDayMap(d){
+  if (currentDayMap) { currentDayMap.remove(); currentDayMap = null; }
+  if (!d.route || d.route.length < 2) return;
+  const requestedDay = d.key;
+
+  try {
+    const originQuery = d.route[0];
+    const destQuery = d.route[d.route.length - 1];
+    const [originCoord, destCoord] = await Promise.all([geocodePlace(originQuery), geocodePlace(destQuery)]);
+    if (activeDay !== requestedDay) return;
+    if (!originCoord || !destCoord) { return; }
+
+    const dirUrl = `https://api.mapbox.com/directions/v5/mapbox/driving/${originCoord[0]},${originCoord[1]};${destCoord[0]},${destCoord[1]}?geometries=geojson&access_token=${mapboxgl.accessToken}`;
+    const dirRes = await fetch(dirUrl);
+    const dirData = await dirRes.json();
+    if (activeDay !== requestedDay) return;
+    const routeGeo = (dirData.routes && dirData.routes[0]) ? dirData.routes[0].geometry : null;
+
+    const container = document.getElementById('dayMapContainer');
+    if (!container) return;
+    container.textContent = '';
+
+    const map = new mapboxgl.Map({
+      container,
+      style: 'mapbox://styles/mapbox/light-v11',
+      center: originCoord,
+      zoom: 10,
+    });
+    currentDayMap = map;
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+
+    map.on('load', () => {
+      if (routeGeo) {
+        map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: routeGeo, properties: {} } });
+        map.addLayer({ id: 'route-line', type: 'line', source: 'route', paint: { 'line-color': '#aa3529', 'line-width': 4 } });
+      }
+      new mapboxgl.Marker({ color: '#2a2521' }).setLngLat(originCoord).addTo(map);
+      new mapboxgl.Marker({ color: '#aa3529' }).setLngLat(destCoord).addTo(map);
+
+      const bounds = new mapboxgl.LngLatBounds();
+      bounds.extend(originCoord);
+      bounds.extend(destCoord);
+      map.fitBounds(bounds, { padding: 50, maxZoom: 14 });
+    });
+  } catch (err) {
+    console.error('No se pudo cargar el mapa de Mapbox', err);
+  }
 }
 
 function mealSummary(d){
@@ -1510,8 +1569,20 @@ function render(){
   renderHotels();
   renderDay();
   renderBottomNav();
+  renderDayMap(dayData.find(x => x.key === activeDay));
 }
-render();
+
+async function initApp(){
+  try {
+    const res = await fetch('/api/config');
+    const cfg = await res.json();
+    mapboxgl.accessToken = cfg.mapboxToken || '';
+  } catch (err) {
+    console.error('No se pudo cargar la configuración de Mapbox', err);
+  }
+  render();
+}
+initApp();
 </script>
 </body>
 </html>
