@@ -1343,14 +1343,114 @@ function mapsSearchUrl(place){
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
 }
 
+// Coordenadas verificadas a mano para cada lugar usado en route[].
+// El buscador de texto de Mapbox confunde varios de estos nombres con
+// lugares homónimos en otras partes de Japón (ej. "Narita" lo mandaba a
+// Miyagi, "Todai-ji" a un pueblo de Ibaraki, "Gion" a un barrio de
+// Okayama), así que en vez de depender de esa búsqueda usamos esta tabla
+// como fuente principal y el geocoding de Mapbox solo como respaldo.
+const KNOWN_PLACES = {
+  'Abeno Harukas, Osaka, Japan': [135.5136, 34.6459],
+  'Akihabara, Tokyo, Japan': [139.7745, 35.6984],
+  'Arashiyama Bamboo Grove, Kyoto, Japan': [135.672, 35.017],
+  'Asakusa, Taito, Tokyo, Japan': [139.7967, 35.7118],
+  'Asakusa, Tokyo, Japan': [139.7967, 35.7118],
+  'Azabudai Hills, Tokyo, Japan': [139.7396, 35.6605],
+  'Chureito Pagoda, Fujiyoshida, Japan': [138.8006, 35.4903],
+  'Cosmo Clock 21, Yokohama, Japan': [139.638, 35.4548],
+  'Daikokuya Tempura, Asakusa, Tokyo, Japan': [139.7959, 35.7108],
+  'Don Quijote Asakusa, Tokyo, Japan': [139.7943, 35.7128],
+  'Dotonbori, Osaka, Japan': [135.5023, 34.6687],
+  'Enoshima Island, Japan': [139.4803, 35.2989],
+  'Fuji-Q Highland, Fujiyoshida, Japan': [138.7998, 35.4877],
+  'Fushimi Inari Taisha, Kyoto, Japan': [135.7727, 34.9671],
+  'Ghibli Museum, Mitaka, Japan': [139.5704, 35.6962],
+  'Gion Corner, Kyoto, Japan': [135.7751, 35.0021],
+  'Gion, Kyoto, Japan': [135.7753, 35.0037],
+  'Golden Gai, Tokyo, Japan': [139.7038, 35.6938],
+  'Gundam Base Tokyo, Odaiba, Japan': [139.7756, 35.6253],
+  'Hachiko Statue, Shibuya, Tokyo, Japan': [139.7005, 35.659],
+  'Hanamikoji Street, Kyoto, Japan': [135.7752, 35.0025],
+  'Hase-dera Temple, Kamakura, Japan': [139.535, 35.3115],
+  'Higashiyama, Kyoto, Japan': [135.7796, 35.0038],
+  'Hozenji Yokocho, Osaka, Japan': [135.5024, 34.6668],
+  'Iwatayama Monkey Park, Kyoto, Japan': [135.6768, 35.0106],
+  'Jindaiji Temple, Chofu, Japan': [139.5397, 35.6668],
+  'Kabukicho, Tokyo, Japan': [139.7028, 35.6942],
+  'Kachi Kachi Ropeway, Fujiyoshida, Japan': [138.8037, 35.4931],
+  'Kamakura Station, Japan': [139.5523, 35.319],
+  'Kaminarimon Gate, Tokyo, Japan': [139.7961, 35.7108],
+  'Kasuga Taisha, Nara, Japan': [135.8486, 34.6819],
+  'Katsuo-ji Temple, Minoh, Japan': [135.4704, 34.8626],
+  'Kinkaku-ji Temple, Kyoto, Japan': [135.7292, 35.0394],
+  'Kirby Cafe TOKYO, Sumida, Tokyo, Japan': [139.8107, 35.7101],
+  'Kiyomizu-dera Temple, Kyoto, Japan': [135.785, 34.9949],
+  'Kofuku-ji Temple, Nara, Japan': [135.8296, 34.6851],
+  'Komachi-dori, Kamakura, Japan': [139.5518, 35.3184],
+  'Kotoku-in Great Buddha, Kamakura, Japan': [139.5358, 35.3167],
+  'Kubota Itchiku Art Museum, Japan': [138.7469, 35.5158],
+  'Kuromon Ichiba Market, Osaka, Japan': [135.5061, 34.6653],
+  'Kyoto Station, Japan': [135.758, 34.9858],
+  'Kyoto Tower, Japan': [135.759, 34.9879],
+  'Lake Kawaguchiko, Japan': [138.7517, 35.5108],
+  'Meiji Jingu, Tokyo, Japan': [139.6993, 35.6764],
+  'Minato Mirai, Yokohama, Japan': [139.6317, 35.4564],
+  'Nakatanidou, Nara, Japan': [135.8296, 34.6807],
+  'Namba Station, Osaka, Japan': [135.5017, 34.6663],
+  'Namba Yasaka Shrine, Osaka, Japan': [135.4979, 34.6626],
+  'Nara Park, Japan': [135.843, 34.6851],
+  'Narita International Airport, Japan': [140.3929, 35.7719],
+  'Nijo Castle, Kyoto, Japan': [135.7481, 35.0142],
+  'Nishiki Market, Kyoto, Japan': [135.7652, 35.0051],
+  'Odaiba, Tokyo, Japan': [139.7798, 35.6297],
+  'Omoide Yokocho, Shinjuku, Tokyo, Japan': [139.6989, 35.6942],
+  'Osaka Castle, Japan': [135.5259, 34.6873],
+  'Otagi Nenbutsu-ji, Kyoto, Japan': [135.6689, 35.0233],
+  'Pokemon Cafe, Nihonbashi, Tokyo, Japan': [139.7745, 35.6835],
+  'Pokemon Center Kyoto, Japan': [135.7593, 34.9855],
+  'Pontocho Alley, Kyoto, Japan': [135.771, 35.0068],
+  'Round1 Akihabara, Japan': [139.7717, 35.7002],
+  'Sannenzaka, Kyoto, Japan': [135.7803, 34.9963],
+  'Senso-ji Temple, Tokyo, Japan': [139.7967, 35.7148],
+  'Shibuya Crossing, Tokyo, Japan': [139.7005, 35.6595],
+  'Shibuya Sky, Tokyo, Japan': [139.6989, 35.658],
+  'Shin-Osaka Station, Japan': [135.5, 34.7333],
+  'Shinjuku Gyoen, Tokyo, Japan': [139.71, 35.6852],
+  'Shinjuku Station, Tokyo, Japan': [139.7005, 35.6896],
+  'Shinsaibashi-suji, Osaka, Japan': [135.5013, 34.6745],
+  'Shinsekai, Osaka, Japan': [135.5064, 34.6524],
+  'Snoopy Museum, Machida, Tokyo, Japan': [139.4459, 35.5646],
+  'Sumida Park, Tokyo, Japan': [139.801, 35.715],
+  'Sumida River Park, Tokyo, Japan': [139.801, 35.715],
+  'Takeshita Street, Harajuku, Tokyo, Japan': [139.7028, 35.6712],
+  'Tenryu-ji Temple, Kyoto, Japan': [135.6742, 35.0159],
+  'The National Art Center Tokyo, Japan': [139.7268, 35.6653],
+  'Todai-ji Temple, Nara, Japan': [135.8398, 34.6889],
+  'Togetsukyo Bridge, Kyoto, Japan': [135.6776, 35.0097],
+  'Tokyo Imperial Palace, Japan': [139.7528, 35.6852],
+  'Tokyo Skytree, Tokyo, Japan': [139.8107, 35.7101],
+  'Tokyo Solamachi, Tokyo, Japan': [139.8115, 35.7101],
+  'Tokyo Station, Japan': [139.7671, 35.6812],
+  'Tokyo Tower, Japan': [139.7454, 35.6586],
+  'Toyosu, Tokyo, Japan': [139.7965, 35.6547],
+  'Tsurugaoka Hachimangu, Kamakura, Japan': [139.5563, 35.3258],
+  'Umeda Sky Building, Osaka, Japan': [135.4901, 34.7053],
+  'Universal CityWalk Osaka, Japan': [135.4321, 34.6654],
+  'Universal Studios Japan, Osaka, Japan': [135.4323, 34.6654],
+  'Yasaka Pagoda, Kyoto, Japan': [135.7799, 34.9977],
+  'Yasaka Shrine, Kyoto, Japan': [135.7784, 35.0037],
+  'Yokohama Chinatown, Japan': [139.6503, 35.4437],
+  'Yuigahama Beach, Kamakura, Japan': [139.5428, 35.3079],
+};
+
 let currentDayMap = null;
 const geocodeCache = {};
 
 async function geocodePlace(query){
+  if (KNOWN_PLACES[query]) return KNOWN_PLACES[query];
   if (geocodeCache[query]) return geocodeCache[query];
-  // country=jp + proximity a Tokio: todo el itinerario es en Japón, y sin esto
-  // Mapbox a veces ubica mal nombres cortos (ej. "Narita" lo mandaba a Miyagi
-  // en vez de Chiba, cerca del aeropuerto real).
+  // Respaldo para cualquier lugar que no esté en KNOWN_PLACES (no debería
+  // pasar con el itinerario actual, pero cubre nuevos lugares a futuro).
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?limit=1&country=jp&proximity=139.6917,35.6895&access_token=${mapboxgl.accessToken}`;
   const res = await fetch(url);
   const data = await res.json();
