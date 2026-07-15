@@ -171,16 +171,29 @@ const dayData = [
         ['💴','Actividad','Retiro de efectivo','cajero automático en el aeropuerto'],
         ['🎫','Actividad','Suica card y eSIM','tarjeta de transporte y datos móviles'],
         ['🚄','Traslado','Narita Express a Asakusa','~80 minutos hasta el hotel'],
-        ['宿','Actividad','Check-in en Asakusa','llegada al hotel y descanso breve'],
+        ['宿','Actividad','Check-in en Asakusa','llegada al hotel y descanso breve',
+          [['Nombre de mil años','"Asakusa" podría derivar de una antigua palabra que significa "hierba ligera", en referencia a la vegetación que cubría la zona antes de urbanizarse.']]],
         ['購','Actividad','Uniqlo Asakusa','ropa básica, cerca del hotel'],
-        ['寺','Templo','Senso-ji de noche','iluminado, sin las multitudes del día — sello goshuin disponible'],
-        ['門','Foto','Kaminarimon iluminada','la linterna roja de noche'],
-        ['店','Recorrido','Nakamise-dori de noche','tiendas cerradas, ambiente distinto'],
+        ['寺','Templo','Senso-ji de noche','iluminado, sin las multitudes del día — sello goshuin disponible',
+          [['Un templo sin horario de cierre','El recinto exterior de Senso-ji nunca cierra sus puertas: se puede caminar por los jardines a cualquier hora.'],
+           ['El primer templo budista de Tokio','Senso-ji ya existía cuando Tokio (entonces Edo) era solo una aldea pesquera, siglos antes de convertirse en capital.'],
+           ['Humo que cura, según la tradición','Frente a Senso-ji hay un gran incensario donde los visitantes se abanican el humo hacia las zonas del cuerpo que quieren proteger.']]],
+        ['門','Foto','Kaminarimon iluminada','la linterna roja de noche',
+          [['La linterna que se enciende sola','La gran linterna de Kaminarimon se ilumina automáticamente al atardecer, marcando el inicio de la vida nocturna del barrio.']]],
+        ['店','Recorrido','Nakamise-dori de noche','tiendas cerradas, ambiente distinto',
+          [['Un barrio, muchos festivales','Asakusa organiza el Sanja Matsuri en mayo, uno de los tres festivales sintoístas más grandes de Tokio, con más de un millón de visitantes.'],
+           ['Una calle comercial centenaria','Nakamise-dori conserva más de 250 metros de tiendas tradicionales, algunas atendidas por la misma familia desde hace generaciones.']]],
         ['🎀','Comida','Cena en Kirby Café','reserva necesaria, menú temático de Kirby'],
         ['塔','Foto','Skytree desde lejos','primera vista de la torre iluminada'],
-        ['川','Recorrido','Paseo por el Sumida','de noche, con menos gente'],
-        ['店','Actividad','Konbini nocturno','tiendas de conveniencia 24h'],
-        ['道','Recorrido','Denboin-dori','callejón tradicional casi vacío'],
+        ['川','Recorrido','Paseo por el Sumida','de noche, con menos gente',
+          [['El santo escondido en el río','Según la leyenda, Senso-ji nació cuando dos pescadores encontraron una estatua de Kannon en el río Sumida en el año 628, el origen religioso más antiguo de Tokio.'],
+           ['El río que separaba dos mundos','Durante siglos, el Sumida marcaba el límite entre el Tokio formal y los barrios de entretenimiento como Asakusa, del otro lado del puente.']]],
+        ['店','Actividad','Konbini nocturno','tiendas de conveniencia 24h',
+          [['Asakusa nunca duerme del todo','Muchos konbini y locales de ramen en Asakusa abren 24 horas, ideal para el primer jet-lag.']]],
+        ['道','Recorrido','Denboin-dori','callejón tradicional casi vacío',
+          [['Sin rascacielos a la vista','Asakusa es una de las pocas zonas centrales de Tokio con altura de edificios limitada, para no opacar la vista de Senso-ji y el Skytree.'],
+           ['Un barrio de referencia visual','Varios estudios de animación japoneses han usado callejuelas como las de Asakusa como referencia para escenas de Tokio antiguo.'],
+           ['Rickshaws todavía en servicio','En Asakusa aún circulan rickshaws jalados a pie (jinrikisha) para turistas, un transporte que era común en todo Japón hace más de un siglo.']]],
         ['購','Actividad','Don Quijote Asakusa','compras de última hora, abierto 24h']
       ],
       steps: [
@@ -201,21 +214,7 @@ const dayData = [
         ['23:15', 'Denboin-dori — callejón tradicional casi vacío'],
         ['23:55', 'Don Quijote Asakusa — compras de última hora, abierto 24h']
       ],
-      curiosities: [
-        ['Asakusa nunca duerme del todo','Muchos konbini y locales de ramen en Asakusa abren 24 horas, ideal para el primer jet-lag.'],
-        ['La linterna que se enciende sola','La gran linterna de Kaminarimon se ilumina automáticamente al atardecer, marcando el inicio de la vida nocturna del barrio.'],
-        ['Un templo sin horario de cierre','El recinto exterior de Senso-ji nunca cierra sus puertas: se puede caminar por los jardines a cualquier hora.'],
-        ['El santo escondido en el río','Según la leyenda, Senso-ji nació cuando dos pescadores encontraron una estatua de Kannon en el río Sumida en el año 628, el origen religioso más antiguo de Tokio.'],
-        ['Sin rascacielos a la vista','Asakusa es una de las pocas zonas centrales de Tokio con altura de edificios limitada, para no opacar la vista de Senso-ji y el Skytree.'],
-        ['El primer templo budista de Tokio','Senso-ji ya existía cuando Tokio (entonces Edo) era solo una aldea pesquera, siglos antes de convertirse en capital.'],
-        ['Un barrio, muchos festivales','Asakusa organiza el Sanja Matsuri en mayo, uno de los tres festivales sintoístas más grandes de Tokio, con más de un millón de visitantes.'],
-        ['El río que separaba dos mundos','Durante siglos, el Sumida marcaba el límite entre el Tokio formal y los barrios de entretenimiento como Asakusa, del otro lado del puente.'],
-        ['Humo que cura, según la tradición','Frente a Senso-ji hay un gran incensario donde los visitantes se abanican el humo hacia las zonas del cuerpo que quieren proteger.'],
-        ['Una calle comercial centenaria','Nakamise-dori conserva más de 250 metros de tiendas tradicionales, algunas atendidas por la misma familia desde hace generaciones.'],
-        ['Nombre de mil años','"Asakusa" podría derivar de una antigua palabra que significa "hierba ligera", en referencia a la vegetación que cubría la zona antes de urbanizarse.'],
-        ['Un barrio de referencia visual','Varios estudios de animación japoneses han usado callejuelas como las de Asakusa como referencia para escenas de Tokio antiguo.'],
-        ['Rickshaws todavía en servicio','En Asakusa aún circulan rickshaws jalados a pie (jinrikisha) para turistas, un transporte que era común en todo Japón hace más de un siglo.']
-      ],
+      route: ['Narita International Airport, Japan','Asakusa, Taito, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Sumida River Park, Tokyo, Japan','Don Quijote Asakusa, Tokyo, Japan'],
       photos: ['Aterrizaje en Narita','Narita Express','Llegada a Asakusa','Uniqlo Asakusa','Senso-ji de noche','Kaminarimon iluminada','Kirby Café','Skytree a la distancia','Río Sumida de noche'],
       optional: [] },
     { key: 'd2', num: '02', place: 'Tokio', title: 'El corazón de Asakusa y la gran torre',
@@ -225,14 +224,27 @@ const dayData = [
         ['本','Recorrido','Book-Off Shinjuku','libros, manga y artículos usados, misma zona'],
         ['🚃','Traslado','Regreso a Asakusa','línea Ginza/Marunouchi, ~20 min'],
         ['帳','Actividad','Comprar goshuincho','libreta especial para coleccionar sellos caligrafiados de templos y santuarios'],
-        ['寺','Templo','Templo Senso-ji','el templo más antiguo de Tokio — sello goshuin disponible'],
-        ['門','Foto','Puerta Kaminarimon','la gran linterna roja, foto obligatoria'],
-        ['店','Recorrido','Nakamise-dori','calle de snacks y souvenirs'],
+        ['寺','Templo','Templo Senso-ji','el templo más antiguo de Tokio — sello goshuin disponible',
+          [['Vecina de 1,300 años','A los pies del Skytree, Senso-ji ha existido (reconstruido varias veces) desde el año 645, mucho antes de que existiera la torre.']]],
+        ['門','Foto','Puerta Kaminarimon','la gran linterna roja, foto obligatoria',
+          [['La linterna de Kaminarimon','La gran linterna roja de la puerta Kaminarimon pesa cerca de 700 kg y se reemplaza cada 10 años.']]],
+        ['店','Recorrido','Nakamise-dori','calle de snacks y souvenirs',
+          [['Fama desde el periodo Edo','Asakusa era ya una zona de entretenimiento popular durante el periodo Edo, mucho antes de que existieran los rascacielos de Tokio.']]],
         ['🚃','Traslado','Tren a Nihonbashi','línea Ginza/Asakusa, ~10 min desde Asakusa'],
         ['食','Comida','Comida en Pokémon Café','Nihonbashi, ~8 min en tren desde Asakusa, reserva necesaria'],
         ['🚃','Traslado','Regreso a Asakusa','línea Ginza/Asakusa, ~10 min'],
-        ['塔','Foto','Tokyo Skytree','mirador con vistas de toda la ciudad'],
-        ['遊','Actividad','Asakusa Hanayashiki','el parque de atracciones más antiguo de Japón'],
+        ['塔','Foto','Tokyo Skytree','mirador con vistas de toda la ciudad',
+          [['Por qué mide 634 metros','La Tokyo Skytree mide exactamente 634 metros, un guiño a la antigua provincia de Musashi ("mu-sa-shi" = 6-3-4).'],
+           ['Iluminación que cambia de diseño','La Tokyo Skytree cambia su iluminación nocturna según festivales, estaciones del año y eventos especiales durante todo el año.'],
+           ['Récord mundial al abrir sus puertas','Al inaugurarse en 2012, Tokyo Skytree era la torre autoportante más alta del mundo, superando a la Torre de Cantón.'],
+           ['Amortiguación inspirada en pagodas','Skytree usa un sistema antisísmico inspirado en las pagodas de cinco pisos tradicionales, cuyo eje central absorbe el balanceo.'],
+           ['Un mirador con dos alturas','Tokyo Skytree tiene dos miradores, uno a 350 m y otro a 450 m, conectados por una escalera en espiral con vista al vacío.'],
+           ['Una torre visible desde la bahía','En días despejados, Tokyo Skytree puede verse desde la Bahía de Tokio, a varios kilómetros de distancia.'],
+           ['Un ascensor con velocidad de récord','Los elevadores de Tokyo Skytree suben a más de 600 metros por minuto, de los más rápidos del mundo en un edificio abierto al público.'],
+           ['El piso de cristal','En el mirador de 445m hay un tramo de piso de vidrio desde el que se ve directo hacia la calle, cientos de metros más abajo.']]],
+        ['遊','Actividad','Asakusa Hanayashiki','el parque de atracciones más antiguo de Japón',
+          [['Asakusa Hanayashiki','Al lado de Senso-ji está el Asakusa Hanayashiki: abierto en 1853, es el parque de atracciones más antiguo de Japón.'],
+           ['El parque más pequeño con gran historia','Asakusa Hanayashiki es tan compacto que su montaña rusa, de 1953, sigue considerada de las más antiguas en operación del mundo.']]],
         ['船','Actividad','Paseo en barco','crucero corto por el río Sumida'],
         ['桜','Foto','Parque Sumida','cerezos junto al río, vista a la torre'],
         ['道','Recorrido','Denboin-dori','callejón tradicional con menos turistas'],
@@ -267,21 +279,7 @@ const dayData = [
         ['21:30', 'Arcade en Asakusa — máquinas clásicas y modernas hasta tarde'],
         ['22:20', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir']
       ],
-      curiosities: [
-        ['Asakusa Hanayashiki','Al lado de Senso-ji está el Asakusa Hanayashiki: abierto en 1853, es el parque de atracciones más antiguo de Japón.'],
-        ['La linterna de Kaminarimon','La gran linterna roja de la puerta Kaminarimon pesa cerca de 700 kg y se reemplaza cada 10 años.'],
-        ['Por qué mide 634 metros','La Tokyo Skytree mide exactamente 634 metros, un guiño a la antigua provincia de Musashi ("mu-sa-shi" = 6-3-4).'],
-        ['Iluminación que cambia de diseño','La Tokyo Skytree cambia su iluminación nocturna según festivales, estaciones del año y eventos especiales durante todo el año.'],
-        ['Vecina de 1,300 años','A los pies del Skytree, Senso-ji ha existido (reconstruido varias veces) desde el año 645, mucho antes de que existiera la torre.'],
-        ['Récord mundial al abrir sus puertas','Al inaugurarse en 2012, Tokyo Skytree era la torre autoportante más alta del mundo, superando a la Torre de Cantón.'],
-        ['Amortiguación inspirada en pagodas','Skytree usa un sistema antisísmico inspirado en las pagodas de cinco pisos tradicionales, cuyo eje central absorbe el balanceo.'],
-        ['Un mirador con dos alturas','Tokyo Skytree tiene dos miradores, uno a 350 m y otro a 450 m, conectados por una escalera en espiral con vista al vacío.'],
-        ['El parque más pequeño con gran historia','Asakusa Hanayashiki es tan compacto que su montaña rusa, de 1953, sigue considerada de las más antiguas en operación del mundo.'],
-        ['Una torre visible desde la bahía','En días despejados, Tokyo Skytree puede verse desde la Bahía de Tokio, a varios kilómetros de distancia.'],
-        ['Un ascensor con velocidad de récord','Los elevadores de Tokyo Skytree suben a más de 600 metros por minuto, de los más rápidos del mundo en un edificio abierto al público.'],
-        ['El piso de cristal','En el mirador de 445m hay un tramo de piso de vidrio desde el que se ve directo hacia la calle, cientos de metros más abajo.'],
-        ['Fama desde el periodo Edo','Asakusa era ya una zona de entretenimiento popular durante el periodo Edo, mucho antes de que existieran los rascacielos de Tokio.']
-      ],
+      route: ['Asakusa, Taito, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Nihonbashi, Tokyo, Japan','Tokyo Skytree, Tokyo, Japan','Sumida Park, Tokyo, Japan','Tokyo Solamachi, Tokyo, Japan','Tokyo Tower, Japan'],
       photos: ['BicCamera Shinjuku','Book-Off Shinjuku','Templo Senso-ji','Goshuincho','Puerta Kaminarimon','Nakamise-dori','Pokémon Café','Tokyo Skytree','Río Sumida','Cena en Solamachi','Tokyo Tower de noche'],
       optional: [
         ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara','10 min caminando desde Yodobashi-Akiba'],
@@ -290,14 +288,27 @@ const dayData = [
     { key: 'd3', num: '03', place: 'Kamakura', title: 'Kamakura, Enoshima y la bahía de Yokohama',
       poi: [
         ['🚃','Traslado','Tren a Kamakura','JR Yokosuka Line desde Tokyo Station, ~1h desde Asakusa'],
-        ['仏','Templo','Templo Kotoku-in','hogar del Gran Buda de bronce al aire libre — sello goshuin disponible'],
-        ['店','Recorrido','Komachi-dori','calle comercial llena de snacks'],
-        ['社','Templo','Tsurugaoka Hachimangu','el santuario más importante de Kamakura — sello goshuin disponible'],
+        ['仏','Templo','Templo Kotoku-in','hogar del Gran Buda de bronce al aire libre — sello goshuin disponible',
+          [['Un Buda que sobrevivió un tsunami','El Gran Buda estaba originalmente dentro de un templo, pero un tsunami en 1498 arrasó el edificio; la estatua quedó en pie y desde entonces está al aire libre.'],
+           ['Un Buda hueco por dentro','El Gran Buda de Kamakura es hueco: se puede entrar a su interior por una módica cuota y ver cómo fue fundido en piezas de bronce.'],
+           ['Más icónico al aire libre','Al quedar sin techo tras el tsunami de 1498, el Gran Buda se volvió aún más reconocible, justo por su silueta contra el cielo.']]],
+        ['店','Recorrido','Komachi-dori','calle comercial llena de snacks',
+          [['La antigua capital samurái','Kamakura fue la capital de facto de Japón entre 1185 y 1333, durante el primer shogunato de su historia.'],
+           ['Una ciudad rodeada de montañas por diseño','Kamakura fue elegida como capital en parte por su geografía: montañas y mar la hacían fácil de defender.'],
+           ['Trazado urbano defensivo','Aunque hoy es una escapada tranquila desde Tokio, Kamakura conserva el trazado urbano pensado originalmente para defenderse de invasiones.']]],
+        ['社','Templo','Tsurugaoka Hachimangu','el santuario más importante de Kamakura — sello goshuin disponible',
+          [['Un torii que anuncia un camino largo','El gran torii de bronce de Tsurugaoka Hachimangu marca el inicio de una avenida ceremonial de más de 1.8 km hacia el santuario.'],
+           ['Escenario de leyendas samurái','Kamakura conserva más de 65 templos y santuarios de la era medieval, herencia de su época como sede del primer shogunato.'],
+           ['Un santuario en el centro del poder samurái','Tsurugaoka Hachimangu fue fundado por Minamoto no Yoritomo, el primer shogun, como santuario protector de su clan.']]],
         ['浜','Foto','Playa de Yuigahama','vista al mar frente a Kamakura'],
-        ['寺','Templo','Templo Hase-dera','estatua de Kannon de 9 metros — sello goshuin disponible'],
-        ['氷','Comida','Helado de matcha 7 niveles','el reto dulce más famoso de la zona'],
+        ['寺','Templo','Templo Hase-dera','estatua de Kannon de 9 metros — sello goshuin disponible',
+          [['Sede de grandes templos zen','A pesar de su tamaño, Kamakura concentra templos zen de primer nivel histórico, incluyendo varios de los "cinco grandes templos" de la ciudad.']]],
+        ['氷','Comida','Helado de matcha 7 niveles','el reto dulce más famoso de la zona',
+          [['El reto del helado de shirasu','En Komachi-dori venden helado de shirasu (pececillos blancos) y matcha con 7 niveles de intensidad: el reto gastronómico más famoso de la zona.']]],
         ['竹','Foto','Bosque de bambú de Hokoku-ji','más tranquilo que el de Kioto'],
-        ['鉄','Actividad','Tren Enoden','línea local pintoresca junto al mar'],
+        ['鉄','Actividad','Tren Enoden','línea local pintoresca junto al mar',
+          [['El tranvía más fotografiado de Japón','El tren Enoden pasa a centímetros de las casas y roza la playa: es escenario recurrente en el anime y el cine japonés.'],
+           ['El tren que casi toca las casas','Algunos tramos del Enoden son tan estrechos que los vagones pasan a menos de un metro de las puertas de las viviendas.']]],
         ['社','Santuario','Santuario de Enoshima','tres santuarios conectados por senderos en la isla — sello goshuin disponible'],
         ['浜','Naturaleza','Isla de Enoshima','cuevas marinas, playas y vistas al mar'],
         ['陽','Foto','Atardecer en Enoshima','vista del Monte Fuji al atardecer desde la isla, si el clima acompaña'],
@@ -328,21 +339,7 @@ const dayData = [
         ['19:28', 'Cena en Chinatown de Yokohama — el barrio chino más grande de Japón'],
         ['20:28', 'Ramen de madrugada en Yokohama — última parada antes del tren de regreso']
       ],
-      curiosities: [
-        ['El reto del helado de shirasu','En Komachi-dori venden helado de shirasu (pececillos blancos) y matcha con 7 niveles de intensidad: el reto gastronómico más famoso de la zona.'],
-        ['Un Buda que sobrevivió un tsunami','El Gran Buda estaba originalmente dentro de un templo, pero un tsunami en 1498 arrasó el edificio; la estatua quedó en pie y desde entonces está al aire libre.'],
-        ['El tranvía más fotografiado de Japón','El tren Enoden pasa a centímetros de las casas y roza la playa: es escenario recurrente en el anime y el cine japonés.'],
-        ['La antigua capital samurái','Kamakura fue la capital de facto de Japón entre 1185 y 1333, durante el primer shogunato de su historia.'],
-        ['Un Buda hueco por dentro','El Gran Buda de Kamakura es hueco: se puede entrar a su interior por una módica cuota y ver cómo fue fundido en piezas de bronce.'],
-        ['Un torii que anuncia un camino largo','El gran torii de bronce de Tsurugaoka Hachimangu marca el inicio de una avenida ceremonial de más de 1.8 km hacia el santuario.'],
-        ['Escenario de leyendas samurái','Kamakura conserva más de 65 templos y santuarios de la era medieval, herencia de su época como sede del primer shogunato.'],
-        ['Un santuario en el centro del poder samurái','Tsurugaoka Hachimangu fue fundado por Minamoto no Yoritomo, el primer shogun, como santuario protector de su clan.'],
-        ['El tren que casi toca las casas','Algunos tramos del Enoden son tan estrechos que los vagones pasan a menos de un metro de las puertas de las viviendas.'],
-        ['Una ciudad rodeada de montañas por diseño','Kamakura fue elegida como capital en parte por su geografía: montañas y mar la hacían fácil de defender.'],
-        ['Sede de grandes templos zen','A pesar de su tamaño, Kamakura concentra templos zen de primer nivel histórico, incluyendo varios de los "cinco grandes templos" de la ciudad.'],
-        ['Más icónico al aire libre','Al quedar sin techo tras el tsunami de 1498, el Gran Buda se volvió aún más reconocible, justo por su silueta contra el cielo.'],
-        ['Trazado urbano defensivo','Aunque hoy es una escapada tranquila desde Tokio, Kamakura conserva el trazado urbano pensado originalmente para defenderse de invasiones.']
-      ],
+      route: ['Kamakura Station, Japan','Kotoku-in Great Buddha, Kamakura, Japan','Komachi-dori, Kamakura, Japan','Tsurugaoka Hachimangu, Kamakura, Japan','Yuigahama Beach, Kamakura, Japan','Hase-dera Temple, Kamakura, Japan','Enoshima Island, Japan','Cosmo Clock 21, Yokohama, Japan','Minato Mirai, Yokohama, Japan','Yokohama Chinatown, Japan'],
       photos: ['Tren a Kamakura','Gran Buda de Kamakura','Komachi-dori','Tsurugaoka Hachimangu','Playa de Yuigahama','Tren Enoden','Bosque de bambú Hokoku-ji','Isla de Enoshima','Atardecer en Enoshima','Cosmo Clock 21 de noche','Bahía de Minato Mirai','Chinatown de Yokohama'],
       optional: [
         ['寺','Kenchō-ji','el templo zen más antiguo de Japón, en Kita-Kamakura','1 estación en tren desde Kamakura'],
@@ -351,11 +348,18 @@ const dayData = [
     { key: 'd4', num: '04', place: 'Fuji / Hakone', title: 'Kawaguchiko y Fuji-Q Highland',
       poi: [
         ['🚌','Traslado','Autobús a Kawaguchiko','autobús directo desde Shinjuku, ~2h'],
-        ['遊','Actividad','Fuji-Q Highland','parque temático a los pies del Monte Fuji, mañana completa'],
+        ['遊','Actividad','Fuji-Q Highland','parque temático a los pies del Monte Fuji, mañana completa',
+          [['Rutas de peregrinación antiguas','Subir el Fuji ha sido una práctica religiosa desde hace siglos; aún existen senderos de peregrinos marcados con piedras talladas.']]],
         ['絶','Actividad','Fujiyama','una de las montañas rusas más altas del mundo'],
-        ['湖','Naturaleza','Lago Kawaguchiko','tarde tranquila con vistas clásicas del Fuji reflejado en el agua'],
-        ['索','Actividad','Teleférico Kachi Kachi','mirador panorámico del Fuji y los cinco lagos'],
-        ['塔','Foto','Mirador Chureito','la postal más icónica del Fuji, con la pagoda de cinco pisos'],
+        ['湖','Naturaleza','Lago Kawaguchiko','tarde tranquila con vistas clásicas del Fuji reflejado en el agua',
+          [['Un volcán que sigue activo','El Monte Fuji entró en erupción por última vez en 1707 y sigue clasificado como volcán activo, aunque en reposo.'],
+           ['Cinco lagos, una montaña','El Monte Fuji está rodeado por los "Fuji Five Lakes", formados por antiguas coladas de lava que represaron ríos cercanos.']]],
+        ['索','Actividad','Teleférico Kachi Kachi','mirador panorámico del Fuji y los cinco lagos',
+          [['Patrimonio cultural, no natural','La UNESCO declaró al Fuji Patrimonio de la Humanidad en 2013 como sitio cultural, por su papel en el arte y la religión japonesa.']]],
+        ['塔','Foto','Mirador Chureito','la postal más icónica del Fuji, con la pagoda de cinco pisos',
+          [['Simetría casi perfecta','El Monte Fuji es célebre por su silueta cónica casi perfectamente simétrica, despejada por completo solo unos 80-100 días al año.'],
+           ['Un Fuji esquivo','Se estima que solo una parte de los días del año el Monte Fuji se ve completamente despejado de nubes.'],
+           ['Verlo despejado es suerte','Es tan común que el Fuji esté cubierto de nubes que los locales consideran un golpe de suerte verlo completamente despejado.']]],
         ['美','Actividad','Museo de Arte Kubota Itchiku','kimonos teñidos a mano con vistas al lago'],
         ['購','Recorrido','Compras de souvenirs en Kawaguchiko','tiendas junto al lago antes del atardecer'],
         ['湯','Actividad','Onsen con vista al Fuji','aguas termales tradicionales, relajación antes de volver'],
@@ -379,21 +383,7 @@ const dayData = [
         ['20:10', 'Izakaya nocturno en Shinjuku — cierre de noche al llegar de Kawaguchiko'],
         ['21:10', 'Arcade en Shinjuku — cierre de noche al llegar de Kawaguchiko']
       ],
-      curiosities: [
-        ['Los huevos que suman años de vida','En Owakudani se cocinan huevos en las aguas sulfurosas volcánicas hasta que la cáscara se vuelve negra: la leyenda dice que comer uno suma 7 años de vida.'],
-        ['Un volcán que sigue activo','El Monte Fuji entró en erupción por última vez en 1707 y sigue clasificado como volcán activo, aunque en reposo.'],
-        ['Un lago dentro de un cráter','Hakone se sitúa dentro de la caldera de un volcán, formada hace unos 400.000 años.'],
-        ['Simetría casi perfecta','El Monte Fuji es célebre por su silueta cónica casi perfectamente simétrica, despejada por completo solo unos 80-100 días al año.'],
-        ['Patrimonio cultural, no natural','La UNESCO declaró al Fuji Patrimonio de la Humanidad en 2013 como sitio cultural, por su papel en el arte y la religión japonesa.'],
-        ['Un museo al aire libre','Hakone Open-Air Museum exhibe esculturas en un parque de montaña, con un pabellón dedicado exclusivamente a obras de Picasso.'],
-        ['Barcos pirata en un cráter volcánico','Los cruceros del Lago Ashi usan réplicas de galeones, un contraste curioso con el paisaje volcánico que los rodea.'],
-        ['El valle del infierno humeante','Owakudani significa literalmente "gran valle hirviente", nombre que recibió tras la última erupción de Hakone hace miles de años.'],
-        ['Un Fuji esquivo','Se estima que solo una parte de los días del año el Monte Fuji se ve completamente despejado de nubes.'],
-        ['Un lago que cambia de humor','El color del Lago Ashi varía según la luz y la temporada, pasando de azul profundo a tonos casi turquesa.'],
-        ['Cinco lagos, una montaña','El Monte Fuji está rodeado por los "Fuji Five Lakes", formados por antiguas coladas de lava que represaron ríos cercanos.'],
-        ['Rutas de peregrinación antiguas','Subir el Fuji ha sido una práctica religiosa desde hace siglos; aún existen senderos de peregrinos marcados con piedras talladas.'],
-        ['Verlo despejado es suerte','Es tan común que el Fuji esté cubierto de nubes que los locales consideran un golpe de suerte verlo completamente despejado.']
-      ],
+      route: ['Shinjuku Station, Tokyo, Japan','Fuji-Q Highland, Fujiyoshida, Japan','Lake Kawaguchiko, Japan','Kachi Kachi Ropeway, Fujiyoshida, Japan','Chureito Pagoda, Fujiyoshida, Japan','Kubota Itchiku Art Museum, Japan','Shinjuku Station, Tokyo, Japan'],
       photos: ['Autobús a Kawaguchiko','Fuji-Q Highland','Fujiyama','Fuji desde Kawaguchiko','Teleférico Kachi Kachi','Mirador Chureito','Onsen con vista al Fuji'],
       optional: [
         ['社','Santuario Fuji Sengen (Kitaguchi Hongu)','el santuario principal dedicado al Monte Fuji, punto de partida de la ruta de peregrinación','10 min caminando desde Fuji-Q Highland']
@@ -406,19 +396,32 @@ const dayData = [
         ['🚌','Traslado','Bus a Katsuo-ji','vía estación Minoh-Kayano, ~40 min desde Osaka'],
         ['寺','Templo','Templo Katsuo-ji','el templo de los daruma — recorres puntos de sello para armar tu propia postal personalizada — sello goshuin disponible'],
         ['🚌','Traslado','Regreso a Osaka','~40 min de vuelta a la ciudad'],
-        ['道','Recorrido','Canal Dotonbori','neones, canal y energía nocturna'],
-        ['看','Foto','Glico Man','el letrero más fotografiado de Osaka'],
-        ['店','Recorrido','Shinsaibashi-suji','arcada de compras techada, 600m'],
-        ['社','Templo','Santuario Namba Yasaka','escenario con forma de cabeza de león — sello goshuin disponible'],
-        ['市','Comida','Mercado Kuromon Ichiba','"la cocina de Osaka", mariscos frescos'],
-        ['食','Comida','Takoyaki callejero','bolitas de pulpo, receta local desde 1935'],
+        ['道','Recorrido','Canal Dotonbori','neones, canal y energía nocturna',
+          [['La ciudad de los comerciantes','Durante el periodo Edo, Osaka concentraba la mayor bolsa de arroz de Japón, considerada uno de los primeros mercados de futuros del mundo.'],
+           ['Más puentes que Venecia','Osaka tiene más de 800 puentes sobre sus canales, herencia de su historia como centro de comercio fluvial.'],
+           ['Un canal que fue autopista','El río Dotonbori se construyó originalmente en 1612 como canal de transporte de mercancías, no como zona de entretenimiento.'],
+           ['Neones que nunca se apagan','Dotonbori mantiene su iluminación encendida toda la noche desde hace décadas, de los primeros distritos en adoptar ese estilo en Japón.']]],
+        ['看','Foto','Glico Man','el letrero más fotografiado de Osaka',
+          [['Un letrero que lleva corriendo desde 1935','El famoso letrero de Glico Running Man en Dotonbori ha sido renovado seis veces sin perder su pose icónica.']]],
+        ['店','Recorrido','Shinsaibashi-suji','arcada de compras techada, 600m',
+          [['Cuna de la comedia japonesa','Osaka es famosa por el \'manzai\', un estilo de comedia rápida a dos voces que nació en la ciudad y hoy domina la TV japonesa.'],
+           ['Un saludo que aún se usa','Muchos osaqueños todavía saludan con la expresión "mokarimakka" (¿le va bien el negocio?), herencia de su pasado comercial.']]],
+        ['社','Templo','Santuario Namba Yasaka','escenario con forma de cabeza de león — sello goshuin disponible',
+          [['El santuario que se traga la mala suerte','El Santuario Namba Yasaka tiene un escenario con forma de cabeza de león de 12 metros: su boca abierta se traga la mala suerte, según la tradición.']]],
+        ['市','Comida','Mercado Kuromon Ichiba','"la cocina de Osaka", mariscos frescos',
+          [['"La cocina de la nación"','Osaka es conocida como "Tenka no Daidokoro": históricamente fue el centro de distribución de arroz y alimentos de todo Japón.']]],
+        ['食','Comida','Takoyaki callejero','bolitas de pulpo, receta local desde 1935',
+          [['El origen del takoyaki','El takoyaki se inventó en Osaka en 1935. Hoy hay puestos casi en cada esquina de Dotonbori compitiendo por la receta más cremosa.']]],
         ['食','Comida','Okonomiyaki','panqueque salado a la plancha'],
         ['灯','Foto','Hozenji Yokocho','callejón de piedra con templo cubierto de musgo'],
         ['購','Actividad','America-mura','moda urbana y tiendas vintage'],
-        ['船','Actividad','Crucero por Dotonbori','el canal desde el agua, de noche'],
-        ['塔','Foto','Abeno Harukas','el rascacielos más alto de Japón, mirador panorámico'],
+        ['船','Actividad','Crucero por Dotonbori','el canal desde el agua, de noche',
+          [['La Venecia de Japón','Antes de rellenar varios canales en el siglo XX, Osaka era conocida como la "Venecia de Japón" por su red de vías fluviales comerciales.']]],
+        ['塔','Foto','Abeno Harukas','el rascacielos más alto de Japón, mirador panorámico',
+          [['Una ciudad que prosperó sin ser capital','Durante el periodo Edo, Osaka creció como centro financiero gracias a su puerto y sus mercados de arroz, sin ser la capital política.']]],
         ['塔','Foto','Umeda Sky Building','mirador flotante entre dos torres, vista nocturna de Osaka'],
-        ['食','Comida','Segunda ronda de street food','kushikatsu extra antes de dormir'],
+        ['食','Comida','Segunda ronda de street food','kushikatsu extra antes de dormir',
+          [['El picante que llegó del puerto','El curry japonés se popularizó primero en Osaka gracias a su papel como puerto comercial con contacto extranjero temprano.']]],
         ['🕹','Actividad','Arcade en Dotonbori','máquinas y UFO catchers hasta tarde'],
         ['📸','Recorrido','Purikura con amigos','fotos instantáneas estilo japonés']
       ],
@@ -445,21 +448,7 @@ const dayData = [
         ['01:35', 'Arcade en Dotonbori — máquinas y UFO catchers hasta tarde'],
         ['02:25', 'Purikura con amigos — fotos instantáneas estilo japonés']
       ],
-      curiosities: [
-        ['El santuario que se traga la mala suerte','El Santuario Namba Yasaka tiene un escenario con forma de cabeza de león de 12 metros: su boca abierta se traga la mala suerte, según la tradición.'],
-        ['"La cocina de la nación"','Osaka es conocida como "Tenka no Daidokoro": históricamente fue el centro de distribución de arroz y alimentos de todo Japón.'],
-        ['El origen del takoyaki','El takoyaki se inventó en Osaka en 1935. Hoy hay puestos casi en cada esquina de Dotonbori compitiendo por la receta más cremosa.'],
-        ['La ciudad de los comerciantes','Durante el periodo Edo, Osaka concentraba la mayor bolsa de arroz de Japón, considerada uno de los primeros mercados de futuros del mundo.'],
-        ['Cuna de la comedia japonesa','Osaka es famosa por el \'manzai\', un estilo de comedia rápida a dos voces que nació en la ciudad y hoy domina la TV japonesa.'],
-        ['Más puentes que Venecia','Osaka tiene más de 800 puentes sobre sus canales, herencia de su historia como centro de comercio fluvial.'],
-        ['Un letrero que lleva corriendo desde 1935','El famoso letrero de Glico Running Man en Dotonbori ha sido renovado seis veces sin perder su pose icónica.'],
-        ['Una ciudad que prosperó sin ser capital','Durante el periodo Edo, Osaka creció como centro financiero gracias a su puerto y sus mercados de arroz, sin ser la capital política.'],
-        ['Un saludo que aún se usa','Muchos osaqueños todavía saludan con la expresión "mokarimakka" (¿le va bien el negocio?), herencia de su pasado comercial.'],
-        ['Un canal que fue autopista','El río Dotonbori se construyó originalmente en 1612 como canal de transporte de mercancías, no como zona de entretenimiento.'],
-        ['La Venecia de Japón','Antes de rellenar varios canales en el siglo XX, Osaka era conocida como la "Venecia de Japón" por su red de vías fluviales comerciales.'],
-        ['El picante que llegó del puerto','El curry japonés se popularizó primero en Osaka gracias a su papel como puerto comercial con contacto extranjero temprano.'],
-        ['Neones que nunca se apagan','Dotonbori mantiene su iluminación encendida toda la noche desde hace décadas, de los primeros distritos en adoptar ese estilo en Japón.']
-      ],
+      route: ['Asakusa, Tokyo, Japan','Shin-Osaka Station, Japan','Katsuo-ji Temple, Minoh, Japan','Dotonbori, Osaka, Japan','Shinsaibashi-suji, Osaka, Japan','Namba Yasaka Shrine, Osaka, Japan','Kuromon Ichiba Market, Osaka, Japan','Abeno Harukas, Osaka, Japan','Umeda Sky Building, Osaka, Japan'],
       photos: ['Shinkansen a Osaka','Templo Katsuo-ji','Postal de sellos Katsuo-ji','Neones de Dotonbori','Glico Man','Shinsaibashi-suji','Mercado Kuromon','Takoyaki callejero','Hozenji Yokocho','Umeda Sky Building','Abeno Harukas'],
       optional: [
         ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI)','línea Tanimachi, ~15 min desde Namba']
@@ -467,18 +456,31 @@ const dayData = [
     { key: 'd6', num: '06', place: 'Osaka', title: 'Un día de película en Universal Studios Japan',
       poi: [
         ['🚃','Traslado','Tren a USJ','línea JR Yumesaki (vía Nishikujo) desde Namba, ~20 min'],
-        ['界','Actividad','Super Nintendo World','Mario Kart con visor de realidad aumentada'],
+        ['界','Actividad','Super Nintendo World','Mario Kart con visor de realidad aumentada',
+          [['Realidad aumentada sobre ruedas','Mario Kart: Koopa\'s Challenge usa visores de RA para mostrar monedas y obstáculos virtuales sobre el recorrido real.'],
+           ['El área más pedida del mundo','Super Nintendo World fue de las zonas temáticas más solicitadas en encuestas de fans antes de su apertura en 2021.'],
+           ['El primer mundo temático de Mario','Super Nintendo World fue la primera área temática dedicada por completo al universo de Mario en cualquier parque del mundo.'],
+           ['Apertura retrasada por la pandemia','Super Nintendo World iba a abrir antes, pero la situación sanitaria global retrasó más de un año su inauguración final en 2021.']]],
         ['杖','Actividad','Mundo de Harry Potter','Hogsmeade y el castillo de Hogwarts'],
         ['恐','Actividad','Jurassic Park The Ride','caída de agua sorpresa incluida'],
-        ['黄','Actividad','Minion Park','zona temática de Gru: Mi Villano Favorito'],
+        ['黄','Actividad','Minion Park','zona temática de Gru: Mi Villano Favorito',
+          [['Asientos que giran solos','Algunas atracciones de Minion Park usan vehículos con rotación individual, poco común en atracciones familiares.']]],
         ['絶','Actividad','Hollywood Dream','montaña rusa con banda sonora propia'],
         ['宙','Actividad','Space Fantasy','montaña rusa en la oscuridad'],
-        ['店','Recorrido','CityWalk','zona comercial y de restaurantes a la salida'],
-        ['児','Actividad','Universal Wonderland','área familiar con Snoopy y Sesame Street'],
+        ['店','Recorrido','CityWalk','zona comercial y de restaurantes a la salida',
+          [['Dos décadas de historia','Universal Studios Japan abrió sus puertas en el año 2001, siendo el primer parque Universal fuera de Estados Unidos.'],
+           ['Terreno ganado al mar','Universal Studios Japan se construyó sobre terreno ganado al mar en la bahía de Osaka.'],
+           ['Hermano de Hollywood y Orlando','Universal Studios Japan es uno de los cinco parques Universal en el mundo, y el primero fuera de Estados Unidos.'],
+           ['Un parque construido pensando en el futuro','USJ reservó espacio desde su apertura para expansiones futuras, lo que hizo posible construir Super Nintendo World casi 20 años después.'],
+           ['Pases con horario exacto','USJ fue de los primeros parques en implementar accesos prioritarios con horarios exactos por atracción, modelo luego copiado en otros parques.']]],
+        ['児','Actividad','Universal Wonderland','área familiar con Snoopy y Sesame Street',
+          [['Un mapa que cambia cada temporada','USJ agrega decoraciones estacionales (Halloween, Navidad, Año Nuevo) que transforman por completo varias zonas del parque.']]],
         ['購','Actividad','Tienda de merchandising','recuerdos exclusivos del parque'],
-        ['band','Actividad','Power-Up Band','pulsera interactiva para juegos en Nintendo World'],
+        ['band','Actividad','Power-Up Band','pulsera interactiva para juegos en Nintendo World',
+          [['La pulsera que interactúa con el parque','La Power-Up Band de Nintendo World se sincroniza con juegos y retos repartidos por toda la zona temática.']]],
         ['🚃','Traslado','Regreso a Namba','línea JR Yumesaki, ~20 min'],
-        ['✨','Actividad','Espectáculo nocturno y castillo iluminado','parada nocturna antes del cierre del parque'],
+        ['✨','Actividad','Espectáculo nocturno y castillo iluminado','parada nocturna antes del cierre del parque',
+          [['Un show que cambia con las estaciones','El espectáculo nocturno de luces y proyecciones del parque se actualiza varias veces al año según la temporada.']]],
         ['食','Comida','Cena en CityWalk','cierre de noche fuera del parque'],
         ['🎆','Actividad','Fuegos artificiales o show extra','si el parque los tiene esa temporada'],
         ['🕹','Actividad','Arcade en CityWalk','cierre de noche antes de volver al hotel'],
@@ -505,21 +507,7 @@ const dayData = [
         ['20:50', 'Segunda vuelta de arcade en CityWalk — más rondas antes de volver al hotel'],
         ['21:40', 'Ramen de madrugada en Namba — última parada antes de dormir']
       ],
-      curiosities: [
-        ['La pulsera que interactúa con el parque','La Power-Up Band de Nintendo World se sincroniza con juegos y retos repartidos por toda la zona temática.'],
-        ['Realidad aumentada sobre ruedas','Mario Kart: Koopa\'s Challenge usa visores de RA para mostrar monedas y obstáculos virtuales sobre el recorrido real.'],
-        ['Dos décadas de historia','Universal Studios Japan abrió sus puertas en el año 2001, siendo el primer parque Universal fuera de Estados Unidos.'],
-        ['Terreno ganado al mar','Universal Studios Japan se construyó sobre terreno ganado al mar en la bahía de Osaka.'],
-        ['El área más pedida del mundo','Super Nintendo World fue de las zonas temáticas más solicitadas en encuestas de fans antes de su apertura en 2021.'],
-        ['Hermano de Hollywood y Orlando','Universal Studios Japan es uno de los cinco parques Universal en el mundo, y el primero fuera de Estados Unidos.'],
-        ['Asientos que giran solos','Algunas atracciones de Minion Park usan vehículos con rotación individual, poco común en atracciones familiares.'],
-        ['Un parque construido pensando en el futuro','USJ reservó espacio desde su apertura para expansiones futuras, lo que hizo posible construir Super Nintendo World casi 20 años después.'],
-        ['El primer mundo temático de Mario','Super Nintendo World fue la primera área temática dedicada por completo al universo de Mario en cualquier parque del mundo.'],
-        ['Un show que cambia con las estaciones','El espectáculo nocturno de luces y proyecciones del parque se actualiza varias veces al año según la temporada.'],
-        ['Pases con horario exacto','USJ fue de los primeros parques en implementar accesos prioritarios con horarios exactos por atracción, modelo luego copiado en otros parques.'],
-        ['Apertura retrasada por la pandemia','Super Nintendo World iba a abrir antes, pero la situación sanitaria global retrasó más de un año su inauguración final en 2021.'],
-        ['Un mapa que cambia cada temporada','USJ agrega decoraciones estacionales (Halloween, Navidad, Año Nuevo) que transforman por completo varias zonas del parque.']
-      ],
+      route: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan','Universal CityWalk Osaka, Japan','Namba Station, Osaka, Japan'],
       photos: ['Tren a USJ','Super Nintendo World','Mundo de Harry Potter','Jurassic Park The Ride','Minion Park','CityWalk','Universal Wonderland','Castillo iluminado de noche'],
       optional: [] },
     { key: 'd7', num: '07', place: 'Osaka', title: 'Nara y el Castillo de Osaka',
@@ -530,13 +518,26 @@ const dayData = [
         ['寺','Templo','Kofuku-ji','pagoda de cinco pisos, símbolo de Nara — sello goshuin disponible'],
         ['餅','Comida','Nakatanidou','mochi hecho a mazazos, famoso por su rapidez'],
         ['🚃','Traslado','Regreso a Osaka','línea JR/Kintetsu, ~40-50 min'],
-        ['城','Castillo','Castillo de Osaka','de regreso en Osaka, recorrido rápido'],
-        ['庭','Recorrido','Jardines del castillo','atardecer entre los jardines'],
-        ['塔','Recorrido','Shinsekai','el barrio retro con la Torre Tsutenkaku'],
+        ['城','Castillo','Castillo de Osaka','de regreso en Osaka, recorrido rápido',
+          [['Un castillo reconstruido en concreto','La torre actual del Castillo de Osaka es una reconstrucción de 1931 en concreto armado; el original de 1583 fue destruido por incendios y batallas.'],
+           ['Piedras de 100 toneladas','Algunas piedras de las murallas del Castillo de Osaka pesan más de 100 toneladas y fueron traídas por barco desde otras regiones.'],
+           ['Un castillo que cambió de dueño','El Castillo de Osaka fue construido en 1583 por Toyotomi Hideyoshi, pero terminó bajo control del clan Tokugawa tras el sitio de Osaka.'],
+           ['Museo dentro de la torre','La torre principal funciona como museo, con un mirador en el piso más alto al que se llega en elevador.']]],
+        ['庭','Recorrido','Jardines del castillo','atardecer entre los jardines',
+          [['Un castillo con pasado militar','Durante la era Meiji, los terrenos del Castillo de Osaka se usaron como arsenal militar antes de convertirse en el parque actual.'],
+           ['Un foso que sigue lleno','El foso original del castillo, cavado en el siglo XVI, todavía rodea la fortaleza y se puede recorrer caminando por sus jardines.']]],
+        ['塔','Recorrido','Shinsekai','el barrio retro con la Torre Tsutenkaku',
+          [['La estatua que trae suerte','Billiken, la deidad de la buena suerte de Shinsekai, tiene los pies dorados de tanto que los frotan los visitantes.'],
+           ['Nueva York y París en un barrio','Shinsekai se diseñó en 1912 combinando el estilo de Nueva York (al norte) y París (al sur), con la Torre Tsutenkaku como su propio ícono.'],
+           ['Inspirada en la Torre Eiffel','La Torre Tsutenkaku de Shinsekai, reconstruida en 1956, tomó parte de su inspiración de la Torre Eiffel de París.'],
+           ['El amuleto que se frota por suerte','Se cree que frotar los pies de la estatua de Billiken en Shinsekai trae fortuna, por eso lucen tan desgastados.'],
+           ['Una torre reconstruida dos veces','La Torre Tsutenkaku actual es en realidad la segunda versión: la original de 1912 fue desmantelada durante la Segunda Guerra Mundial.'],
+           ['Estética retro a propósito','A diferencia de otras zonas de Osaka, Shinsekai conservó deliberadamente su aire de principios del siglo XX como sello de identidad.']]],
         ['道','Recorrido','Dotonbori de despedida','últimas luces de neón de Osaka'],
         ['購','Recorrido','Shinsaibashi de noche','arcada de compras iluminada, ambiente nocturno'],
         ['塔','Foto','Umeda Sky Building','mirador flotante entre dos torres, vista nocturna de Osaka'],
-        ['食','Comida','Última cena en Osaka','cierre gastronómico antes de Kioto'],
+        ['食','Comida','Última cena en Osaka','cierre gastronómico antes de Kioto',
+          [['La regla de oro del kushikatsu','En los locales de kushikatsu está prohibido volver a mojar el palito ya mordido en la salsa comunitaria — una regla que todos respetan.']]],
         ['酒','Actividad','Tachinomi (bar de pie)','bar tradicional para tomar de pie, ambiente muy local'],
         ['菓','Comida','Postre nocturno','dulces japoneses antes de dormir'],
         ['購','Recorrido','Compras de última hora en Namba','snacks y regalos antes de dormir'],
@@ -563,21 +564,7 @@ const dayData = [
         ['20:00', 'Arcade en Namba — última parada antes de dormir'],
         ['20:50', 'Purikura en Namba — fotos instantáneas estilo japonés']
       ],
-      curiosities: [
-        ['Un castillo reconstruido en concreto','La torre actual del Castillo de Osaka es una reconstrucción de 1931 en concreto armado; el original de 1583 fue destruido por incendios y batallas.'],
-        ['La estatua que trae suerte','Billiken, la deidad de la buena suerte de Shinsekai, tiene los pies dorados de tanto que los frotan los visitantes.'],
-        ['La regla de oro del kushikatsu','En los locales de kushikatsu está prohibido volver a mojar el palito ya mordido en la salsa comunitaria — una regla que todos respetan.'],
-        ['Piedras de 100 toneladas','Algunas piedras de las murallas del Castillo de Osaka pesan más de 100 toneladas y fueron traídas por barco desde otras regiones.'],
-        ['Nueva York y París en un barrio','Shinsekai se diseñó en 1912 combinando el estilo de Nueva York (al norte) y París (al sur), con la Torre Tsutenkaku como su propio ícono.'],
-        ['Un castillo que cambió de dueño','El Castillo de Osaka fue construido en 1583 por Toyotomi Hideyoshi, pero terminó bajo control del clan Tokugawa tras el sitio de Osaka.'],
-        ['Inspirada en la Torre Eiffel','La Torre Tsutenkaku de Shinsekai, reconstruida en 1956, tomó parte de su inspiración de la Torre Eiffel de París.'],
-        ['Un castillo con pasado militar','Durante la era Meiji, los terrenos del Castillo de Osaka se usaron como arsenal militar antes de convertirse en el parque actual.'],
-        ['El amuleto que se frota por suerte','Se cree que frotar los pies de la estatua de Billiken en Shinsekai trae fortuna, por eso lucen tan desgastados.'],
-        ['Una torre reconstruida dos veces','La Torre Tsutenkaku actual es en realidad la segunda versión: la original de 1912 fue desmantelada durante la Segunda Guerra Mundial.'],
-        ['Un foso que sigue lleno','El foso original del castillo, cavado en el siglo XVI, todavía rodea la fortaleza y se puede recorrer caminando por sus jardines.'],
-        ['Museo dentro de la torre','La torre principal funciona como museo, con un mirador en el piso más alto al que se llega en elevador.'],
-        ['Estética retro a propósito','A diferencia de otras zonas de Osaka, Shinsekai conservó deliberadamente su aire de principios del siglo XX como sello de identidad.']
-      ],
+      route: ['Namba Station, Osaka, Japan','Nara Park, Japan','Todai-ji Temple, Nara, Japan','Kasuga Taisha, Nara, Japan','Kofuku-ji Temple, Nara, Japan','Osaka Castle, Japan','Shinsekai, Osaka, Japan','Dotonbori, Osaka, Japan','Umeda Sky Building, Osaka, Japan'],
       photos: ['Venados de Nara','Todai-ji','Kasuga Taisha','Mochi de Nakatanidou','Castillo de Osaka','Shinsekai de noche','Umeda Sky Building'],
       optional: [
         ['社','Sumiyoshi Taisha','santuario shinto de estilo arquitectónico único, muy fotogénico','línea Nankai, ~20 min desde Namba']
@@ -586,13 +573,26 @@ const dayData = [
       poi: [
         ['鞄','Traslado','Check-out en Osaka','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Tren a Kioto','Shinkansen o línea JR Kyoto, ~15-30 min desde Osaka'],
-        ['寺','Templo','Templo Kiyomizu-dera','construido sin usar un solo clavo — sello goshuin disponible'],
-        ['台','Foto','Escenario de madera','mirador elevado sobre la ciudad'],
-        ['恋','Templo','Santuario Jishu','las piedras del amor, a 18 metros — sello goshuin disponible'],
-        ['坂','Recorrido','Sannenzaka y Ninenzaka','calles empedradas del Japón feudal'],
-        ['街','Recorrido','Higashiyama','barrio histórico con tiendas tradicionales'],
+        ['寺','Templo','Templo Kiyomizu-dera','construido sin usar un solo clavo — sello goshuin disponible',
+          [['Un templo sin un solo clavo','Kiyomizu-dera está construido completamente en madera, ensamblada sin usar un solo clavo, con técnicas de carpintería centenarias.'],
+           ['17 sitios en un solo nombre','Kioto agrupa 17 templos, santuarios y castillos bajo la declaratoria UNESCO conjunta "Monumentos Históricos de la Antigua Kioto".']]],
+        ['台','Foto','Escenario de madera','mirador elevado sobre la ciudad',
+          [['Saltar desde el escenario','Existe una expresión japonesa, "saltar desde el escenario de Kiyomizu", que significa tomar una decisión arriesgada — por gente que antiguamente saltaba de verdad creyendo que sobrevivir cumplía un deseo.'],
+           ['Una plataforma sin tornillos visibles','El escenario de Kiyomizu-dera se sostiene con "kake-zukuri", una técnica japonesa de ensamblaje con cientos de vigas entrelazadas.']]],
+        ['恋','Templo','Santuario Jishu','las piedras del amor, a 18 metros — sello goshuin disponible',
+          [['Las piedras del amor','En el Santuario Jishu hay dos piedras separadas 18 metros: caminar de una a otra con los ojos cerrados asegura, según la leyenda, encontrar el amor verdadero.']]],
+        ['坂','Recorrido','Sannenzaka y Ninenzaka','calles empedradas del Japón feudal',
+          [['Una cuadrícula copiada de China','El trazado de calles de Kioto se diseñó en el año 794 inspirado en la capital china de Chang\'an.'],
+           ['Una ciudad que se salvó de las bombas','Al librarse de los bombardeos de la Segunda Guerra Mundial, Kioto conserva miles de edificios y templos anteriores al siglo XX.'],
+           ['Una cuadrícula milenaria','El trazado en cuadrícula de Kioto, diseñado hace más de 1,200 años, sigue siendo la base del mapa actual de la ciudad.']]],
+        ['街','Recorrido','Higashiyama','barrio histórico con tiendas tradicionales',
+          [['Mil años de capital imperial','Kioto fue la capital imperial de Japón durante más de mil años, desde el año 794 hasta 1868.'],
+           ['Una ciudad que se salvó de las bombas','Kioto se libró casi por completo de los bombardeos de la Segunda Guerra Mundial, por lo que conserva miles de templos históricos intactos.'],
+           ['Una capital elegida por sus montañas','Kioto se diseñó siguiendo principios de geomancia china, rodeada de montañas consideradas protectoras en las cuatro direcciones.'],
+           ['Vínculo simbólico imperial','Aunque Tokio es la capital desde 1868, muchas ceremonias imperiales tradicionales conservan fuertes vínculos simbólicos con Kioto.']]],
         ['塔','Foto','Pagoda Yasaka','postal clásica entre tejados'],
-        ['茶','Comida','Casas de té','dulces y té matcha en Higashiyama'],
+        ['茶','Comida','Casas de té','dulces y té matcha en Higashiyama',
+          [['Cuna del matcha de calidad','Kioto y sus alrededores, en especial Uji, son responsables de algunos de los tés matcha más prestigiosos de Japón.']]],
         ['服','Actividad','Alquiler de kimono','para pasear el barrio en traje tradicional'],
         ['景','Foto','Vista panorámica de Kioto','desde el escenario de Kiyomizu-dera'],
         ['球','Actividad','Pokémon Center Kyoto','tienda temática oficial'],
@@ -627,36 +627,35 @@ const dayData = [
         ['19:58', 'Bar tradicional cerca de Gion — cierre de noche con sake local'],
         ['20:48', 'Tienda 24h antes de dormir — snacks para el día siguiente']
       ],
-      curiosities: [
-        ['Un templo sin un solo clavo','Kiyomizu-dera está construido completamente en madera, ensamblada sin usar un solo clavo, con técnicas de carpintería centenarias.'],
-        ['Las piedras del amor','En el Santuario Jishu hay dos piedras separadas 18 metros: caminar de una a otra con los ojos cerrados asegura, según la leyenda, encontrar el amor verdadero.'],
-        ['Saltar desde el escenario','Existe una expresión japonesa, "saltar desde el escenario de Kiyomizu", que significa tomar una decisión arriesgada — por gente que antiguamente saltaba de verdad creyendo que sobrevivir cumplía un deseo.'],
-        ['Mil años de capital imperial','Kioto fue la capital imperial de Japón durante más de mil años, desde el año 794 hasta 1868.'],
-        ['Una ciudad que se salvó de las bombas','Kioto se libró casi por completo de los bombardeos de la Segunda Guerra Mundial, por lo que conserva miles de templos históricos intactos.'],
-        ['Una cuadrícula copiada de China','El trazado de calles de Kioto se diseñó en el año 794 inspirado en la capital china de Chang\'an.'],
-        ['17 sitios en un solo nombre','Kioto agrupa 17 templos, santuarios y castillos bajo la declaratoria UNESCO conjunta "Monumentos Históricos de la Antigua Kioto".'],
-        ['Una plataforma sin tornillos visibles','El escenario de Kiyomizu-dera se sostiene con "kake-zukuri", una técnica japonesa de ensamblaje con cientos de vigas entrelazadas.'],
-        ['Una ciudad que se salvó de las bombas','Al librarse de los bombardeos de la Segunda Guerra Mundial, Kioto conserva miles de edificios y templos anteriores al siglo XX.'],
-        ['Una capital elegida por sus montañas','Kioto se diseñó siguiendo principios de geomancia china, rodeada de montañas consideradas protectoras en las cuatro direcciones.'],
-        ['Una cuadrícula milenaria','El trazado en cuadrícula de Kioto, diseñado hace más de 1,200 años, sigue siendo la base del mapa actual de la ciudad.'],
-        ['Vínculo simbólico imperial','Aunque Tokio es la capital desde 1868, muchas ceremonias imperiales tradicionales conservan fuertes vínculos simbólicos con Kioto.'],
-        ['Cuna del matcha de calidad','Kioto y sus alrededores, en especial Uji, son responsables de algunos de los tés matcha más prestigiosos de Japón.']
-      ],
+      route: ['Shin-Osaka Station, Japan','Kyoto Station, Japan','Kiyomizu-dera Temple, Kyoto, Japan','Sannenzaka, Kyoto, Japan','Higashiyama, Kyoto, Japan','Yasaka Pagoda, Kyoto, Japan','Kyoto Tower, Japan'],
       photos: ['Tren Osaka-Kioto','Kiyomizu-dera','Escenario de madera','Sannenzaka','Pagoda Yasaka','Higashiyama','Pokémon Center Kyoto','Kimono en Higashiyama','Kyoto Tower de noche','Higashiyama de noche'],
       optional: [] },
     { key: 'd9', num: '09', place: 'Kioto', title: 'El bosque de bambú de Arashiyama',
       poi: [
-        ['🚃','Traslado','Tren a Arashiyama','línea JR Sagano o Randen, ~15-20 min desde Kioto'],
-        ['竹','Foto','Bosque de bambú','senderos altos y estrechos entre cañas'],
+        ['🚃','Traslado','Tren a Arashiyama','línea JR Sagano o Randen, ~15-20 min desde Kioto',
+          [['Un andén decorado con bambú','La estación de Arashiyama tiene un andén con cientos de postes de bambú iluminados por la noche.']]],
+        ['竹','Foto','Bosque de bambú','senderos altos y estrechos entre cañas',
+          [['Un paisaje sonoro protegido','El susurro del bosque de bambú de Arashiyama fue reconocido por el gobierno japonés como uno de los "100 paisajes sonoros" a preservar.'],
+           ['Bambú que crece un metro al día','En la temporada adecuada, el bambú de Arashiyama puede crecer hasta un metro en 24 horas, una de las plantas más rápidas del mundo.'],
+           ['Una villa imperial cercana','A poca distancia del bosque de bambú está la Villa Imperial Katsura, jardín del siglo XVII considerado obra maestra del paisajismo japonés.'],
+           ['Un bosque protegido por partida doble','Además de su sonido, el bosque de bambú de Arashiyama está protegido como parte del paisaje cultural de Kioto.'],
+           ['Un bosque que suena distinto cada vez','El crujido del bambú de Arashiyama varía según la velocidad del viento, por lo que nunca suena exactamente igual dos veces.']]],
         ['寺','Templo','Templo Tenryu-ji','jardín zen Patrimonio de la Humanidad — sello goshuin disponible'],
-        ['橋','Foto','Puente Togetsukyo','cruce icónico sobre el río Katsura'],
+        ['橋','Foto','Puente Togetsukyo','cruce icónico sobre el río Katsura',
+          [['El puente que cruza la luna','"Togetsukyo" significa "puente que cruza la luna", por la leyenda de un emperador que admiró el reflejo de la luna llena desde ahí.']]],
         ['苔','Foto','Jardín de musgo','dentro de Tenryu-ji, muy fotogénico'],
         ['車','Actividad','Paseo en riksha','recorrido guiado por Arashiyama'],
-        ['市','Comida','Mercado de Nishiki','"la cocina de Kioto", en el centro'],
+        ['市','Comida','Mercado de Nishiki','"la cocina de Kioto", en el centro',
+          [['Cuidado con los caldos','Revisa bien los ingredientes en el Mercado de Nishiki si buscas evitar mariscos ocultos en los caldos y snacks tradicionales.'],
+           ['Un mercado con siglos de historia','Nishiki Market ha operado en el mismo lugar desde el periodo Edo, por lo que se le conoce como "la cocina de Kioto".']]],
         ['茶','Comida','Té y dulces de matcha','varias casas de té tradicionales'],
         ['仏','Templo','Otagi Nenbutsu-ji','1,200 estatuas de piedra, todas distintas — sello goshuin disponible'],
-        ['鉄','Actividad','Tren Sagano Romantic','recorrido panorámico por el valle'],
-        ['猿','Actividad','Iwatayama Monkey Park','monos en libertad y vista de Kioto'],
+        ['鉄','Actividad','Tren Sagano Romantic','recorrido panorámico por el valle',
+          [['Un tren sin ventanas para ver mejor','El Sagano Romantic Train recorre el valle de Hozugawa en vagones antiguos abiertos, pensados para apreciar el paisaje.']]],
+        ['猿','Actividad','Iwatayama Monkey Park','monos en libertad y vista de Kioto',
+          [['Monos con jerarquía propia','En el Parque de Monos de Iwatayama, los macacos siguen una estricta estructura social que los cuidadores respetan al alimentarlos.'],
+           ['Monos con reglas propias','Los macacos de Iwatayama están acostumbrados a los visitantes, pero el parque pide no mirarlos directamente a los ojos por respeto a su jerarquía.'],
+           ['Reglas para convivir con los monos','Se pide a los visitantes no alimentar a los monos de Iwatayama para no alterar su dieta ni su comportamiento natural.']]],
         ['市','Recorrido','Mercado de Nishiki','la \'cocina de Kioto\', cientos de puestos de comida'],
         ['食','Comida','Cena tradicional en Kioto','izakaya o kaiseki sencillo'],
         ['灯','Recorrido','Paseo nocturno por Pontocho','callejón iluminado junto al río Kamo'],
@@ -687,21 +686,7 @@ const dayData = [
         ['19:38', 'Última copa en Pontocho — cierre de noche junto al río'],
         ['20:28', 'Arcade en el centro de Kioto — poca oferta, pero abierto hasta tarde']
       ],
-      curiosities: [
-        ['Cuidado con los caldos','Revisa bien los ingredientes en el Mercado de Nishiki si buscas evitar mariscos ocultos en los caldos y snacks tradicionales.'],
-        ['Un paisaje sonoro protegido','El susurro del bosque de bambú de Arashiyama fue reconocido por el gobierno japonés como uno de los "100 paisajes sonoros" a preservar.'],
-        ['El puente que cruza la luna','"Togetsukyo" significa "puente que cruza la luna", por la leyenda de un emperador que admiró el reflejo de la luna llena desde ahí.'],
-        ['Monos con jerarquía propia','En el Parque de Monos de Iwatayama, los macacos siguen una estricta estructura social que los cuidadores respetan al alimentarlos.'],
-        ['Bambú que crece un metro al día','En la temporada adecuada, el bambú de Arashiyama puede crecer hasta un metro en 24 horas, una de las plantas más rápidas del mundo.'],
-        ['Una villa imperial cercana','A poca distancia del bosque de bambú está la Villa Imperial Katsura, jardín del siglo XVII considerado obra maestra del paisajismo japonés.'],
-        ['Un tren sin ventanas para ver mejor','El Sagano Romantic Train recorre el valle de Hozugawa en vagones antiguos abiertos, pensados para apreciar el paisaje.'],
-        ['Un mercado con siglos de historia','Nishiki Market ha operado en el mismo lugar desde el periodo Edo, por lo que se le conoce como "la cocina de Kioto".'],
-        ['Un bosque protegido por partida doble','Además de su sonido, el bosque de bambú de Arashiyama está protegido como parte del paisaje cultural de Kioto.'],
-        ['Monos con reglas propias','Los macacos de Iwatayama están acostumbrados a los visitantes, pero el parque pide no mirarlos directamente a los ojos por respeto a su jerarquía.'],
-        ['Un bosque que suena distinto cada vez','El crujido del bambú de Arashiyama varía según la velocidad del viento, por lo que nunca suena exactamente igual dos veces.'],
-        ['Reglas para convivir con los monos','Se pide a los visitantes no alimentar a los monos de Iwatayama para no alterar su dieta ni su comportamiento natural.'],
-        ['Un andén decorado con bambú','La estación de Arashiyama tiene un andén con cientos de postes de bambú iluminados por la noche.']
-      ],
+      route: ['Kyoto Station, Japan','Arashiyama Bamboo Grove, Kyoto, Japan','Tenryu-ji Temple, Kyoto, Japan','Togetsukyo Bridge, Kyoto, Japan','Iwatayama Monkey Park, Kyoto, Japan','Nishiki Market, Kyoto, Japan','Pontocho Alley, Kyoto, Japan'],
       photos: ['Tren a Arashiyama','Bosque de bambú','Templo Tenryu-ji','Puente Togetsukyo','Jardín de musgo','Mercado de Nishiki','Monkey Park','Mercado de Nishiki','Pontocho de noche','Teramachi de noche'],
       optional: [
         ['寺','Nanzen-ji','templo zen con un acueducto de ladrillo dentro del complejo','cerca de Ginkaku-ji, ~15 min en autobús desde Arashiyama']
@@ -709,14 +694,27 @@ const dayData = [
     { key: 'd10', num: '10', place: 'Kioto', title: 'El sendero de los diez mil toriis',
       poi: [
         ['🚃','Traslado','Tren a Fushimi Inari','línea JR Nara, ~5 min desde Kioto'],
-        ['社','Templo','Fushimi Inari-Taisha','miles de puertas torii sobre la montaña — sello goshuin disponible'],
-        ['門','Foto','Senda de los toriis','el recorrido más fotografiado de Kioto'],
-        ['山','Actividad','Cima del monte Inari','vista de Kioto tras la subida completa'],
-        ['狐','Foto','Estatuas de zorros','kitsune, mensajeros del dios Inari'],
+        ['社','Templo','Fushimi Inari-Taisha','miles de puertas torii sobre la montaña — sello goshuin disponible',
+          [['Más de 30,000 santuarios hermanos','Existen más de 30,000 santuarios dedicados a Inari en todo Japón, y Fushimi Inari Taisha es el santuario principal de todos ellos.']]],
+        ['門','Foto','Senda de los toriis','el recorrido más fotografiado de Kioto',
+          [['Cada torii tiene un donante','Cada puerta torii de Fushimi Inari fue donada por una empresa o persona, cuyo nombre queda inscrito en la base como agradecimiento.'],
+           ['Una caminata que se vuelve solitaria','Los primeros tramos de Fushimi Inari son los más concurridos; pasado cierto punto, la mayoría de los visitantes da la vuelta.'],
+           ['Donaciones que siguen llegando','Muchas puertas torii de Fushimi Inari son donadas por empresas que buscan prosperidad, una tradición todavía vigente.']]],
+        ['山','Actividad','Cima del monte Inari','vista de Kioto tras la subida completa',
+          [['La caminata completa toma horas','Recorrer todos los senderos de Fushimi Inari hasta la cima del monte Inari (233 m) toma entre 2 y 3 horas ida y vuelta.'],
+           ['Menos gente entre más subes','Conforme se avanza por los senderos de Fushimi Inari, los toriis se vuelven más antiguos y menos concurridos.']]],
+        ['狐','Foto','Estatuas de zorros','kitsune, mensajeros del dios Inari',
+          [['Los zorros mensajeros','Los kitsune (zorros) son considerados mensajeros del dios Inari, por eso sus estatuas custodian el santuario en pares.'],
+           ['Símbolos en la boca de los zorros','Muchas estatuas de zorros en Fushimi Inari sostienen una llave, una bola o un rollo, símbolos ligados a la prosperidad.'],
+           ['Zorros con distintos símbolos','Cada estatua de zorro en Fushimi Inari sostiene un objeto distinto en la boca, cada uno con un significado propio.']]],
         ['🚌','Traslado','Autobús a Kinkaku-ji','autobús urbano, ~45-50 min desde Fushimi Inari'],
-        ['金','Templo','Kinkaku-ji','el Pabellón Dorado sobre su estanque — sello goshuin disponible'],
-        ['鏡','Foto','Estanque del espejo','el reflejo perfecto del pabellón'],
-        ['庭','Recorrido','Jardín de Kinkaku-ji','paseo tradicional japonés'],
+        ['金','Templo','Kinkaku-ji','el Pabellón Dorado sobre su estanque — sello goshuin disponible',
+          [['Un pabellón reconstruido en 1955','Kinkaku-ji fue incendiado intencionalmente en 1950 por un monje; el edificio actual es una reconstrucción fiel de 1955.'],
+           ['Pan de oro auténtico','Los dos pisos superiores de Kinkaku-ji están recubiertos con láminas de pan de oro real.']]],
+        ['鏡','Foto','Estanque del espejo','el reflejo perfecto del pabellón',
+          [['Un pabellón pensado para reflejarse','Kinkaku-ji fue diseñado para reflejarse por completo en el estanque frente a él, un efecto conocido como ukimidō.']]],
+        ['庭','Recorrido','Jardín de Kinkaku-ji','paseo tradicional japonés',
+          [['Un jardín pensado por estación','Los jardines que rodean Kinkaku-ji se diseñaron para verse distintos en primavera, verano, otoño e invierno.']]],
         ['松','Foto','Pinos y bambú del camino','detalles del jardín zen'],
         ['食','Comida','Puestos junto a Fushimi Inari','snacks e inarizushi al pie del monte'],
         ['景','Foto','Vista desde la cima','panorámica de Kioto entre los toriis'],
@@ -751,21 +749,7 @@ const dayData = [
         ['19:58', 'Segunda ronda cerca de la estación — bar o izakaya antes de dormir'],
         ['20:48', 'Compras nocturnas de último minuto — ']
       ],
-      curiosities: [
-        ['Cada torii tiene un donante','Cada puerta torii de Fushimi Inari fue donada por una empresa o persona, cuyo nombre queda inscrito en la base como agradecimiento.'],
-        ['Los zorros mensajeros','Los kitsune (zorros) son considerados mensajeros del dios Inari, por eso sus estatuas custodian el santuario en pares.'],
-        ['Un pabellón reconstruido en 1955','Kinkaku-ji fue incendiado intencionalmente en 1950 por un monje; el edificio actual es una reconstrucción fiel de 1955.'],
-        ['Más de 30,000 santuarios hermanos','Existen más de 30,000 santuarios dedicados a Inari en todo Japón, y Fushimi Inari Taisha es el santuario principal de todos ellos.'],
-        ['Pan de oro auténtico','Los dos pisos superiores de Kinkaku-ji están recubiertos con láminas de pan de oro real.'],
-        ['La caminata completa toma horas','Recorrer todos los senderos de Fushimi Inari hasta la cima del monte Inari (233 m) toma entre 2 y 3 horas ida y vuelta.'],
-        ['Símbolos en la boca de los zorros','Muchas estatuas de zorros en Fushimi Inari sostienen una llave, una bola o un rollo, símbolos ligados a la prosperidad.'],
-        ['Una caminata que se vuelve solitaria','Los primeros tramos de Fushimi Inari son los más concurridos; pasado cierto punto, la mayoría de los visitantes da la vuelta.'],
-        ['Un pabellón pensado para reflejarse','Kinkaku-ji fue diseñado para reflejarse por completo en el estanque frente a él, un efecto conocido como ukimidō.'],
-        ['Zorros con distintos símbolos','Cada estatua de zorro en Fushimi Inari sostiene un objeto distinto en la boca, cada uno con un significado propio.'],
-        ['Menos gente entre más subes','Conforme se avanza por los senderos de Fushimi Inari, los toriis se vuelven más antiguos y menos concurridos.'],
-        ['Un jardín pensado por estación','Los jardines que rodean Kinkaku-ji se diseñaron para verse distintos en primavera, verano, otoño e invierno.'],
-        ['Donaciones que siguen llegando','Muchas puertas torii de Fushimi Inari son donadas por empresas que buscan prosperidad, una tradición todavía vigente.']
-      ],
+      route: ['Kyoto Station, Japan','Fushimi Inari Taisha, Kyoto, Japan','Kinkaku-ji Temple, Kyoto, Japan','Kyoto Station, Japan'],
       photos: ['Tren a Fushimi Inari','Fushimi Inari','Senda de toriis','Zorros de piedra','Kinkaku-ji','Estanque del espejo','Jardín de Kinkaku-ji','Kyoto Station de noche','Río Kamo de noche'],
       optional: [
         ['寺','Ginkaku-ji (Pabellón de Plata)','el \'hermano\' de Kinkaku-ji, jardín de arena zen','20 min en autobús desde Kinkaku-ji'],
@@ -775,10 +759,23 @@ const dayData = [
       poi: [
         ['城','Castillo','Castillo de Nijo','sitio UNESCO, suelos "ruiseñor" antiasalto'],
         ['🚌','Traslado','Autobús a Gion','autobús urbano, ~20 min desde Nijo'],
-        ['街','Recorrido','Distrito de Gion','el barrio histórico más famoso de Kioto'],
-        ['道','Foto','Calle Hanami-koji','casas de té tradicionales de madera'],
-        ['茶','Actividad','Ochaya','casas de té donde actúan maiko y geiko'],
-        ['芸','Foto','Avistar maiko/geiko','al atardecer, con respeto y sin fotos de cerca'],
+        ['街','Recorrido','Distrito de Gion','el barrio histórico más famoso de Kioto',
+          [['Uno de los cinco barrios de geishas','Gion es uno de los cinco "hanamachi" (barrios de flores) históricos de Kioto donde aún se conserva esta tradición.'],
+           ['Casas centenarias en uso','Muchas casas tradicionales (machiya) de Gion tienen más de 100 años y siguen habitadas o en uso comercial.']]],
+        ['道','Foto','Calle Hanami-koji','casas de té tradicionales de madera',
+          [['Fachadas protegidas por ley','Hanamikoji, la calle principal de Gion, está protegida por regulaciones que impiden modificar sus fachadas tradicionales de madera.'],
+           ['Calles protegidas por ley','Gion Shinbashi es una de las zonas de paisaje urbano tradicional designadas oficialmente para su preservación en Japón.'],
+           ['Calles pensadas para pasear despacio','Hanamikoji está pavimentada con piedra tradicional y sin cables visibles, para conservar la estética de otra época.']]],
+        ['茶','Actividad','Ochaya','casas de té donde actúan maiko y geiko',
+          [['Años de entrenamiento formal','Convertirse en geiko puede tomar entre 5 y 6 años de entrenamiento en danza, música y etiqueta tradicional.'],
+           ['Más que solo servir té','Una velada formal con una maiko puede incluir horas de conversación, juegos tradicionales y danza, no solo la ceremonia del té.'],
+           ['Un arte que toma toda una vida','Parte del entrenamiento de una maiko incluye la ceremonia del té, una disciplina que puede tomar años perfeccionar.'],
+           ['Reglas de siglos atrás','La ceremonia del té que practican las maiko sigue reglas establecidas desde el siglo XVI, prácticamente sin cambios.']]],
+        ['芸','Foto','Avistar maiko/geiko','al atardecer, con respeto y sin fotos de cerca',
+          [['Maiko y geiko, no es lo mismo','"Maiko" son las aprendices, con kimono y peinado más elaborado; "geiko" es el término de Kioto para geisha, ya formada.'],
+           ['La etiqueta del respeto','Fotografiar o tocar a una maiko/geiko sin permiso está mal visto y en zonas concurridas incluso está sancionado.'],
+           ['Un oficio cada vez más escaso','El número de maiko y geiko en Kioto cayó drásticamente tras la Segunda Guerra Mundial; hoy se cuentan solo unos cientos en toda la ciudad.'],
+           ['Un oficio que se aprende en casa','No existen escuelas formales para ser maiko: el oficio se aprende conviviendo dentro de una casa de geishas (okiya).']]],
         ['道','Recorrido','Pontocho Alley','callejón junto al río, lleno de restaurantes'],
         ['川','Foto','Río Kamo','terrazas junto al agua al atardecer'],
         ['社','Templo','Santuario Yasaka','entrada tradicional al distrito de Gion — sello goshuin disponible'],
@@ -812,21 +809,7 @@ const dayData = [
         ['19:20', 'Segunda ronda en Kiyamachi — otro bar antes de volver al hotel'],
         ['20:10', 'Arcade en Kawaramachi — cierre de noche en el centro de Kioto']
       ],
-      curiosities: [
-        ['Maiko y geiko, no es lo mismo','"Maiko" son las aprendices, con kimono y peinado más elaborado; "geiko" es el término de Kioto para geisha, ya formada.'],
-        ['La etiqueta del respeto','Fotografiar o tocar a una maiko/geiko sin permiso está mal visto y en zonas concurridas incluso está sancionado.'],
-        ['Uno de los cinco barrios de geishas','Gion es uno de los cinco "hanamachi" (barrios de flores) históricos de Kioto donde aún se conserva esta tradición.'],
-        ['Fachadas protegidas por ley','Hanamikoji, la calle principal de Gion, está protegida por regulaciones que impiden modificar sus fachadas tradicionales de madera.'],
-        ['Años de entrenamiento formal','Convertirse en geiko puede tomar entre 5 y 6 años de entrenamiento en danza, música y etiqueta tradicional.'],
-        ['Más que solo servir té','Una velada formal con una maiko puede incluir horas de conversación, juegos tradicionales y danza, no solo la ceremonia del té.'],
-        ['Calles protegidas por ley','Gion Shinbashi es una de las zonas de paisaje urbano tradicional designadas oficialmente para su preservación en Japón.'],
-        ['Un oficio cada vez más escaso','El número de maiko y geiko en Kioto cayó drásticamente tras la Segunda Guerra Mundial; hoy se cuentan solo unos cientos en toda la ciudad.'],
-        ['Calles pensadas para pasear despacio','Hanamikoji está pavimentada con piedra tradicional y sin cables visibles, para conservar la estética de otra época.'],
-        ['Un arte que toma toda una vida','Parte del entrenamiento de una maiko incluye la ceremonia del té, una disciplina que puede tomar años perfeccionar.'],
-        ['Reglas de siglos atrás','La ceremonia del té que practican las maiko sigue reglas establecidas desde el siglo XVI, prácticamente sin cambios.'],
-        ['Casas centenarias en uso','Muchas casas tradicionales (machiya) de Gion tienen más de 100 años y siguen habitadas o en uso comercial.'],
-        ['Un oficio que se aprende en casa','No existen escuelas formales para ser maiko: el oficio se aprende conviviendo dentro de una casa de geishas (okiya).']
-      ],
+      route: ['Nijo Castle, Kyoto, Japan','Gion, Kyoto, Japan','Hanamikoji Street, Kyoto, Japan','Yasaka Shrine, Kyoto, Japan','Pontocho Alley, Kyoto, Japan'],
       photos: ['Castillo de Nijo','Distrito de Gion','Hanami-koji','Pontocho Alley','Río Kamo','Santuario Yasaka','Puentes sobre el Kamo','Shirakawa de noche','Kawaramachi de noche'],
       optional: [
         ['寺','Sanjusangendo','salón con 1,001 estatuas doradas de Kannon','cerca de Kiyomizu-dera, ~10 min caminando']
@@ -842,15 +825,27 @@ const dayData = [
         ['宿','Traslado','Check-in en Shinjuku','llegada al hotel antes de salir de noche'],
         ['城','Recorrido','Kokyo (Palacio Imperial de Tokio)','jardines y foso del antiguo castillo de Edo'],
         ['店','Recorrido','Ikebukuro','tiendas de anime, Sunshine City y ambiente otaku'],
-        ['光','Foto','Shinjuku de noche','pantallas y neones del distrito'],
+        ['光','Foto','Shinjuku de noche','pantallas y neones del distrito',
+          [['Brillo bajo regulación','La ciudad regula el brillo y horario de algunas pantallas gigantes de Shinjuku y Shibuya para reducir contaminación lumínica.']]],
         ['店','Comida','Omoide Yokocho','callejones diminutos con brochetas'],
-        ['猫','Foto','Gato gigante de Shinjuku','pantalla LED 3D hiperrealista'],
+        ['猫','Foto','Gato gigante de Shinjuku','pantalla LED 3D hiperrealista',
+          [['El gato que nunca duerme del todo','La pantalla LED 3D del gato gigante de Shinjuku maúlla e interactúa con la gente durante el día y se acurruca a dormir de noche.']]],
         ['街','Recorrido','Kabukicho','el barrio de entretenimiento más animado'],
-        ['飲','Recorrido','Golden Gai','más de 200 bares diminutos'],
+        ['飲','Recorrido','Golden Gai','más de 200 bares diminutos',
+          [['Doscientos bares en un callejón','Golden Gai reúne más de 200 bares diminutos, muchos con capacidad para menos de 10 personas, en apenas unas calles.'],
+           ['Bares del tamaño de una habitación','Muchos locales de Golden Gai apenas tienen espacio para 5 o 6 personas, y algunos solo reciben clientes recomendados.']]],
         ['景','Foto','Mirador gratuito','edificio del gobierno metropolitano'],
-        ['庭','Actividad','Shinjuku Gyoen','jardín tradicional, si hay tiempo'],
+        ['庭','Actividad','Shinjuku Gyoen','jardín tradicional, si hay tiempo',
+          [['Un bosque hecho a mano','El Jardín Nacional Shinjuku Gyoen combina estilos de jardín japonés, francés e inglés a pocos minutos de los rascacielos.'],
+           ['Tres estilos de jardín en un solo lugar','Shinjuku Gyoen combina un jardín francés, uno inglés y uno tradicional japonés, algo poco común incluso en Japón.'],
+           ['Una entrada poco común','A diferencia de la mayoría de parques públicos en Japón, Shinjuku Gyoen cobra una entrada simbólica para mantener sus jardines.']]],
         ['食','Comida','Yakitori callejero','brochetas a la parrilla en Omoide Yokocho'],
-        ['駅','Foto','Estación de Shinjuku','la más transitada del mundo'],
+        ['駅','Foto','Estación de Shinjuku','la más transitada del mundo',
+          [['Récord Guinness de tráfico','La estación de Shinjuku tiene el récord Guinness a la estación más transitada del mundo, con más de 3 millones de pasajeros al día.'],
+           ['Más de 200 salidas','La estación de Shinjuku tiene más de 200 salidas — suficientes para perderse incluso siendo local.'],
+           ['Una estación con 12 líneas','Shinjuku Station conecta hasta 12 líneas de tren y metro de distintas compañías, lo que explica parte de su complejidad.'],
+           ['Una estación que es casi una ciudad','Dentro de Shinjuku Station hay cientos de tiendas y restaurantes, suficientes para pasar el día entero sin salir a la calle.'],
+           ['Todo bajo un mismo techo','El complejo de Shinjuku Station conecta directamente con centros comerciales, oficinas y hoteles sin salir a la calle.']]],
         ['麺','Comida','Última ronda en Omoide Yokocho','yakitori y cerveza para cerrar la noche'],
         ['🕹','Actividad','Arcade en Kabukicho','máquinas hasta la madrugada'],
         ['🍜','Comida','Ramen de madrugada','último antojo antes de dormir']
@@ -878,21 +873,7 @@ const dayData = [
         ['23:15', 'Arcade en Kabukicho — máquinas hasta la madrugada'],
         ['00:05', 'Ramen de madrugada — último antojo antes de dormir']
       ],
-      curiosities: [
-        ['El gato que nunca duerme del todo','La pantalla LED 3D del gato gigante de Shinjuku maúlla e interactúa con la gente durante el día y se acurruca a dormir de noche.'],
-        ['Récord Guinness de tráfico','La estación de Shinjuku tiene el récord Guinness a la estación más transitada del mundo, con más de 3 millones de pasajeros al día.'],
-        ['Doscientos bares en un callejón','Golden Gai reúne más de 200 bares diminutos, muchos con capacidad para menos de 10 personas, en apenas unas calles.'],
-        ['Más de 200 salidas','La estación de Shinjuku tiene más de 200 salidas — suficientes para perderse incluso siendo local.'],
-        ['Un bosque hecho a mano','El Jardín Nacional Shinjuku Gyoen combina estilos de jardín japonés, francés e inglés a pocos minutos de los rascacielos.'],
-        ['Pantallas gigantes por todos lados','Shibuya Crossing está rodeado de algunas de las pantallas publicitarias más grandes de Japón, como la curva del edificio Q-Front.'],
-        ['Una estación con 12 líneas','Shinjuku Station conecta hasta 12 líneas de tren y metro de distintas compañías, lo que explica parte de su complejidad.'],
-        ['Una estación que es casi una ciudad','Dentro de Shinjuku Station hay cientos de tiendas y restaurantes, suficientes para pasar el día entero sin salir a la calle.'],
-        ['Tres estilos de jardín en un solo lugar','Shinjuku Gyoen combina un jardín francés, uno inglés y uno tradicional japonés, algo poco común incluso en Japón.'],
-        ['Bares del tamaño de una habitación','Muchos locales de Golden Gai apenas tienen espacio para 5 o 6 personas, y algunos solo reciben clientes recomendados.'],
-        ['Todo bajo un mismo techo','El complejo de Shinjuku Station conecta directamente con centros comerciales, oficinas y hoteles sin salir a la calle.'],
-        ['Brillo bajo regulación','La ciudad regula el brillo y horario de algunas pantallas gigantes de Shinjuku y Shibuya para reducir contaminación lumínica.'],
-        ['Una entrada poco común','A diferencia de la mayoría de parques públicos en Japón, Shinjuku Gyoen cobra una entrada simbólica para mantener sus jardines.']
-      ],
+      route: ['Kyoto Station, Japan','Tokyo Station, Japan','Machida, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Kabukicho, Tokyo, Japan','Golden Gai, Tokyo, Japan','Shinjuku Gyoen, Tokyo, Japan'],
       photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku','Kokyo','Ikebukuro'],
       optional: [
         ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower','5 min caminando desde Tokyo Tower']
@@ -900,24 +881,37 @@ const dayData = [
     { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku',
       poi: [
         ['🚃','Traslado','Tren a Akihabara','línea JR Chuo/Sobu, ~20-25 min desde Shinjuku'],
-        ['電','Recorrido','Akihabara','el "Electric Town" de Tokio'],
-        ['漫','Actividad','Tiendas de anime y manga','pisos enteros de figuras y coleccionables'],
+        ['電','Recorrido','Akihabara','el "Electric Town" de Tokio',
+          [['El "Electric Town" de posguerra','Akihabara nació como mercado de repuestos electrónicos tras la Segunda Guerra Mundial, antes de volverse el centro otaku que es hoy.'],
+           ['De radios a videojuegos','Antes de ser el centro otaku actual, Akihabara era conocida por vender radios y electrodomésticos en los años 60 y 70.'],
+           ['Lanzamientos que atraen fans globales','Además de tiendas, Akihabara alberga eventos y lanzamientos oficiales de videojuegos y anime.'],
+           ['Ayer y hoy en la misma cuadra','Es común ver tiendas de electrónica de los años 80 junto a locales con la última tecnología en videojuegos.']]],
+        ['漫','Actividad','Tiendas de anime y manga','pisos enteros de figuras y coleccionables',
+          [['Torres enteras de gachapon','Akihabara tiene tiendas dedicadas solo a máquinas de cápsulas (gachapon), algunas con cientos de máquinas distintas.'],
+           ['Tiendas que ocupan pisos completos','Algunas tiendas de gachapon en Akihabara tienen cientos de máquinas distintas repartidas en varios niveles.'],
+           ['Pisos dedicados a una sola franquicia','Algunas tiendas destinan pisos completos a una sola serie, desde figuras coleccionables hasta cartas.']]],
         ['遊','Actividad','Arcades retro','videojuegos clásicos y modernos'],
-        ['喫','Comida','Maid café','experiencia temática única de Akihabara'],
+        ['喫','Comida','Maid café','experiencia temática única de Akihabara',
+          [['El origen de los maid cafés','Los maid cafés surgieron en Akihabara a inicios de los 2000, inspirados en la cultura de videojuegos y anime del barrio.']]],
         ['像','Foto','Figuras y coleccionables','vitrinas de edición limitada'],
         ['🚃','Traslado','Yurikamome a Odaiba','tren automatizado Yurikamome, ~25 min'],
         ['台','Foto','Odaiba','isla artificial con vistas a la bahía'],
         ['美','Actividad','The National Art Center, Tokyo','museo de arte en Roppongi, cerca de Azabudai Hills'],
         ['珈','Comida','Hekkelun','café retro de pudín en Shinbashi/Toranomon'],
         ['技','Actividad','teamLab Borderless','arte digital inmersivo, Azabudai Hills'],
-        ['像','Foto','Estatua de Gundam','a tamaño real, en Odaiba'],
+        ['像','Foto','Estatua de Gundam','a tamaño real, en Odaiba',
+          [['Un Gundam a escala real','La estatua de Gundam en Odaiba mide 18 metros, la misma altura que el robot en la serie original.']]],
         ['橋','Foto','Rainbow Bridge','vista nocturna desde Odaiba'],
-        ['本','Recorrido','BOOKOFF Akihabara','manga, videojuegos y electrónica usada'],
-        ['店','Comida','Tiendas de videojuegos usados','clásicos de importación y retro'],
+        ['本','Recorrido','BOOKOFF Akihabara','manga, videojuegos y electrónica usada',
+          [['De mercado de radios a paraíso otaku','Tras la guerra, Akihabara nació como mercado informal de piezas de radio, antes de evolucionar hacia la cultura otaku actual.'],
+           ['De piezas sueltas a cultura pop mundial','Akihabara pasó de vender componentes electrónicos sueltos a convertirse en referencia global de anime, manga y videojuegos.']]],
+        ['店','Comida','Tiendas de videojuegos usados','clásicos de importación y retro',
+          [['Capital del retro gaming','Varias tiendas de Akihabara se especializan solo en consolas y videojuegos descontinuados, algunos ya piezas de colección.']]],
         ['🎮','Actividad','Round1','arcade, bowling y purikura — cierre de noche'],
         ['麺','Comida','Ramen nocturno en Akihabara','cierre de noche antes de volver al hotel'],
         ['店','Recorrido','Segunda vuelta por tiendas de anime','piso por piso, buscando ediciones limitadas'],
-        ['🤖','Foto','Gundam iluminado de noche','la estatua de tamaño real en DiverCity Tokyo Plaza'],
+        ['🤖','Foto','Gundam iluminado de noche','la estatua de tamaño real en DiverCity Tokyo Plaza',
+          [['Un robot con poses programadas','La estatua de Gundam en Odaiba tiene luces y movimientos que se activan en horarios especiales durante el día.']]],
         ['👗','Actividad','Maid café en Akihabara','experiencia temática única del barrio otaku']
       ],
       steps: [
@@ -942,21 +936,7 @@ const dayData = [
         ['23:43', 'Gundam iluminado de noche — la estatua de tamaño real en DiverCity Tokyo Plaza'],
         ['00:13', 'Maid café en Akihabara — experiencia temática única del barrio otaku']
       ],
-      curiosities: [
-        ['El "Electric Town" de posguerra','Akihabara nació como mercado de repuestos electrónicos tras la Segunda Guerra Mundial, antes de volverse el centro otaku que es hoy.'],
-        ['El origen de los maid cafés','Los maid cafés surgieron en Akihabara a inicios de los 2000, inspirados en la cultura de videojuegos y anime del barrio.'],
-        ['Un Gundam a escala real','La estatua de Gundam en Odaiba mide 18 metros, la misma altura que el robot en la serie original.'],
-        ['De radios a videojuegos','Antes de ser el centro otaku actual, Akihabara era conocida por vender radios y electrodomésticos en los años 60 y 70.'],
-        ['Capital del retro gaming','Varias tiendas de Akihabara se especializan solo en consolas y videojuegos descontinuados, algunos ya piezas de colección.'],
-        ['De mercado de radios a paraíso otaku','Tras la guerra, Akihabara nació como mercado informal de piezas de radio, antes de evolucionar hacia la cultura otaku actual.'],
-        ['Torres enteras de gachapon','Akihabara tiene tiendas dedicadas solo a máquinas de cápsulas (gachapon), algunas con cientos de máquinas distintas.'],
-        ['De piezas sueltas a cultura pop mundial','Akihabara pasó de vender componentes electrónicos sueltos a convertirse en referencia global de anime, manga y videojuegos.'],
-        ['Un robot con poses programadas','La estatua de Gundam en Odaiba tiene luces y movimientos que se activan en horarios especiales durante el día.'],
-        ['Tiendas que ocupan pisos completos','Algunas tiendas de gachapon en Akihabara tienen cientos de máquinas distintas repartidas en varios niveles.'],
-        ['Lanzamientos que atraen fans globales','Además de tiendas, Akihabara alberga eventos y lanzamientos oficiales de videojuegos y anime.'],
-        ['Pisos dedicados a una sola franquicia','Algunas tiendas destinan pisos completos a una sola serie, desde figuras coleccionables hasta cartas.'],
-        ['Ayer y hoy en la misma cuadra','Es común ver tiendas de electrónica de los años 80 junto a locales con la última tecnología en videojuegos.']
-      ],
+      route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Odaiba, Tokyo, Japan','Gundam Base Tokyo, Odaiba, Japan','Azabudai Hills, Tokyo, Japan','Akihabara, Tokyo, Japan'],
       photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Arcade retro','teamLab Borderless','Odaiba','Estatua de Gundam','Rainbow Bridge','The National Art Center, Tokyo','Round1','Ramen nocturno Akihabara','Gundam iluminado de noche','Hekkelun','BOOKOFF Akihabara'],
       optional: [] },
     { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora',
@@ -964,13 +944,26 @@ const dayData = [
         ['🚃','Traslado','Tren a Toyosu','línea Yurikamome o Yurakucho, ~30-35 min desde Shinjuku'],
         ['技','Actividad','teamLab Planets','arte digital inmersivo, Toyosu (mañana)'],
         ['🚃','Traslado','Tren a Harajuku','línea JR Yamanote, ~30 min desde Toyosu'],
-        ['社','Templo','Meiji Jingu','santuario dentro de un bosque urbano — sello goshuin disponible'],
-        ['森','Foto','Bosque de Meiji Jingu','100,000 árboles donados de todo Japón'],
-        ['街','Recorrido','Takeshita-dori','moda excéntrica y crepes en Harajuku'],
+        ['社','Templo','Meiji Jingu','santuario dentro de un bosque urbano — sello goshuin disponible',
+          [['Un torii de ciprés gigante','El gran torii de madera de Meiji Jingu está hecho de ciprés japonés de más de 1,500 años, uno de los más grandes de Japón.']]],
+        ['森','Foto','Bosque de Meiji Jingu','100,000 árboles donados de todo Japón',
+          [['Un bosque hecho a mano','Los 100,000 árboles del bosque de Meiji Jingu fueron donados y plantados por voluntarios de todo Japón en 1920.'],
+           ['Un bosque que tardó décadas en madurar','Cuando se plantó en 1920, el bosque de Meiji Jingu se diseñó para parecer un bosque natural centenario en menos de 100 años.'],
+           ['Silencio en medio del ruido','A pesar de estar junto a una zona muy transitada, Meiji Jingu logra un silencio notable gracias a su densa vegetación.']]],
+        ['街','Recorrido','Takeshita-dori','moda excéntrica y crepes en Harajuku',
+          [['La moda que nació en una calle','Takeshita Street ha sido cuna de subculturas de moda como el estilo \'kawaii\' y el \'decora\' desde los años 80.'],
+           ['Una calle que reinventa la moda','En Takeshita Street las tiendas rotan su mercancía con mucha frecuencia para mantenerse al día con las tendencias juveniles.'],
+           ['Termómetro de tendencias juveniles','Marcas japonesas usan Takeshita Street para probar tendencias antes de llevarlas a otras ciudades.']]],
         ['服','Foto','Moda de Harajuku','estilos únicos y coloridos'],
-        ['道','Foto','Cruce de Shibuya','el paso peatonal más concurrido del mundo'],
-        ['犬','Foto','Estatua de Hachiko','el perro más fiel de Japón'],
-        ['景','Actividad','Shibuya Sky','mirador al aire libre sobre la ciudad'],
+        ['道','Foto','Cruce de Shibuya','el paso peatonal más concurrido del mundo',
+          [['Hasta 3,000 personas por semáforo','En el cruce de Shibuya pueden cruzar hasta 3,000 personas cada vez que cambia el semáforo, en sus momentos más concurridos.'],
+           ['Un cruce sin semáforos centrales','En Shibuya Crossing, todos los semáforos peatonales cambian a la vez, permitiendo cruces desde cualquier ángulo al mismo tiempo.']]],
+        ['犬','Foto','Estatua de Hachiko','el perro más fiel de Japón',
+          [['Nueve años de espera','Hachiko siguió esperando a su dueño en la estación de Shibuya todos los días durante 9 años después de su muerte, hasta el final de su propia vida.'],
+           ['El punto de encuentro más famoso','La estatua de Hachiko es uno de los puntos de encuentro más populares de Tokio, citando a miles de personas cada día.'],
+           ['Una estatua que es réplica','La estatua original de Hachiko fue fundida durante la Segunda Guerra Mundial; la actual es una réplica erigida en 1948.']]],
+        ['景','Actividad','Shibuya Sky','mirador al aire libre sobre la ciudad',
+          [['Un mirador sin techo','Shibuya Sky tiene una terraza al aire libre en el piso 47, sin barandales altos que obstruyan la vista, diseñada para sentir el viento de la ciudad.']]],
         ['店','Recorrido','Shibuya Center Gai','tiendas, música y ambiente joven'],
         ['食','Comida','Crepes de Harajuku','el snack dulce más icónico de la zona'],
         ['購','Actividad','Compras de souvenirs','última ronda de regalos y recuerdos'],
@@ -1000,21 +993,7 @@ const dayData = [
         ['19:58', 'Compras nocturnas en Don Quijote Shibuya — abierto hasta tarde, todo tipo de souvenirs'],
         ['20:38', 'Arcade en Shibuya — última parada de la noche']
       ],
-      curiosities: [
-        ['Nueve años de espera','Hachiko siguió esperando a su dueño en la estación de Shibuya todos los días durante 9 años después de su muerte, hasta el final de su propia vida.'],
-        ['Hasta 3,000 personas por semáforo','En el cruce de Shibuya pueden cruzar hasta 3,000 personas cada vez que cambia el semáforo, en sus momentos más concurridos.'],
-        ['Un bosque hecho a mano','Los 100,000 árboles del bosque de Meiji Jingu fueron donados y plantados por voluntarios de todo Japón en 1920.'],
-        ['El punto de encuentro más famoso','La estatua de Hachiko es uno de los puntos de encuentro más populares de Tokio, citando a miles de personas cada día.'],
-        ['Un torii de ciprés gigante','El gran torii de madera de Meiji Jingu está hecho de ciprés japonés de más de 1,500 años, uno de los más grandes de Japón.'],
-        ['La moda que nació en una calle','Takeshita Street ha sido cuna de subculturas de moda como el estilo \'kawaii\' y el \'decora\' desde los años 80.'],
-        ['Un cruce sin semáforos centrales','En Shibuya Crossing, todos los semáforos peatonales cambian a la vez, permitiendo cruces desde cualquier ángulo al mismo tiempo.'],
-        ['Un bosque que tardó décadas en madurar','Cuando se plantó en 1920, el bosque de Meiji Jingu se diseñó para parecer un bosque natural centenario en menos de 100 años.'],
-        ['Una calle que reinventa la moda','En Takeshita Street las tiendas rotan su mercancía con mucha frecuencia para mantenerse al día con las tendencias juveniles.'],
-        ['Un mirador sin techo','Shibuya Sky tiene una terraza al aire libre en el piso 47, sin barandales altos que obstruyan la vista, diseñada para sentir el viento de la ciudad.'],
-        ['Una estatua que es réplica','La estatua original de Hachiko fue fundida durante la Segunda Guerra Mundial; la actual es una réplica erigida en 1948.'],
-        ['Silencio en medio del ruido','A pesar de estar junto a una zona muy transitada, Meiji Jingu logra un silencio notable gracias a su densa vegetación.'],
-        ['Termómetro de tendencias juveniles','Marcas japonesas usan Takeshita Street para probar tendencias antes de llevarlas a otras ciudades.']
-      ],
+      route: ['Toyosu, Tokyo, Japan','Meiji Jingu, Tokyo, Japan','Takeshita Street, Harajuku, Tokyo, Japan','Shibuya Crossing, Tokyo, Japan','Hachiko Statue, Shibuya, Tokyo, Japan','Shibuya Sky, Tokyo, Japan'],
       photos: ['Tren a Toyosu','teamLab Planets','Meiji Jingu','Takeshita-dori','Cruce de Shibuya','Estatua de Hachiko','Shibuya Sky','Crepes de Harajuku','Shibuya de noche','Karaoke en Shibuya'],
       optional: [
         ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico','10 min en tren desde Harajuku']
@@ -1026,10 +1005,13 @@ const dayData = [
         ['🚌','Traslado','Autobús a Chofu','autobús o tren corto, ~15 min desde Mitaka'],
         ['寺','Templo','Templo Jindaiji','Chofu, soba tradicional, cerca de Mitaka — sello goshuin disponible'],
         ['購','Actividad','Últimas compras','souvenirs pendientes en Shinjuku o Shibuya'],
-        ['景','Recorrido','Revisitar tu lugar favorito','volver a un sitio que te haya encantado del viaje'],
+        ['景','Recorrido','Revisitar tu lugar favorito','volver a un sitio que te haya encantado del viaje',
+          [['Un día pensado para respirar','Después de 14 días de actividades, este día libre está pensado para no correr — ya no hay pendientes por tachar.'],
+           ['Volver siempre sabe distinto','Muchos viajeros dicen que revisitar un lugar al final del viaje se siente distinto: ya lo conoces, y lo disfrutas con más calma.']]],
         ['食','Comida','Última cena japonesa','el platillo que más te gustó, una vez más'],
         ['鞄','Actividad','Empacar con calma','dejar la maleta lista antes de dormir'],
-        ['📦','Actividad','Enviar equipaje (opcional)','servicio takuhaibin, si quieres viajar ligero mañana'],
+        ['📦','Actividad','Enviar equipaje (opcional)','servicio takuhaibin, si quieres viajar ligero mañana',
+          [['El servicio que libera tus manos','El takuhaibin permite enviar tu maleta directo al aeropuerto un día antes, para caminar ligero tu última tarde en Tokio.']]],
         ['灯','Recorrido','Último paseo nocturno por Tokio','despedida caminando por tu zona favorita'],
         ['食','Comida','Cena con vista en Tokio','restaurante en algún piso alto para la despedida'],
         ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir'],
@@ -1054,23 +1036,22 @@ const dayData = [
         ['19:30', 'Onsen urbano de despedida — spa termal urbano, relajación antes de dormir'],
         ['20:30', 'Última vuelta de arcade en Shinjuku — cierre de noche antes de dormir']
       ],
-      curiosities: [
-        ['Un día pensado para respirar','Después de 14 días de actividades, este día libre está pensado para no correr — ya no hay pendientes por tachar.'],
-        ['El servicio que libera tus manos','El takuhaibin permite enviar tu maleta directo al aeropuerto un día antes, para caminar ligero tu última tarde en Tokio.'],
-        ['Volver siempre sabe distinto','Muchos viajeros dicen que revisitar un lugar al final del viaje se siente distinto: ya lo conoces, y lo disfrutas con más calma.']
-      ],
+      route: ['Shinjuku Station, Tokyo, Japan','Ghibli Museum, Mitaka, Japan','Jindaiji Temple, Chofu, Japan','Shinjuku Station, Tokyo, Japan'],
       photos: ['Tren a Mitaka','Museo Ghibli','Templo Jindaiji','Última compra','Lugar favorito revisitado','Última cena japonesa','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
       optional: [] },
     { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso',
       poi: [
         ['宿','Actividad','Último desayuno','rápido, antes del check-out'],
         ['鞄','Actividad','Check-out del hotel','equipaje listo desde la noche anterior'],
-        ['🚄','Traslado','Narita Express a Narita','~80 minutos desde Shinjuku'],
+        ['🚄','Traslado','Narita Express a Narita','~80 minutos desde Shinjuku',
+          [['Un aeropuerto pensado para el viajero','Narita ha sido reconocido varias veces entre los aeropuertos más limpios y puntuales del mundo.']]],
         ['✈','Trámite','Facturación de equipaje','check-in con la aerolínea'],
         ['購','Actividad','Compras de último minuto','tiendas de la terminal'],
         ['店','Comida','Duty-free','snacks y regalos para el vuelo'],
-        ['食','Comida','Onigiri para el vuelo','último sabor japonés antes de partir'],
-        ['🛂','Trámite','Migración y seguridad','con tiempo antes del embarque'],
+        ['食','Comida','Onigiri para el vuelo','último sabor japonés antes de partir',
+          [['El último sabor antes de partir','Los konbini de las terminales japonesas venden onigiri frescos las 24 horas — un último sabor casero antes de embarcar.']]],
+        ['🛂','Trámite','Migración y seguridad','con tiempo antes del embarque',
+          [['Por qué salir con tanto margen','Para vuelos internacionales, la mayoría de las aerolíneas japonesas recomienda llegar con 2.5 a 3 horas de anticipación.']]],
         ['機','Actividad','Vuelo de regreso','ZG016, Narita → Houston, 11:30 AM']
       ],
       steps: [
@@ -1084,11 +1065,7 @@ const dayData = [
         ['09:55', 'Migración y seguridad — con tiempo antes del embarque'],
         ['10:35', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
       ],
-      curiosities: [
-        ['Por qué salir con tanto margen','Para vuelos internacionales, la mayoría de las aerolíneas japonesas recomienda llegar con 2.5 a 3 horas de anticipación.'],
-        ['Un aeropuerto pensado para el viajero','Narita ha sido reconocido varias veces entre los aeropuertos más limpios y puntuales del mundo.'],
-        ['El último sabor antes de partir','Los konbini de las terminales japonesas venden onigiri frescos las 24 horas — un último sabor casero antes de embarcar.']
-      ],
+      route: ['Shinjuku Station, Tokyo, Japan','Narita International Airport, Japan'],
       photos: ['Último desayuno','Check-out del hotel','Narita Express','Terminal del aeropuerto','Duty-free','Onigiri de despedida'],
       optional: [] }
   ];
@@ -1146,6 +1123,45 @@ function renderHotels(){
 }
 
 
+function mapsRouteUrl(route){
+  if (!route || route.length < 2) return '';
+  const pts = [...route];
+  const origin = pts.shift();
+  const destination = pts.pop();
+  const params = new URLSearchParams({ api:'1', travelmode:'transit', origin, destination });
+  if (pts.length) params.set('waypoints', pts.join('|'));
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function transportSummary(d){
+  const legs = d.poi
+    .map((p, i) => ({ p, step: d.steps[i] }))
+    .filter(({p}) => p[1] === "Traslado");
+  if (!legs.length) return '';
+  const url = mapsRouteUrl(d.route);
+  const routeBtn = url ? `
+    <a href="${url}" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary">
+      <span class="material-symbols-outlined !text-lg">map</span> Abrir ruta del día en Google Maps
+    </a>` : '';
+  return `
+    <section class="px-6 mb-6">
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-secondary">train</span>
+          <h3 class="font-headline-md text-body-lg font-bold text-primary">Cómo moverte hoy</h3>
+        </div>
+        <div class="space-y-2">
+          ${legs.map(({p, step}) => `
+            <div class="flex gap-3 items-start">
+              <span class="font-label-caps text-[11px] text-ink-subtle w-10 flex-none pt-0.5">${step[0]}</span>
+              <p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">${p[2]}</span> — ${p[3]}</p>
+            </div>`).join('')}
+        </div>
+        ${routeBtn}
+      </div>
+    </section>`;
+}
+
 function photoBento(d){
   const imgs = (d.photos || []).slice(0, 6).map((caption, i) => {
     const src = `images/${d.key}/${i+1}.jpg`;
@@ -1188,6 +1204,14 @@ function renderDay(){
     const style = catStyle(cat);
     const [name, ...descParts] = step[1].split(' — ');
     const desc = descParts.join(' — ');
+    const curiosities = (poiItem && poiItem[4]) ? poiItem[4].map(([ctitle, ctext]) => `
+        <div class="mt-3 pt-3 border-t border-outline-variant/20 flex gap-2">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim !text-base">lightbulb</span>
+          <div>
+            <p class="text-xs font-bold text-on-surface">${ctitle}</p>
+            <p class="text-xs text-on-surface-variant">${ctext}</p>
+          </div>
+        </div>`).join('') : '';
     return `
     <div class="relative pl-10 pb-8 timeline-connector">
       <div class="absolute left-0 top-1 w-8 h-8 ${style.bg} rounded-full flex items-center justify-center z-10 border-2 border-surface-cream">
@@ -1200,11 +1224,10 @@ function renderDay(){
         </div>
         <h4 class="font-headline-md text-body-lg font-bold mb-1">${name}</h4>
         ${desc ? `<p class="font-body-md text-on-surface-variant text-sm">${desc}</p>` : ''}
+        ${curiosities}
       </div>
     </div>`;
   }).join('');
-
-  const nightSection = "";
 
   const optionalHtml = (d.optional && d.optional.length) ? `
     <section class="px-6 py-8">
@@ -1224,8 +1247,6 @@ function renderDay(){
       </div>
     </section>` : '';
 
-  const curiosHtml = '';
-
   wrap.innerHTML = `
     <section class="px-6 pt-8 pb-4">
       <p class="font-label-caps text-label-caps text-secondary mb-2">DÍA ${d.num} — ${(DATES[d.key]?.long || '').toUpperCase()}</p>
@@ -1233,6 +1254,8 @@ function renderDay(){
       <p class="text-xs text-on-surface-variant">${d.place}</p>
       ${goshuinBadge}
     </section>
+
+    ${transportSummary(d)}
 
     <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
       ${photoBento(d)}
@@ -1244,8 +1267,6 @@ function renderDay(){
     </section>
 
     ${optionalHtml}
-
-    ${nightSection}
   `;
 }
 
