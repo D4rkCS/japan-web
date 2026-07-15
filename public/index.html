@@ -158,7 +158,7 @@ tailwind.config = {
 
 <script>
 const dayData = [
-    { key: 'd1', num: '01', place: 'Tokio', title: 'Llegada & primer vistazo',
+    { key: 'd1', num: '01', place: 'Tokio', title: 'Llegada & primer vistazo', mealZone: 'asakusa',
       poi: [
         ['✈','Llegada','Aterrizaje en Narita','vuelo IAH → NRT, Terminal 1, ~2:15 PM'],
         ['🛂','Trámite','Migración y aduana','revisión de pasaporte y equipaje'],
@@ -211,7 +211,7 @@ const dayData = [
       route: ['Narita International Airport, Japan','Asakusa, Taito, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Kirby Cafe TOKYO, Sumida, Tokyo, Japan','Sumida River Park, Tokyo, Japan','Don Quijote Asakusa, Tokyo, Japan'],
       photos: ['Aterrizaje en Narita','Narita Express','Llegada a Asakusa','Uniqlo Asakusa','Senso-ji de noche','Kaminarimon iluminada','Kirby Café','Skytree a la distancia','Río Sumida de noche'],
       optional: [] },
-    { key: 'd2', num: '02', place: 'Tokio', title: 'El corazón de Asakusa y la gran torre',
+    { key: 'd2', num: '02', place: 'Tokio', title: 'El corazón de Asakusa y la gran torre', mealZone: 'asakusa',
       poi: [
         ['🚃','Traslado','Tren a Shinjuku','línea Ginza/Marunouchi, ~20 min desde Asakusa'],
         ['技','Actividad','BicCamera Shinjuku','cámara profesional — tax-free + cupón de descuento'],
@@ -279,7 +279,7 @@ const dayData = [
         ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara','10 min caminando desde Yodobashi-Akiba'],
         ['社','Ueno Toshogu','santuario dorado dentro del Parque Ueno','línea Ginza hasta Ueno, ~20 min desde Asakusa']
       ] },
-    { key: 'd3', num: '03', place: 'Kamakura', title: 'Kamakura, Enoshima y la bahía de Yokohama',
+    { key: 'd3', num: '03', place: 'Kamakura', title: 'Kamakura, Enoshima y la bahía de Yokohama', mealZone: 'asakusa',
       poi: [
         ['🚃','Traslado','Tren a Kamakura','JR Yokosuka Line desde Tokyo Station, ~1h desde Asakusa'],
         ['仏','Templo','Templo Kotoku-in','hogar del Gran Buda de bronce al aire libre — sello goshuin disponible',
@@ -339,7 +339,7 @@ const dayData = [
         ['寺','Kenchō-ji','el templo zen más antiguo de Japón, en Kita-Kamakura','1 estación en tren desde Kamakura'],
         ['寺','Engaku-ji','templo zen entre árboles centenarios, junto a la estación','misma estación de Kita-Kamakura']
       ] },
-    { key: 'd4', num: '04', place: 'Fuji / Hakone', title: 'Kawaguchiko y Fuji-Q Highland',
+    { key: 'd4', num: '04', place: 'Fuji / Hakone', title: 'Kawaguchiko y Fuji-Q Highland', mealZone: 'asakusa',
       poi: [
         ['🚌','Traslado','Autobús a Kawaguchiko','autobús directo desde Shinjuku, ~2h'],
         ['遊','Actividad','Fuji-Q Highland','parque temático a los pies del Monte Fuji, mañana completa',
@@ -382,7 +382,7 @@ const dayData = [
       optional: [
         ['社','Santuario Fuji Sengen (Kitaguchi Hongu)','el santuario principal dedicado al Monte Fuji, punto de partida de la ruta de peregrinación','10 min caminando desde Fuji-Q Highland']
       ] },
-    { key: 'd5', num: '05', place: 'Osaka', title: 'Katsuo-ji y noche en Dotonbori',
+    { key: 'd5', num: '05', place: 'Osaka', title: 'Katsuo-ji y noche en Dotonbori', mealZone: 'namba',
       poi: [
         ['鞄','Traslado','Check-out en Asakusa','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Shinkansen a Osaka','Tokaido Shinkansen (Nozomi/Hikari), ~2h30, Tokio → Shin-Osaka'],
@@ -447,7 +447,7 @@ const dayData = [
       optional: [
         ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI)','línea Tanimachi, ~15 min desde Namba']
       ] },
-    { key: 'd6', num: '06', place: 'Osaka', title: 'Un día de película en Universal Studios Japan',
+    { key: 'd6', num: '06', place: 'Osaka', title: 'Un día de película en Universal Studios Japan', mealZone: 'namba',
       poi: [
         ['🚃','Traslado','Tren a USJ','línea JR Yumesaki (vía Nishikujo) desde Namba, ~20 min'],
         ['界','Actividad','Super Nintendo World','Mario Kart con visor de realidad aumentada',
@@ -504,7 +504,7 @@ const dayData = [
       route: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan','Universal CityWalk Osaka, Japan','Namba Station, Osaka, Japan'],
       photos: ['Tren a USJ','Super Nintendo World','Mundo de Harry Potter','Jurassic Park The Ride','Minion Park','CityWalk','Universal Wonderland','Castillo iluminado de noche'],
       optional: [] },
-    { key: 'd7', num: '07', place: 'Osaka', title: 'Nara y el Castillo de Osaka',
+    { key: 'd7', num: '07', place: 'Osaka', title: 'Nara y el Castillo de Osaka', mealZone: 'namba',
       poi: [
         ['鹿','Naturaleza','Parque de Nara','cientos de venados sagrados en libertad'],
         ['寺','Templo','Todai-ji','alberga el Gran Buda de bronce más grande de Japón — sello goshuin disponible'],
@@ -563,7 +563,7 @@ const dayData = [
       optional: [
         ['社','Sumiyoshi Taisha','santuario shinto de estilo arquitectónico único, muy fotogénico','línea Nankai, ~20 min desde Namba']
       ] },
-    { key: 'd8', num: '08', place: 'Kioto', title: 'Rumbo a la capital cultural',
+    { key: 'd8', num: '08', place: 'Kioto', title: 'Rumbo a la capital cultural', mealZone: 'kyoto',
       poi: [
         ['鞄','Traslado','Check-out en Osaka','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Tren a Kioto','Shinkansen o línea JR Kyoto, ~15-30 min desde Osaka'],
@@ -624,7 +624,7 @@ const dayData = [
       route: ['Shin-Osaka Station, Japan','Kyoto Station, Japan','Kiyomizu-dera Temple, Kyoto, Japan','Sannenzaka, Kyoto, Japan','Higashiyama, Kyoto, Japan','Yasaka Pagoda, Kyoto, Japan','Pokemon Center Kyoto, Japan','Kyoto Tower, Japan'],
       photos: ['Tren Osaka-Kioto','Kiyomizu-dera','Escenario de madera','Sannenzaka','Pagoda Yasaka','Higashiyama','Pokémon Center Kyoto','Kimono en Higashiyama','Kyoto Tower de noche','Higashiyama de noche'],
       optional: [] },
-    { key: 'd9', num: '09', place: 'Kioto', title: 'El bosque de bambú de Arashiyama',
+    { key: 'd9', num: '09', place: 'Kioto', title: 'El bosque de bambú de Arashiyama', mealZone: 'kyoto',
       poi: [
         ['🚃','Traslado','Tren a Arashiyama','línea JR Sagano o Randen, ~15-20 min desde Kioto',
           [['Un andén decorado con bambú','La estación de Arashiyama tiene un andén con cientos de postes de bambú iluminados por la noche.']]],
@@ -685,7 +685,7 @@ const dayData = [
       optional: [
         ['寺','Nanzen-ji','templo zen con un acueducto de ladrillo dentro del complejo','cerca de Ginkaku-ji, ~15 min en autobús desde Arashiyama']
       ] },
-    { key: 'd10', num: '10', place: 'Kioto', title: 'El sendero de los diez mil toriis',
+    { key: 'd10', num: '10', place: 'Kioto', title: 'El sendero de los diez mil toriis', mealZone: 'kyoto',
       poi: [
         ['🚃','Traslado','Tren a Fushimi Inari','línea JR Nara, ~5 min desde Kioto'],
         ['社','Templo','Fushimi Inari-Taisha','miles de puertas torii sobre la montaña — sello goshuin disponible',
@@ -749,7 +749,7 @@ const dayData = [
         ['寺','Ginkaku-ji (Pabellón de Plata)','el \'hermano\' de Kinkaku-ji, jardín de arena zen','20 min en autobús desde Kinkaku-ji'],
         ['寺','Tofuku-ji','famoso por su puente entre árboles de arce','línea JR Nara, cerca de Fushimi Inari']
       ] },
-    { key: 'd11', num: '11', place: 'Kioto', title: 'El barrio de las geishas & tradición',
+    { key: 'd11', num: '11', place: 'Kioto', title: 'El barrio de las geishas & tradición', mealZone: 'kyoto',
       poi: [
         ['城','Castillo','Castillo de Nijo','sitio UNESCO, suelos "ruiseñor" antiasalto'],
         ['🚌','Traslado','Autobús a Gion','autobús urbano, ~20 min desde Nijo'],
@@ -808,7 +808,7 @@ const dayData = [
       optional: [
         ['寺','Sanjusangendo','salón con 1,001 estatuas doradas de Kannon','cerca de Kiyomizu-dera, ~10 min caminando']
       ] },
-    { key: 'd12', num: '12', place: 'Tokio', title: 'Regreso a Tokio, vía Machida',
+    { key: 'd12', num: '12', place: 'Tokio', title: 'Regreso a Tokio, vía Machida', mealZone: 'shinjuku',
       poi: [
         ['鞄','Traslado','Check-out en Kioto','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Shinkansen a Tokio','Tokaido Shinkansen (Nozomi/Hikari), ~2h15, Kioto → Tokio'],
@@ -872,7 +872,7 @@ const dayData = [
       optional: [
         ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower','5 min caminando desde Tokyo Tower']
       ] },
-    { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku',
+    { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku', mealZone: 'shinjuku',
       poi: [
         ['🚃','Traslado','Tren a Akihabara','línea JR Chuo/Sobu, ~20-25 min desde Shinjuku'],
         ['電','Recorrido','Akihabara','el "Electric Town" de Tokio',
@@ -933,7 +933,7 @@ const dayData = [
       route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Odaiba, Tokyo, Japan','The National Art Center Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Gundam Base Tokyo, Odaiba, Japan','Round1 Akihabara, Japan','Akihabara, Tokyo, Japan'],
       photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Arcade retro','teamLab Borderless','Odaiba','Estatua de Gundam','Rainbow Bridge','The National Art Center, Tokyo','Round1','Ramen nocturno Akihabara','Gundam iluminado de noche','Hekkelun','BOOKOFF Akihabara'],
       optional: [] },
-    { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora',
+    { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora', mealZone: 'shinjuku',
       poi: [
         ['🚃','Traslado','Tren a Toyosu','línea Yurikamome o Yurakucho, ~30-35 min desde Shinjuku'],
         ['技','Actividad','teamLab Planets','arte digital inmersivo, Toyosu (mañana)'],
@@ -992,7 +992,7 @@ const dayData = [
       optional: [
         ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico','10 min en tren desde Harajuku']
       ] },
-    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio',
+    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'shinjuku',
       poi: [
         ['🚃','Traslado','Tren a Mitaka','línea JR Chuo, ~20 min desde Shinjuku'],
         ['🎨','Actividad','Museo Ghibli','Mitaka, reserva de horario fijo (mañana)'],
@@ -1033,7 +1033,7 @@ const dayData = [
       route: ['Shinjuku Station, Tokyo, Japan','Ghibli Museum, Mitaka, Japan','Jindaiji Temple, Chofu, Japan','Shinjuku Station, Tokyo, Japan'],
       photos: ['Tren a Mitaka','Museo Ghibli','Templo Jindaiji','Última compra','Lugar favorito revisitado','Última cena japonesa','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
       optional: [] },
-    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso',
+    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'shinjuku',
       poi: [
         ['宿','Actividad','Último desayuno','rápido, antes del check-out'],
         ['鞄','Actividad','Check-out del hotel','equipaje listo desde la noche anterior'],
@@ -1080,6 +1080,129 @@ const DATES = {
   d11:{short:'6 SEP',long:'Domingo 6 de septiembre',iso:'2026-09-06'}, d12:{short:'7 SEP',long:'Lunes 7 de septiembre',iso:'2026-09-07'},
   d13:{short:'8 SEP',long:'Martes 8 de septiembre',iso:'2026-09-08'}, d14:{short:'9 SEP',long:'Miércoles 9 de septiembre',iso:'2026-09-09'},
   d15:{short:'10 SEP',long:'Jueves 10 de septiembre',iso:'2026-09-10'}, d16:{short:'11 SEP',long:'Viernes 11 de septiembre',iso:'2026-09-11'},
+};
+
+const MEAL_ZONES = {
+  asakusa: {
+    label: 'Asakusa',
+    breakfast: [
+      ['Nezumi no Cafe', 'Toast grueso y café de especialidad, ambiente tranquilo cerca de Senso-ji.', 'Nezumi no Cafe Asakusa Tokyo'],
+      ['Asakusa Kagetsudo', 'Melon pan recién horneado, clásico de la calle Nakamise.', 'Kagetsudo Asakusa Tokyo'],
+      ['Marugoto Nippon', 'Mercado con puestos de desayuno regional de todo Japón.', 'Marugoto Nippon Asakusa Tokyo'],
+      ['Sukiya Asakusa', 'Gyudon (res sobre arroz) rápido y económico, abierto desde temprano.', 'Sukiya Asakusa Tokyo'],
+      ['Doutor Coffee Asakusa', 'Cadena de café japonesa, sándwiches y desayunos ligeros.', 'Doutor Coffee Asakusa Tokyo'],
+      ['Asakusa Onigiri Yadoroku', 'Onigiri artesanal recién hecho, la más antigua de Tokio.', 'Onigiri Yadoroku Asakusa Tokyo'],
+      ['Hoppy-dori Breakfast Stalls', 'Puestos callejeros con desayunos sencillos tipo teishoku.', 'Hoppy Street Asakusa Tokyo'],
+    ],
+    lunch: [
+      ['Daikokuya Tempura', 'Tempura clásico de Asakusa desde 1887, tendones generosos.', 'Daikokuya Tempura Asakusa Tokyo'],
+      ['Asakusa Menchirashi', 'Fideos secos estilo Tokio con caldo aparte (tsukemen).', 'Asakusa Menchirashi Tokyo'],
+      ['CoCo Ichibanya Asakusa', 'Curry japonés a tu gusto, sin mariscos, muy versátil.', 'CoCo Ichibanya Asakusa Tokyo'],
+      ['Sometaro Okonomiyaki', 'Okonomiyaki de cerdo/vegetales para prepararte tú mismo.', 'Sometaro Okonomiyaki Asakusa Tokyo'],
+      ['Asakusa Imahan', 'Sukiyaki y shabu-shabu de res, ambiente tradicional.', 'Imahan Asakusa Tokyo'],
+      ['Katsuya Asakusa', 'Tonkatsu empanizado crujiente, sets con arroz y sopa miso.', 'Katsuya Asakusa Tokyo'],
+      ['Fuguki Ramen', 'Ramen shoyu casero, porciones grandes cerca de la estación.', 'Fuguki Ramen Asakusa Tokyo'],
+    ],
+    dinner: [
+      ['Asakusa Imahan (cena)', 'Sukiyaki de res en un salón tradicional, buena opción de cena formal.', 'Imahan Asakusa Tokyo'],
+      ['Buta-ya Yakiniku Asakusa', 'Yakiniku (parrilla) de res y cerdo para compartir.', 'Butaya Yakiniku Asakusa Tokyo'],
+      ['Kirinya Yakitori', 'Brochetas de pollo a la parrilla, izakaya casual.', 'Kirinya Yakitori Asakusa Tokyo'],
+      ['Fujiya Gyoza Asakusa', 'Gyozas de cerdo y ramen ligero, ambiente informal.', 'Fujiya Gyoza Asakusa Tokyo'],
+      ['Namiki Yabusoba', 'Soba tradicional en un local centenario de Asakusa.', 'Namiki Yabusoba Asakusa Tokyo'],
+      ['Asakusa Kagiya Curry', 'Curry katsu casero, porciones abundantes.', 'Kagiya Curry Asakusa Tokyo'],
+      ['Hoppy-dori Izakaya', 'Callejón de izakayas con yakitori, karaage y cerveza.', 'Hoppy Street Asakusa Tokyo'],
+    ],
+  },
+  namba: {
+    label: 'Namba / Dotonbori',
+    breakfast: [
+      ['Marufuku Coffee Namba', 'Café por goteo old-school y tostadas gruesas.', 'Marufuku Coffee Namba Osaka'],
+      ['Hotel breakfast buffet spots', 'Cafeterías tipo buffet cerca de Namba para desayuno rápido antes de salir.', 'Namba Station cafe Osaka'],
+      ['Komeda\'s Coffee Namba', 'Cadena japonesa clásica de desayuno con toast y huevo.', 'Komeda Coffee Namba Osaka'],
+      ['Salada-Kan Namba', 'Ensaladas y sándwiches ligeros para empezar el día.', 'Salada-Kan Namba Osaka'],
+      ['Namba Doutor Coffee', 'Café y sándwiches rápidos, buena opción económica.', 'Doutor Coffee Namba Osaka'],
+      ['Excelsior Caffe Shinsaibashi', 'Café estilo italiano con pastelería, cerca de la arcada.', 'Excelsior Caffe Shinsaibashi Osaka'],
+      ['Yoshinoya Namba', 'Gyudon rápido y barato, ideal si vas con prisa.', 'Yoshinoya Namba Osaka'],
+    ],
+    lunch: [
+      ['Kani Douraku (opción sin cangrejo)', 'Restaurante icónico de Dotonbori; pide sus sets de tempura o teishoku sin marisco.', 'Kani Douraku Dotonbori Osaka'],
+      ['Kinryu Ramen', 'Ramen 24h con el letrero del dragón dorado, clásico de Namba.', 'Kinryu Ramen Namba Osaka'],
+      ['Chibo Okonomiyaki', 'Okonomiyaki de cerdo, famoso y turístico pero muy sabroso.', 'Chibo Okonomiyaki Dotonbori Osaka'],
+      ['Matsuya Namba', 'Gyudon y curry económico, cadena confiable.', 'Matsuya Namba Osaka'],
+      ['CoCo Ichibanya Shinsaibashi', 'Curry japonés personalizable, opción segura sin marisco.', 'CoCo Ichibanya Shinsaibashi Osaka'],
+      ['Dotonbori Kukuru (takoyaki de queso/pollo)', 'Takoyaki con rellenos alternativos al pulpo, pide versión de queso o pollo.', 'Kukuru Takoyaki Dotonbori Osaka'],
+      ['Yakiniku Toraji Namba', 'Yakiniku de res y cerdo, buena opción de comida abundante.', 'Yakiniku Toraji Namba Osaka'],
+    ],
+    dinner: [
+      ['Daruma Kushikatsu', 'Kushikatsu (brochetas empanizadas) de cerdo y verduras, clásico de Osaka.', 'Daruma Kushikatsu Dotonbori Osaka'],
+      ['Zauo Namba', 'Restaurante temático donde "pescas" tu cena (opción de pollo/res también).', 'Zauo Namba Osaka'],
+      ['Dotonbori Imai Honten', 'Udon con caldo dashi suave, ambiente tradicional.', 'Imai Honten Dotonbori Osaka'],
+      ['Yakiniku Toraji (cena)', 'Parrilla de carne para compartir, buena opción de cena en grupo.', 'Yakiniku Toraji Namba Osaka'],
+      ['Shinsekai Daruma', 'Kushikatsu en el barrio retro de Shinsekai, sin mariscos si evitas el ebi.', 'Daruma Kushikatsu Shinsekai Osaka'],
+      ['Ichiran Ramen Dotonbori', 'Ramen individual en cabina, tonkotsu clásico.', 'Ichiran Ramen Dotonbori Osaka'],
+      ['America-mura Curry House', 'Curry japonés casual en el barrio de moda urbana.', 'Curry House Amerikamura Osaka'],
+    ],
+  },
+  kyoto: {
+    label: 'Kioto',
+    breakfast: [
+      ['% Arabica Kyoto', 'Café de especialidad con vista, ideal antes de salir a caminar.', 'Arabica Kyoto Higashiyama'],
+      ['Kyoto Station Ramen Koji (desayuno ligero)', 'Panaderías y cafés dentro de la estación de Kioto.', 'Kyoto Station bakery Japan'],
+      ['Smart Coffee Kyoto', 'Cafetería clásica desde 1932, tostadas con mantequilla y pudín.', 'Smart Coffee Kyoto'],
+      ['Inoda Coffee Honten', 'Institución de café kyotoense, desayuno occidental clásico.', 'Inoda Coffee Honten Kyoto'],
+      ['Nishiki Market Breakfast Stalls', 'Puestos de comida callejera en el mercado, prueba tamagoyaki o dango.', 'Nishiki Market Kyoto'],
+      ['Yamamotomenzou Gion', 'Udon caliente ligero, buena opción de desayuno abundante.', 'Yamamotomenzou Gion Kyoto'],
+      ['Komeda\'s Coffee Kyoto Station', 'Cadena confiable de desayuno con toast y huevo.', 'Komeda Coffee Kyoto Station'],
+    ],
+    lunch: [
+      ['Omen Kyoto', 'Udon casero con vegetales, cerca de Ginkaku-ji.', 'Omen Udon Kyoto'],
+      ['Katsukura Kyoto', 'Tonkatsu con arroz recién molido y sopa miso.', 'Katsukura Tonkatsu Kyoto'],
+      ['Nishiki Warai', 'Okonomiyaki y yakisoba en el Mercado Nishiki.', 'Nishiki Warai Kyoto'],
+      ['CoCo Ichibanya Kyoto Station', 'Curry japonés personalizable, práctico entre paradas.', 'CoCo Ichibanya Kyoto Station'],
+      ['Gion Karyo', 'Udon y sets kaiseki ligeros en pleno Gion.', 'Gion Karyo Kyoto'],
+      ['Musoshin Ramen', 'Ramen shoyu suave, opción tranquila cerca de Higashiyama.', 'Musoshin Ramen Kyoto'],
+      ['Kyoto Ramen Koji', 'Piso de la estación de Kioto con varios locales de ramen para elegir.', 'Kyoto Ramen Koji Kyoto Station'],
+    ],
+    dinner: [
+      ['Kyoto Gyukatsu Kyoto Katsuzen', 'Gyukatsu (res empanizada) para cocinar tú mismo en la mesa.', 'Gyukatsu Kyoto Katsuzen'],
+      ['Yakiniku Toraji Kyoto', 'Parrilla de carne, buena opción de cena abundante.', 'Yakiniku Toraji Kyoto'],
+      ['Ganko Sushi (opción sin pescado)', 'Cadena grande con menú amplio; pide sets de tempura o teishoku de carne.', 'Ganko Kyoto Station'],
+      ['Pontocho Robata', 'Robatayaki (a la parrilla) de carnes y vegetales en el callejón de Pontocho.', 'Pontocho Robatayaki Kyoto'],
+      ['Nakau Kyoto Station', 'Gyudon y udon rápido, buena opción de cena económica.', 'Nakau Kyoto Station'],
+      ['Kyoto Curry Gogyo', 'Ramen con toque de curry, especialidad local poco común.', 'Gogyo Ramen Kyoto'],
+      ['Musashi Sushi (versión vegetariana/carne)', 'Si prefieres evitar mariscos, pide sus rolls de vegetales o tamago.', 'Musashi Sushi Kyoto Station'],
+    ],
+  },
+  shinjuku: {
+    label: 'Shinjuku',
+    breakfast: [
+      ['Berg Shinjuku', 'Café clásico dentro de la estación, sándwiches y café por buen precio.', 'Berg Shinjuku Station Tokyo'],
+      ['Komeda\'s Coffee Shinjuku', 'Toast grueso y huevo cocido, cadena confiable de desayuno.', 'Komeda Coffee Shinjuku Tokyo'],
+      ['Bills Shinjuku', 'Pancakes esponjosos y desayuno estilo occidental.', 'Bills Shinjuku Tokyo'],
+      ['Doutor Coffee Shinjuku', 'Café y sándwiches rápidos y económicos.', 'Doutor Coffee Shinjuku Tokyo'],
+      ['Shinjuku Kappo Nakajima (desayuno set)', 'Set de desayuno japonés tradicional con pescado a la parrilla o carne.', 'Kappo Nakajima Shinjuku Tokyo'],
+      ['Excelsior Caffe Shinjuku', 'Café con pastelería estilo italiano, buena opción rápida.', 'Excelsior Caffe Shinjuku Tokyo'],
+      ['Yoshinoya Shinjuku', 'Gyudon rápido, abierto desde temprano.', 'Yoshinoya Shinjuku Tokyo'],
+    ],
+    lunch: [
+      ['Omoide Yokocho Yakitori', 'Brochetas de pollo a la parrilla en los callejones diminutos.', 'Omoide Yokocho Shinjuku Tokyo'],
+      ['Fuunji Tsukemen', 'Fideos para mojar con caldo concentrado, muy popular en Shinjuku.', 'Fuunji Tsukemen Shinjuku Tokyo'],
+      ['CoCo Ichibanya Shinjuku', 'Curry japonés a tu gusto, opción rápida y segura.', 'CoCo Ichibanya Shinjuku Tokyo'],
+      ['Nagi Ramen Golden Gai', 'Ramen niboshi (caldo de sardina seca, no marisco fresco) en un local diminuto.', 'Nagi Ramen Golden Gai Shinjuku Tokyo'],
+      ['Katsukura Shinjuku', 'Tonkatsu crujiente con sets completos.', 'Katsukura Shinjuku Tokyo'],
+      ['Matsuya Shinjuku', 'Gyudon y curry económico, práctico entre actividades.', 'Matsuya Shinjuku Tokyo'],
+      ['Tsunahachi Tempura', 'Tempura de verduras y carne, evita las piezas de mariscos.', 'Tsunahachi Tempura Shinjuku Tokyo'],
+    ],
+    dinner: [
+      ['Omoide Yokocho Izakaya', 'Callejones de izakayas con yakitori, karaage y cerveza fría.', 'Omoide Yokocho Shinjuku Tokyo'],
+      ['Golden Gai Bars & Snacks', 'Bares diminutos, muchos con menú corto de botanas simples.', 'Golden Gai Shinjuku Tokyo'],
+      ['Yakiniku Toraji Shinjuku', 'Parrilla de carne para compartir, buena opción de cena en grupo.', 'Yakiniku Toraji Shinjuku Tokyo'],
+      ['Nakau Shinjuku', 'Gyudon y udon caliente, cena rápida y económica.', 'Nakau Shinjuku Tokyo'],
+      ['Kabukicho Ichiran Ramen', 'Ramen tonkotsu individual en cabina, abierto hasta tarde.', 'Ichiran Ramen Kabukicho Tokyo'],
+      ['Shirube Izakaya', 'Izakaya local muy popular entre oficinistas, ambiente auténtico.', 'Shirube Shinjuku Tokyo'],
+      ['Gyoza Stadium Shinjuku', 'Variedad de gyozas de cerdo y vegetales para compartir.', 'Gyoza Stadium Shinjuku Tokyo'],
+    ],
+  },
 };
 
 // Category -> { icon (material symbol), bg, text }
@@ -1152,6 +1275,44 @@ function transportSummary(d){
             </div>`).join('')}
         </div>
         ${routeBtn}
+      </div>
+    </section>`;
+}
+
+function mapsSearchUrl(place){
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
+}
+
+function mealSummary(d){
+  const zone = MEAL_ZONES[d.mealZone];
+  if (!zone) return '';
+  const section = (title, icon, items) => `
+    <details class="group">
+      <summary class="flex items-center justify-between cursor-pointer list-none py-3">
+        <span class="flex items-center gap-2 font-bold text-sm text-on-surface">
+          <span class="material-symbols-outlined !text-lg text-secondary">${icon}</span> ${title}
+        </span>
+        <span class="material-symbols-outlined text-ink-subtle transition-transform group-open:rotate-180">expand_more</span>
+      </summary>
+      <div class="space-y-3 pb-3">
+        ${items.map(([name, desc, mapsQuery]) => `
+          <div class="pl-3 border-l-2 border-outline-variant/30">
+            <p class="text-sm font-bold text-on-surface">${name}</p>
+            <p class="text-xs text-on-surface-variant">${desc}</p>
+            <a href="${mapsSearchUrl(mapsQuery)}" target="_blank" rel="noopener" class="text-[11px] font-bold text-secondary">📍 Ver en Google Maps</a>
+          </div>`).join('')}
+      </div>
+    </details>`;
+  return `
+    <section class="px-6 mb-6">
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10 divide-y divide-outline-variant/20">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="material-symbols-outlined text-secondary">restaurant</span>
+          <h3 class="font-headline-md text-body-lg font-bold text-primary">Dónde comer hoy</h3>
+        </div>
+        ${section('Desayuno', 'coffee', zone.breakfast)}
+        ${section('Comida', 'lunch_dining', zone.lunch)}
+        ${section('Cena', 'dinner_dining', zone.dinner)}
       </div>
     </section>`;
 }
@@ -1250,6 +1411,8 @@ function renderDay(){
     </section>
 
     ${transportSummary(d)}
+
+    ${mealSummary(d)}
 
     <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
       ${photoBento(d)}
