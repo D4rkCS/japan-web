@@ -99,13 +99,21 @@ tailwind.config = {
     .scroll-hide::-webkit-scrollbar{ display:none; }
     .scroll-hide{ -ms-overflow-style:none; scrollbar-width:none; }
     .daypill{ transition:all .15s ease; }
-    body{ max-width:900px; margin:0 auto; }
+    body{ max-width:900px; margin:0 auto !important; }
     @media (min-width:1024px){
         body{ max-width:1100px; }
         .desktop-2col{ display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
     }
     @media (min-width:1400px){
         body{ max-width:1300px; }
+    }
+    #dayContent{ transition:opacity .15s ease; }
+    #dayContent.day-fade-out{ opacity:0; }
+    .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+    .reveal-visible{ opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce){
+        #dayContent{ transition:none; }
+        .reveal{ opacity:1; transform:none; transition:none; }
     }
 </style>
 </head>
@@ -1315,7 +1323,7 @@ function transportSummary(d){
       <div id="dayMapContainer" class="w-full h-72 rounded-lg border border-outline-variant/20 bg-surface-variant flex items-center justify-center text-xs text-ink-subtle">Cargando mapa…</div>
     </div>` : '';
   return `
-    <section class="px-6 mb-6">
+    <section class="px-6 mb-6 reveal">
       <div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10">
         <div class="flex items-center gap-2 mb-3">
           <span class="material-symbols-outlined text-secondary">train</span>
@@ -1570,7 +1578,7 @@ function mealSummary(d){
       </div>
     </details>`;
   return `
-    <section class="px-6 mb-6">
+    <section class="px-6 mb-6 reveal">
       <div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant/10 divide-y divide-outline-variant/20">
         <div class="flex items-center gap-2 mb-1">
           <span class="material-symbols-outlined text-secondary">restaurant</span>
@@ -1650,7 +1658,7 @@ function renderDay(){
   }).join('');
 
   const optionalHtml = (d.optional && d.optional.length) ? `
-    <section class="px-6 py-8">
+    <section class="px-6 py-8 reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-4 border-l-4 border-tertiary-fixed-dim pl-4">Templos opcionales — si te da tiempo</h3>
       <div class="grid grid-cols-1 gap-3">
         ${d.optional.map(([icon,name,desc,how]) => `
@@ -1668,7 +1676,7 @@ function renderDay(){
     </section>` : '';
 
   wrap.innerHTML = `
-    <section class="px-6 pt-8 pb-4">
+    <section class="px-6 pt-8 pb-4 reveal">
       <p class="font-label-caps text-label-caps text-secondary mb-2">DÍA ${d.num} — ${(DATES[d.key]?.long || '').toUpperCase()}</p>
       <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1 italic">${d.title}</h2>
       <p class="text-xs text-on-surface-variant">${d.place}</p>
@@ -1679,17 +1687,47 @@ function renderDay(){
 
     ${mealSummary(d)}
 
-    <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+    <section class="px-6 grid grid-cols-2 lg:grid-cols-3 gap-3 mb-6 reveal">
       ${photoBento(d)}
     </section>
 
-    <section class="px-6">
+    <section class="px-6 reveal">
       <h3 class="font-headline-md text-headline-md text-primary mb-6 border-l-4 border-secondary pl-4">Itinerario del día</h3>
       <div class="space-y-0 lg:max-w-2xl">${timeline}</div>
     </section>
 
     ${optionalHtml}
   `;
+
+  initRevealObserver();
+}
+
+let revealObserver = null;
+function initRevealObserver(){
+  if (revealObserver) revealObserver.disconnect();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('#dayContent .reveal').forEach(el => revealObserver.observe(el));
+}
+
+function changeDay(newKey){
+  window.scrollTo({top:0,behavior:'smooth'});
+  const wrap = document.getElementById('dayContent');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) { activeDay = newKey; render(); return; }
+  wrap.classList.add('day-fade-out');
+  setTimeout(() => {
+    activeDay = newKey;
+    render();
+    wrap.classList.remove('day-fade-out');
+  }, 150);
 }
 
 function renderBottomNav(){
@@ -1701,8 +1739,8 @@ function renderBottomNav(){
   const nextBtn = document.getElementById('nextDayBtn');
   prevBtn.disabled = idx === 0;
   nextBtn.disabled = idx === dayData.length - 1;
-  prevBtn.onclick = () => { if (idx > 0) { activeDay = dayData[idx-1].key; render(); window.scrollTo({top:0,behavior:'smooth'}); } };
-  nextBtn.onclick = () => { if (idx < dayData.length-1) { activeDay = dayData[idx+1].key; render(); window.scrollTo({top:0,behavior:'smooth'}); } };
+  prevBtn.onclick = () => { if (idx > 0) changeDay(dayData[idx-1].key); };
+  nextBtn.onclick = () => { if (idx < dayData.length-1) changeDay(dayData[idx+1].key); };
 }
 
 function render(){
