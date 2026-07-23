@@ -263,7 +263,10 @@ const dayData = [
         ['道','Recorrido','Denboin-dori','callejón tradicional con menos turistas'],
         ['麺','Comida','Ramen nocturno en Asakusa','cierre de noche con un tazón caliente'],
         ['🕹','Actividad','Arcade en Asakusa','máquinas clásicas y modernas hasta tarde'],
-        ['🎁','Recorrido','Gachapon y tiendas 24h','cápsulas coleccionables antes de dormir']
+        ['🎁','Recorrido','Gachapon y tiendas 24h','cápsulas coleccionables antes de dormir'],
+        ['♨','Actividad','Sento tradicional cerca del hotel','baño público japonés, cierre de la noche'],
+        ['川','Recorrido','Último paseo por el río Sumida','puente iluminado, calles casi vacías'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
       ],
       steps: [
         ['08:00', 'Tren a Shinjuku — línea Ginza/Marunouchi, ~20 min desde Asakusa'],
@@ -288,7 +291,10 @@ const dayData = [
         ['18:10', 'Denboin-dori — callejón tradicional con menos turistas'],
         ['18:50', 'Ramen nocturno en Asakusa — cierre de noche con un tazón caliente'],
         ['19:50', 'Arcade en Asakusa — máquinas clásicas y modernas hasta tarde'],
-        ['20:40', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir']
+        ['20:40', 'Gachapon y tiendas 24h — cápsulas coleccionables antes de dormir'],
+        ['21:10', 'Sento tradicional cerca del hotel — baño público japonés, cierre de la noche'],
+        ['22:10', 'Último paseo por el río Sumida — puente iluminado, calles casi vacías'],
+        ['22:40', 'Konbini nocturno antes de dormir — snacks de última hora']
       ],
       route: ['Asakusa, Taito, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Senso-ji Temple, Tokyo, Japan','Ueno Park, Tokyo, Japan','Shinobazu Pond, Tokyo, Japan','Ueno Toshogu, Tokyo, Japan','Kaminarimon Gate, Tokyo, Japan','Pokemon Cafe, Nihonbashi, Tokyo, Japan','Tokyo Skytree, Tokyo, Japan','Sumida Park, Tokyo, Japan'],
       legRoutes: {
@@ -335,7 +341,9 @@ const dayData = [
         ['湾','Recorrido','Bahía de Minato Mirai','paseo nocturno con vista a los rascacielos y el puerto'],
         ['食','Comida','Cena en Chinatown de Yokohama','el barrio chino más grande de Japón'],
         ['🍜','Comida','Ramen de madrugada en Yokohama','última parada antes del tren de regreso'],
-        ['🚃','Traslado','Regreso a Asakusa','JR Yokosuka Line + línea Ginza, ~1h15']
+        ['🍸','Actividad','Bar con vista en Minato Mirai','última copa con los rascacielos iluminados'],
+        ['🚃','Traslado','Regreso a Asakusa','JR Yokosuka Line + línea Ginza, ~1h15'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora al llegar al hotel']
       ],
       steps: [
         ['07:00', 'Tren a Kamakura — JR Yokosuka Line desde Tokyo Station, ~1h desde Asakusa'],
@@ -355,13 +363,15 @@ const dayData = [
         ['17:33', 'Bahía de Minato Mirai — paseo nocturno con vista a los rascacielos y el puerto'],
         ['18:03', 'Cena en Chinatown de Yokohama — el barrio chino más grande de Japón'],
         ['19:03', 'Ramen de madrugada en Yokohama — última parada antes del tren de regreso'],
-        ['19:48', 'Regreso a Asakusa — JR Yokosuka Line + línea Ginza, ~1h15']
+        ['19:48', 'Bar con vista en Minato Mirai — última copa con los rascacielos iluminados'],
+        ['20:33', 'Regreso a Asakusa — JR Yokosuka Line + línea Ginza, ~1h15'],
+        ['21:48', 'Konbini nocturno antes de dormir — snacks de última hora al llegar al hotel']
       ],
       route: ['Kamakura Station, Japan','Kotoku-in Great Buddha, Kamakura, Japan','Komachi-dori, Kamakura, Japan','Tsurugaoka Hachimangu, Kamakura, Japan','Yuigahama Beach, Kamakura, Japan','Hase-dera Temple, Kamakura, Japan','Enoshima Island, Japan','Cosmo Clock 21, Yokohama, Japan','Minato Mirai, Yokohama, Japan','Yokohama Chinatown, Japan'],
       legRoutes: {
         0: ['Asakusa, Taito, Tokyo, Japan','Kamakura Station, Japan'],
         12: ['Enoshima Island, Japan','Yokohama Station, Japan'],
-        17: ['Yokohama Station, Japan','Asakusa, Taito, Tokyo, Japan'],
+        18: ['Yokohama Station, Japan','Asakusa, Taito, Tokyo, Japan'],
       },
       photos: ['Tren a Kamakura','Gran Buda de Kamakura','Komachi-dori','Tsurugaoka Hachimangu','Playa de Yuigahama','Tren Enoden','Bosque de bambú Hokoku-ji','Isla de Enoshima','Atardecer en Enoshima','Cosmo Clock 21 de noche','Bahía de Minato Mirai','Chinatown de Yokohama'],
       optional: [
@@ -396,7 +406,8 @@ const dayData = [
         ['🚌','Traslado','Regreso a Tokio','autobús o tren de vuelta a Shinjuku, ~2h'],
         ['酒','Comida','Izakaya nocturno en Shinjuku','cierre de noche al llegar de Kawaguchiko'],
         ['🕹','Actividad','Arcade en Shinjuku','cierre de noche al llegar de Kawaguchiko'],
-        ['🚃','Traslado','Regreso a Asakusa','línea Toei Asakusa + Ginza, ~25 min']
+        ['🚃','Traslado','Regreso a Asakusa','línea Toei Asakusa + Ginza, ~25 min'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora al llegar al hotel']
       ],
       steps: [
         ['06:20', 'Tren a Shinjuku — línea Ginza + Toei Asakusa, ~25 min desde Asakusa'],
@@ -415,7 +426,8 @@ const dayData = [
         ['18:00', 'Regreso a Tokio — autobús o tren de vuelta a Shinjuku, ~2h'],
         ['20:00', 'Izakaya nocturno en Shinjuku — cierre de noche al llegar de Kawaguchiko'],
         ['21:00', 'Arcade en Shinjuku — cierre de noche al llegar de Kawaguchiko'],
-        ['21:50', 'Regreso a Asakusa — línea Toei Asakusa + Ginza, ~25 min']
+        ['21:50', 'Regreso a Asakusa — línea Toei Asakusa + Ginza, ~25 min'],
+        ['22:15', 'Konbini nocturno antes de dormir — snacks de última hora al llegar al hotel']
       ],
       route: ['Asakusa, Taito, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Fuji-Q Highland, Fujiyoshida, Japan','Lake Kawaguchiko, Japan','Oishi Park, Japan','Kachi Kachi Ropeway, Fujiyoshida, Japan','Chureito Pagoda, Fujiyoshida, Japan','Oshino Hakkai, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
@@ -525,14 +537,16 @@ const dayData = [
         ['購','Actividad','Tienda de merchandising','recuerdos exclusivos del parque'],
         ['band','Actividad','Power-Up Band','pulsera interactiva para juegos en Nintendo World',
           [['La pulsera que interactúa con el parque','La Power-Up Band de Nintendo World se sincroniza con juegos y retos repartidos por toda la zona temática.']]],
-        ['🚃','Traslado','Regreso a Namba','línea JR Yumesaki, ~20 min'],
         ['✨','Actividad','Espectáculo nocturno y castillo iluminado','parada nocturna antes del cierre del parque',
           [['Un show que cambia con las estaciones','El espectáculo nocturno de luces y proyecciones del parque se actualiza varias veces al año según la temporada.']]],
         ['食','Comida','Cena en CityWalk','cierre de noche fuera del parque'],
         ['🎆','Actividad','Fuegos artificiales o show extra','si el parque los tiene esa temporada'],
         ['🕹','Actividad','Arcade en CityWalk','cierre de noche antes de volver al hotel'],
         ['🕹','Actividad','Segunda vuelta de arcade en CityWalk','más rondas antes de volver al hotel'],
-        ['🍜','Comida','Ramen de madrugada en Namba','última parada antes de dormir']
+        ['🚃','Traslado','Regreso a Namba','línea JR Yumesaki, ~20 min'],
+        ['🍜','Comida','Ramen de madrugada en Namba','última parada antes de dormir'],
+        ['購','Recorrido','Compras nocturnas en Don Quijote Namba','abierto 24h'],
+        ['🍶','Actividad','Última copa en un bar de Namba','cierre tranquilo antes de dormir']
       ],
       steps: [
         ['08:30', 'Tren a USJ — línea JR Yumesaki (vía Nishikujo) desde Namba, ~20 min'],
@@ -546,18 +560,20 @@ const dayData = [
         ['14:30', 'Universal Wonderland — área familiar con Snoopy y Sesame Street'],
         ['15:20', 'Tienda de merchandising — recuerdos exclusivos del parque'],
         ['16:10', 'Power-Up Band — pulsera interactiva para juegos en Nintendo World'],
-        ['17:00', 'Regreso a Namba — línea JR Yumesaki, ~20 min'],
-        ['17:20', 'Espectáculo nocturno y castillo iluminado — parada nocturna antes del cierre del parque'],
-        ['18:10', 'Cena en CityWalk — cierre de noche fuera del parque'],
-        ['19:10', 'Fuegos artificiales o show extra — si el parque los tiene esa temporada'],
-        ['20:00', 'Arcade en CityWalk — cierre de noche antes de volver al hotel'],
-        ['20:50', 'Segunda vuelta de arcade en CityWalk — más rondas antes de volver al hotel'],
-        ['21:40', 'Ramen de madrugada en Namba — última parada antes de dormir']
+        ['17:00', 'Espectáculo nocturno y castillo iluminado — parada nocturna antes del cierre del parque'],
+        ['17:50', 'Cena en CityWalk — cierre de noche fuera del parque'],
+        ['18:50', 'Fuegos artificiales o show extra — si el parque los tiene esa temporada'],
+        ['19:50', 'Arcade en CityWalk — cierre de noche antes de volver al hotel'],
+        ['20:40', 'Segunda vuelta de arcade en CityWalk — más rondas antes de volver al hotel'],
+        ['21:30', 'Regreso a Namba — línea JR Yumesaki, ~20 min'],
+        ['21:50', 'Ramen de madrugada en Namba — última parada antes de dormir'],
+        ['22:20', 'Compras nocturnas en Don Quijote Namba — abierto 24h'],
+        ['23:00', 'Última copa en un bar de Namba — cierre tranquilo antes de dormir']
       ],
       route: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan','Universal CityWalk Osaka, Japan','Namba Station, Osaka, Japan'],
       legRoutes: {
         0: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan'],
-        11: ['Universal Studios Japan, Osaka, Japan','Namba Station, Osaka, Japan'],
+        16: ['Universal Studios Japan, Osaka, Japan','Namba Station, Osaka, Japan'],
       },
       photos: ['Tren a USJ','Super Nintendo World','Mundo de Harry Potter','Jurassic Park The Ride','Minion Park','CityWalk','Universal Wonderland','Castillo iluminado de noche'],
       optional: [] },
@@ -593,7 +609,10 @@ const dayData = [
         ['菓','Comida','Postre nocturno','dulces japoneses antes de dormir'],
         ['購','Recorrido','Compras de última hora en Namba','snacks y regalos antes de dormir'],
         ['🎮','Actividad','Round1 Namba','arcade, bowling y karaoke, abierto 24h'],
-        ['📸','Recorrido','Purikura en Namba','fotos instantáneas estilo japonés']
+        ['📸','Recorrido','Purikura en Namba','fotos instantáneas estilo japonés'],
+        ['道','Recorrido','Último paseo nocturno por Dotonbori','últimas luces antes de dejar Osaka mañana'],
+        ['🍶','Actividad','Última copa en un bar de Namba','cierre tranquilo antes de dormir'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
       ],
       steps: [
         ['06:10', 'Tren a Nara — línea JR o Kintetsu desde Namba, ~45-50 min'],
@@ -613,7 +632,10 @@ const dayData = [
         ['17:40', 'Postre nocturno — dulces japoneses antes de dormir'],
         ['18:40', 'Compras de última hora en Namba — snacks y regalos antes de dormir'],
         ['19:20', 'Round1 Namba — arcade, bowling y karaoke, abierto 24h'],
-        ['20:10', 'Purikura en Namba — fotos instantáneas estilo japonés']
+        ['20:10', 'Purikura en Namba — fotos instantáneas estilo japonés'],
+        ['20:40', 'Último paseo nocturno por Dotonbori — últimas luces antes de dejar Osaka mañana'],
+        ['21:10', 'Última copa en un bar de Namba — cierre tranquilo antes de dormir'],
+        ['22:00', 'Konbini nocturno antes de dormir — snacks de última hora']
       ],
       route: ['Namba Station, Osaka, Japan','Nara Park, Japan','Todai-ji Temple, Nara, Japan','Kasuga Taisha, Nara, Japan','Kofuku-ji Temple, Nara, Japan','Nakatanidou, Nara, Japan','Osaka Castle, Japan','Shinsekai, Osaka, Japan','Dotonbori, Osaka, Japan'],
       legRoutes: {
@@ -658,7 +680,10 @@ const dayData = [
         ['菓','Comida','Postre de matcha','cierre dulce en una casa de té tradicional'],
         ['🕹','Actividad','Arcade cerca de la estación de Kioto','poca oferta, pero vale la pena'],
         ['🍶','Actividad','Bar tradicional cerca de Gion','cierre de noche con sake local'],
-        ['🎁','Recorrido','Tienda 24h antes de dormir','snacks para el día siguiente']
+        ['🎁','Recorrido','Tienda 24h antes de dormir','snacks para el día siguiente'],
+        ['駅','Recorrido','Último paseo por Kyoto Station','la arquitectura de vidrio y acero iluminada de noche'],
+        ['🍜','Comida','Ramen nocturno en Kyoto Ramen Koji','segunda ronda antes de dormir'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
       ],
       steps: [
         ['08:00', 'Check-out en Osaka — equipaje listo, salida del hotel'],
@@ -680,7 +705,10 @@ const dayData = [
         ['18:08', 'Postre de matcha — cierre dulce en una casa de té tradicional'],
         ['19:08', 'Arcade cerca de la estación de Kioto — poca oferta, pero vale la pena'],
         ['19:58', 'Bar tradicional cerca de Gion — cierre de noche con sake local'],
-        ['20:48', 'Tienda 24h antes de dormir — snacks para el día siguiente']
+        ['20:48', 'Tienda 24h antes de dormir — snacks para el día siguiente'],
+        ['21:08', 'Último paseo por Kyoto Station — la arquitectura de vidrio y acero iluminada de noche'],
+        ['21:38', 'Ramen nocturno en Kyoto Ramen Koji — segunda ronda antes de dormir'],
+        ['22:28', 'Konbini nocturno antes de dormir — snacks de última hora']
       ],
       route: ['Shin-Osaka Station, Japan','Kyoto Station, Japan','Kiyomizu-dera Temple, Kyoto, Japan','Sannenzaka, Kyoto, Japan','Higashiyama, Kyoto, Japan','Yasaka Pagoda, Kyoto, Japan','Pokemon Center Kyoto, Japan','Kyoto Tower, Japan'],
       legRoutes: { 1: ['Shin-Osaka Station, Japan','Kyoto Station, Japan'] },
@@ -789,7 +817,9 @@ const dayData = [
         ['食','Comida','Cena izakaya cerca de la estación','cierre gastronómico del día'],
         ['🎁','Recorrido','Tienda 24h en la estación','snacks y regalos de último momento'],
         ['🍶','Actividad','Segunda ronda cerca de la estación','bar o izakaya antes de dormir'],
-        ['🎁','Recorrido','Compras nocturnas de último minuto','tiendas abiertas hasta tarde cerca del hotel']
+        ['🎁','Recorrido','Compras nocturnas de último minuto','tiendas abiertas hasta tarde cerca del hotel'],
+        ['🎤','Actividad','Karaoke cerca de la estación','última ronda de canciones antes de dormir'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
       ],
       steps: [
         ['07:00', 'Tren a Fushimi Inari — línea JR Nara, ~5 min desde Kioto'],
@@ -811,7 +841,9 @@ const dayData = [
         ['17:48', 'Cena izakaya cerca de la estación — cierre gastronómico del día'],
         ['18:48', 'Tienda 24h en la estación — snacks y regalos de último momento'],
         ['19:28', 'Segunda ronda cerca de la estación — bar o izakaya antes de dormir'],
-        ['20:18', 'Compras nocturnas de último minuto — tiendas abiertas hasta tarde cerca del hotel']
+        ['20:18', 'Compras nocturnas de último minuto — tiendas abiertas hasta tarde cerca del hotel'],
+        ['20:48', 'Karaoke cerca de la estación — última ronda de canciones antes de dormir'],
+        ['21:48', 'Konbini nocturno antes de dormir — snacks de última hora']
       ],
       route: ['Kyoto Station, Japan','Fushimi Inari Taisha, Kyoto, Japan','Kinkaku-ji Temple, Kyoto, Japan','Kyoto Station, Japan'],
       legRoutes: {
@@ -917,7 +949,8 @@ const dayData = [
            ['Todo bajo un mismo techo','El complejo de Shinjuku Station conecta directamente con centros comerciales, oficinas y hoteles sin salir a la calle.']]],
         ['麺','Comida','Última ronda en Omoide Yokocho','yakitori y cerveza para cerrar la noche'],
         ['🕹','Actividad','Arcade en Kabukicho','máquinas hasta la madrugada'],
-        ['🍜','Comida','Ramen de madrugada','último antojo antes de dormir']
+        ['🍜','Comida','Ramen de madrugada','último antojo antes de dormir'],
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
       ],
       steps: [
         ['08:00', 'Check-out en Kioto — equipaje listo, salida del hotel'],
@@ -938,7 +971,8 @@ const dayData = [
         ['19:55', 'Estación de Shinjuku — la más transitada del mundo'],
         ['20:25', 'Última ronda en Omoide Yokocho — yakitori y cerveza para cerrar la noche'],
         ['21:25', 'Arcade en Kabukicho — máquinas hasta la madrugada'],
-        ['22:15', 'Ramen de madrugada — último antojo antes de dormir']
+        ['22:15', 'Ramen de madrugada — último antojo antes de dormir'],
+        ['22:45', 'Konbini nocturno antes de dormir — snacks de última hora']
       ],
       route: ['Kyoto Station, Japan','Tokyo Station, Japan','Snoopy Museum, Machida, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Tokyo Imperial Palace, Japan','Omoide Yokocho, Shinjuku, Tokyo, Japan','Kabukicho, Tokyo, Japan','Golden Gai, Tokyo, Japan'],
       legRoutes: {
@@ -1108,7 +1142,9 @@ const dayData = [
         ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir'],
         ['灯','Recorrido','Paseo final por Shinjuku de noche','despedida caminando entre los neones'],
         ['♨','Actividad','Onsen urbano de despedida','spa termal urbano, relajación antes de dormir'],
-        ['🕹','Actividad','Última vuelta de arcade en Shinjuku','cierre de noche antes de dormir']
+        ['🕹','Actividad','Última vuelta de arcade en Shinjuku','cierre de noche antes de dormir'],
+        ['🍶','Actividad','Última copa tranquila cerca del hotel','brindis de cierre de viaje, sin prisa'],
+        ['灯','Recorrido','Paseo final sin rumbo por Shinjuku','despedida sin prisa, a donde los pies lleven']
       ],
       steps: [
         ['09:40', 'Tren a Mitaka — línea JR Chuo, ~20 min desde Shinjuku'],
@@ -1125,7 +1161,9 @@ const dayData = [
         ['18:00', 'Última copa cerca del hotel — cierre tranquilo antes de dormir'],
         ['18:50', 'Paseo final por Shinjuku de noche — despedida caminando entre los neones'],
         ['19:30', 'Onsen urbano de despedida — spa termal urbano, relajación antes de dormir'],
-        ['20:30', 'Última vuelta de arcade en Shinjuku — cierre de noche antes de dormir']
+        ['20:30', 'Última vuelta de arcade en Shinjuku — cierre de noche antes de dormir'],
+        ['21:00', 'Última copa tranquila cerca del hotel — brindis de cierre de viaje, sin prisa'],
+        ['21:40', 'Paseo final sin rumbo por Shinjuku — despedida sin prisa, a donde los pies lleven']
       ],
       route: ['Shinjuku Station, Tokyo, Japan','Ghibli Museum, Mitaka, Japan','Jindaiji Temple, Chofu, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
