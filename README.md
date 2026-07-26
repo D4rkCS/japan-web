@@ -1,6 +1,6 @@
 # Guía de Viaje Japón — App
 
-Página web completa con tu itinerario interactivo de Japón — **16 días**, 25 ago al 11 sept 2026 — lista para desplegar en [Render](https://render.com).
+Página web completa con tu itinerario interactivo de Japón — **16 días**, 27 ago al 11 sept 2026 — lista para desplegar en [Render](https://render.com).
 
 Diseño premium (Tailwind + Material Symbols + Noto Serif/Manrope): galería tipo bento, timeline con íconos de color por categoría, barra de hoteles con el activo resaltado según el día, navegación inferior con flechas ← →, insignia de sellos goshuin, y templos opcionales.
 

@@ -127,7 +127,7 @@ tailwind.config = {
     <p class="font-label-caps text-label-caps text-secondary-fixed mb-2">GUÍA INTERACTIVA · 16 DÍAS</p>
     <h2 class="font-headline-xl text-headline-xl mb-3 text-white">Itinerario Japón</h2>
     <p class="font-body-md text-outline-variant leading-relaxed">
-      25 de agosto al 11 de septiembre de 2026<br/>
+      27 de agosto al 11 de septiembre de 2026<br/>
       Tokio · Kamakura · Fuji / Hakone · Osaka · Nara · Kioto
     </p>
   </div>
@@ -148,7 +148,7 @@ tailwind.config = {
 <div id="dayContent"></div>
 
 <footer class="px-6 py-10 text-center">
-  <p class="font-label-caps text-label-caps text-ink-subtle opacity-50">Guía de viaje — 25 de agosto al 11 de septiembre de 2026</p>
+  <p class="font-label-caps text-label-caps text-ink-subtle opacity-50">Guía de viaje — 27 de agosto al 11 de septiembre de 2026</p>
 </footer>
 
 </main>
@@ -178,7 +178,7 @@ const dayData = [
         ['宿','Actividad','Check-in en Asakusa','llegada al hotel y descanso breve',
           [['Nombre de mil años','"Asakusa" podría derivar de una antigua palabra que significa "hierba ligera", en referencia a la vegetación que cubría la zona antes de urbanizarse.']]],
         ['購','Actividad','Uniqlo Asakusa','ropa básica, cerca del hotel'],
-        ['寺','Templo','Senso-ji de noche','iluminado, sin las multitudes del día — sello goshuin disponible',
+        ['寺','Templo','Senso-ji de noche','iluminado, sin las multitudes del día — oficina de goshuin ya cerrada, lo consigues mañana en la visita de día',
           [['Un templo sin horario de cierre','El recinto exterior de Senso-ji nunca cierra sus puertas: se puede caminar por los jardines a cualquier hora.'],
            ['El primer templo budista de Tokio','Senso-ji ya existía cuando Tokio (entonces Edo) era solo una aldea pesquera, siglos antes de convertirse en capital.'],
            ['Humo que cura, según la tradición','Frente a Senso-ji hay un gran incensario donde los visitantes se abanican el humo hacia las zonas del cuerpo que quieren proteger.']]],
@@ -208,7 +208,7 @@ const dayData = [
         ['15:55', 'Narita Express a Asakusa — ~80 minutos hasta el hotel'],
         ['17:15', 'Check-in en Asakusa — llegada al hotel y descanso breve'],
         ['17:30', 'Uniqlo Asakusa — ropa básica, cerca del hotel'],
-        ['18:20', 'Senso-ji de noche — iluminado, sin las multitudes del día — sello goshuin disponible'],
+        ['18:20', 'Senso-ji de noche — iluminado, sin las multitudes del día — oficina de goshuin ya cerrada, lo consigues mañana en la visita de día'],
         ['19:10', 'Kaminarimon iluminada — la linterna roja de noche'],
         ['19:40', 'Nakamise-dori de noche — tiendas cerradas, ambiente distinto'],
         ['20:20', 'Cena en Kirby Café — reserva necesaria, menú temático de Kirby'],
@@ -307,7 +307,9 @@ const dayData = [
       },
       photos: ['BicCamera Shinjuku','Book-Off Shinjuku','Templo Senso-ji','Goshuincho','Puerta Kaminarimon','Nakamise-dori','Pokémon Café','Tokyo Skytree','Río Sumida'],
       optional: [
-        ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara','10 min caminando desde Yodobashi-Akiba']
+        ['社','Kanda Myojin','santuario 1300 años, patrono de la tecnología — cerca de Akihabara — sello goshuin disponible','10 min caminando desde Yodobashi-Akiba'],
+        ['社','Asakusa Jinja','santuario justo al lado de Senso-ji, dedicado a los tres fundadores del templo — sello goshuin disponible','pegado a la salida este de Senso-ji, 2 min caminando'],
+        ['社','Bentendo','templo en la isla del estanque Shinobazu, dedicado a la diosa Benzaiten — sello goshuin disponible','sobre la isla central del estanque Shinobazu']
       ] },
     { key: 'd3', num: '03', place: 'Kamakura', title: 'Kamakura, Enoshima y la bahía de Yokohama', mealZone: 'asakusa',
       poi: [
@@ -320,7 +322,7 @@ const dayData = [
           [['La antigua capital samurái','Kamakura fue la capital de facto de Japón entre 1185 y 1333, durante el primer shogunato de su historia.'],
            ['Una ciudad rodeada de montañas por diseño','Kamakura fue elegida como capital en parte por su geografía: montañas y mar la hacían fácil de defender.'],
            ['Trazado urbano defensivo','Aunque hoy es una escapada tranquila desde Tokio, Kamakura conserva el trazado urbano pensado originalmente para defenderse de invasiones.']]],
-        ['社','Templo','Tsurugaoka Hachimangu','el santuario más importante de Kamakura — sello goshuin disponible',
+        ['社','Santuario','Tsurugaoka Hachimangu','el santuario más importante de Kamakura — sello goshuin disponible',
           [['Un torii que anuncia un camino largo','El gran torii de bronce de Tsurugaoka Hachimangu marca el inicio de una avenida ceremonial de más de 1.8 km hacia el santuario.'],
            ['Escenario de leyendas samurái','Kamakura conserva más de 65 templos y santuarios de la era medieval, herencia de su época como sede del primer shogunato.'],
            ['Un santuario en el centro del poder samurái','Tsurugaoka Hachimangu fue fundado por Minamoto no Yoritomo, el primer shogun, como santuario protector de su clan.']]],
@@ -375,8 +377,8 @@ const dayData = [
       },
       photos: ['Tren a Kamakura','Gran Buda de Kamakura','Komachi-dori','Tsurugaoka Hachimangu','Playa de Yuigahama','Tren Enoden','Bosque de bambú Hokoku-ji','Isla de Enoshima','Atardecer en Enoshima','Cosmo Clock 21 al atardecer','Bahía de Minato Mirai','Chinatown de Yokohama'],
       optional: [
-        ['寺','Kenchō-ji','el templo zen más antiguo de Japón, en Kita-Kamakura','1 estación en tren desde Kamakura'],
-        ['寺','Engaku-ji','templo zen entre árboles centenarios, junto a la estación','misma estación de Kita-Kamakura']
+        ['寺','Kenchō-ji','el templo zen más antiguo de Japón, en Kita-Kamakura — sello goshuin disponible','1 estación en tren desde Kamakura'],
+        ['寺','Engaku-ji','templo zen entre árboles centenarios, junto a la estación — sello goshuin disponible','misma estación de Kita-Kamakura']
       ] },
     { key: 'd4', num: '04', place: 'Fuji / Hakone', title: 'Kawaguchiko y Fuji-Q Highland', mealZone: 'asakusa',
       poi: [
@@ -440,7 +442,7 @@ const dayData = [
       },
       photos: ['Autobús a Kawaguchiko','Fuji-Q Highland','Fujiyama','Fuji desde Kawaguchiko','Teleférico Kachi Kachi','Mirador Chureito'],
       optional: [
-        ['社','Santuario Fuji Sengen (Kitaguchi Hongu)','el santuario principal dedicado al Monte Fuji, punto de partida de la ruta de peregrinación','10 min caminando desde Fuji-Q Highland']
+        ['社','Santuario Fuji Sengen (Kitaguchi Hongu)','el santuario principal dedicado al Monte Fuji, punto de partida de la ruta de peregrinación — sello goshuin disponible','10 min caminando desde Fuji-Q Highland']
       ] },
     { key: 'd5', num: '05', place: 'Osaka', title: 'Katsuo-ji y noche en Dotonbori', mealZone: 'namba',
       poi: [
@@ -458,7 +460,7 @@ const dayData = [
         ['店','Recorrido','Shinsaibashi-suji','arcada de compras techada, 600m',
           [['Cuna de la comedia japonesa','Osaka es famosa por el \'manzai\', un estilo de comedia rápida a dos voces que nació en la ciudad y hoy domina la TV japonesa.'],
            ['Un saludo que aún se usa','Muchos osaqueños todavía saludan con la expresión "mokarimakka" (¿le va bien el negocio?), herencia de su pasado comercial.']]],
-        ['社','Templo','Santuario Namba Yasaka','escenario con forma de cabeza de león — sello goshuin disponible',
+        ['社','Santuario','Santuario Namba Yasaka','escenario con forma de cabeza de león — sello goshuin disponible',
           [['El santuario que se traga la mala suerte','El Santuario Namba Yasaka tiene un escenario con forma de cabeza de león de 12 metros: su boca abierta se traga la mala suerte, según la tradición.']]],
         ['🚇','Traslado','Tren a Umeda','línea Midosuji, ~15 min desde Namba'],
         ['塔','Foto','Umeda Sky Building','mirador flotante entre dos torres, vista al atardecer y de noche sobre Osaka'],
@@ -510,7 +512,7 @@ const dayData = [
       },
       photos: ['Shinkansen a Osaka','Templo Katsuo-ji','Postal de sellos Katsuo-ji','Neones de Dotonbori','Glico Man','Shinsaibashi-suji','Mercado Kuromon','Takoyaki callejero','Hozenji Yokocho','Umeda Sky Building'],
       optional: [
-        ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI)','línea Tanimachi, ~15 min desde Namba']
+        ['寺','Shitennoji','uno de los templos budistas más antiguos de Japón (siglo VI) — sello goshuin disponible','línea Tanimachi, ~15 min desde Namba']
       ] },
     { key: 'd6', num: '06', place: 'Osaka', title: 'Un día de película en Universal Studios Japan', mealZone: 'namba',
       poi: [
@@ -644,7 +646,7 @@ const dayData = [
       },
       photos: ['Venados de Nara','Todai-ji','Kasuga Taisha','Mochi de Nakatanidou','Castillo de Osaka','Shinsekai de noche'],
       optional: [
-        ['社','Sumiyoshi Taisha','santuario shinto de estilo arquitectónico único, muy fotogénico','línea Nankai, ~20 min desde Namba']
+        ['社','Sumiyoshi Taisha','santuario shinto de estilo arquitectónico único, muy fotogénico — sello goshuin disponible','línea Nankai, ~20 min desde Namba']
       ] },
     { key: 'd8', num: '08', place: 'Kioto', title: 'Rumbo a la capital cultural', mealZone: 'kyoto',
       poi: [
@@ -656,7 +658,7 @@ const dayData = [
         ['台','Foto','Escenario de madera','mirador elevado sobre la ciudad',
           [['Saltar desde el escenario','Existe una expresión japonesa, "saltar desde el escenario de Kiyomizu", que significa tomar una decisión arriesgada — por gente que antiguamente saltaba de verdad creyendo que sobrevivir cumplía un deseo.'],
            ['Una plataforma sin tornillos visibles','El escenario de Kiyomizu-dera se sostiene con "kake-zukuri", una técnica japonesa de ensamblaje con cientos de vigas entrelazadas.']]],
-        ['恋','Templo','Santuario Jishu','las piedras del amor, a 18 metros — sello goshuin disponible',
+        ['恋','Santuario','Santuario Jishu','las piedras del amor, a 18 metros — sello goshuin disponible',
           [['Las piedras del amor','En el Santuario Jishu hay dos piedras separadas 18 metros: caminar de una a otra con los ojos cerrados asegura, según la leyenda, encontrar el amor verdadero.']]],
         ['坂','Recorrido','Sannenzaka y Ninenzaka','calles empedradas del Japón feudal',
           [['Una cuadrícula copiada de China','El trazado de calles de Kioto se diseñó en el año 794 inspirado en la capital china de Chang\'an.'],
@@ -713,7 +715,9 @@ const dayData = [
       route: ['Shin-Osaka Station, Japan','Kyoto Station, Japan','Kiyomizu-dera Temple, Kyoto, Japan','Sannenzaka, Kyoto, Japan','Higashiyama, Kyoto, Japan','Yasaka Pagoda, Kyoto, Japan','Pokemon Center Kyoto, Japan','Kyoto Tower, Japan'],
       legRoutes: { 1: ['Shin-Osaka Station, Japan','Kyoto Station, Japan'] },
       photos: ['Tren Osaka-Kioto','Kiyomizu-dera','Escenario de madera','Sannenzaka','Pagoda Yasaka','Higashiyama','Pokémon Center Kyoto','Kimono en Higashiyama','Kyoto Tower de noche','Higashiyama de noche'],
-      optional: [] },
+      optional: [
+        ['寺','Sanjusangendo','salón de 1,001 estatuas de Kannon doradas, todas distintas — sello goshuin disponible','10 min caminando desde Kiyomizu-dera']
+      ] },
     { key: 'd9', num: '09', place: 'Kioto', title: 'El bosque de bambú de Arashiyama', mealZone: 'kyoto',
       poi: [
         ['🚃','Traslado','Tren a Arashiyama','línea JR Sagano o Randen, ~15-20 min desde Kioto',
@@ -781,12 +785,13 @@ const dayData = [
       },
       photos: ['Tren a Arashiyama','Bosque de bambú','Templo Tenryu-ji','Puente Togetsukyo','Jardín de musgo','Mercado de Nishiki','Monkey Park','Museo Nintendo','Pontocho de noche','Teramachi de noche'],
       optional: [
-        ['寺','Nanzen-ji','templo zen con un acueducto de ladrillo dentro del complejo','cerca de Ginkaku-ji, ~15 min en autobús desde Arashiyama']
+        ['寺','Nanzen-ji','templo zen con un acueducto de ladrillo dentro del complejo — sello goshuin disponible','cerca de Ginkaku-ji, ~15 min en autobús desde Arashiyama'],
+        ['寺','Daikaku-ji','antiguo templo imperial con el estanque Osawa, el más antiguo de Japón con forma de jardín — sello goshuin disponible','15-20 min caminando desde el bosque de bambú']
       ] },
     { key: 'd10', num: '10', place: 'Kioto', title: 'El sendero de los diez mil toriis', mealZone: 'kyoto',
       poi: [
         ['🚃','Traslado','Tren a Fushimi Inari','línea JR Nara, ~5 min desde Kioto'],
-        ['社','Templo','Fushimi Inari-Taisha','miles de puertas torii sobre la montaña — sello goshuin disponible',
+        ['社','Santuario','Fushimi Inari-Taisha','miles de puertas torii sobre la montaña — sello goshuin disponible',
           [['Más de 30,000 santuarios hermanos','Existen más de 30,000 santuarios dedicados a Inari en todo Japón, y Fushimi Inari Taisha es el santuario principal de todos ellos.']]],
         ['門','Foto','Senda de los toriis','el recorrido más fotografiado de Kioto',
           [['Cada torii tiene un donante','Cada puerta torii de Fushimi Inari fue donada por una empresa o persona, cuyo nombre queda inscrito en la base como agradecimiento.'],
@@ -852,8 +857,9 @@ const dayData = [
       },
       photos: ['Tren a Fushimi Inari','Fushimi Inari','Senda de toriis','Zorros de piedra','Kinkaku-ji','Estanque del espejo','Jardín de Kinkaku-ji','Kyoto Station de noche','Río Kamo de noche'],
       optional: [
-        ['寺','Ginkaku-ji (Pabellón de Plata)','el \'hermano\' de Kinkaku-ji, jardín de arena zen','20 min en autobús desde Kinkaku-ji'],
-        ['寺','Tofuku-ji','famoso por su puente entre árboles de arce','línea JR Nara, cerca de Fushimi Inari']
+        ['寺','Ginkaku-ji (Pabellón de Plata)','el \'hermano\' de Kinkaku-ji, jardín de arena zen — sello goshuin disponible','20 min en autobús desde Kinkaku-ji'],
+        ['寺','Tofuku-ji','famoso por su puente entre árboles de arce — sello goshuin disponible','línea JR Nara, cerca de Fushimi Inari'],
+        ['寺','To-ji','templo fundador del budismo Shingon, con la pagoda de madera más alta de Japón — sello goshuin disponible','15 min caminando desde Kyoto Station']
       ] },
     { key: 'd11', num: '11', place: 'Hiroshima', title: 'Escapada a Hiroshima y Miyajima', mealZone: 'kyoto',
       poi: [
@@ -877,7 +883,7 @@ const dayData = [
           [['Un santuario construido sobre el agua','Itsukushima se construyó sobre pilotes desde el siglo VI, con su diseño actual establecido en 1168 por orden de Taira no Kiyomori.'],
            ['Solo "flota" a veces','El torii solo parece flotar durante la marea alta; en marea baja se puede caminar hasta la base, sobre el lecho marino expuesto.']]],
         ['鹿','Naturaleza','Ciervos de Miyajima','cientos de ciervos sagrados en libertad — a diferencia de Nara, aquí no se les debe alimentar'],
-        ['寺','Templo','Daisho-in','más de 500 estatuas de Rakan, cada una distinta, a los pies del Monte Misen',
+        ['寺','Templo','Daisho-in','más de 500 estatuas de Rakan, cada una distinta, a los pies del Monte Misen — sello goshuin disponible',
           [['Quinientas estatuas, ninguna igual','Daisho-in alberga más de 500 pequeñas estatuas de Rakan (discípulos de Buda), cada una con una expresión distinta.'],
            ['Una rueda que reemplaza mil lecturas','Al pie de la escalera hay ruedas de oración de metal: girarlas equivale, según la tradición, a leer un sutra completo.']]],
         ['索','Actividad','Teleférico Miyajima','ascenso en dos tramos hacia el Monte Misen'],
@@ -900,7 +906,7 @@ const dayData = [
         ['13:10', 'Tren y ferry a Miyajima — línea JR Sanyo hasta Miyajimaguchi + ferry, ~50 min desde Hiroshima'],
         ['14:00', 'Santuario Itsukushima — el gran torii que "flota" sobre el mar en marea alta — sello goshuin disponible'],
         ['14:50', 'Ciervos de Miyajima — cientos de ciervos sagrados en libertad — a diferencia de Nara, aquí no se les debe alimentar'],
-        ['15:20', 'Daisho-in — más de 500 estatuas de Rakan, cada una distinta, a los pies del Monte Misen'],
+        ['15:20', 'Daisho-in — más de 500 estatuas de Rakan, cada una distinta, a los pies del Monte Misen — sello goshuin disponible'],
         ['16:20', 'Teleférico Miyajima — ascenso en dos tramos hacia el Monte Misen'],
         ['17:00', 'Cima del Monte Misen — vista de 360° del Mar Interior de Seto desde 535m — sitio budista sagrado'],
         ['18:00', 'Momiji manju — el pastelito con forma de hoja de arce, inventado en Miyajima en 1906'],
@@ -982,7 +988,8 @@ const dayData = [
       },
       photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku','Kokyo','Ikebukuro'],
       optional: [
-        ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower','5 min caminando desde Tokyo Tower']
+        ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower — sello goshuin disponible','5 min caminando desde Tokyo Tower'],
+        ['社','Hanazono Shrine','santuario escondido entre los bares de Kabukicho — sello goshuin disponible, visítalo de día antes de las rondas nocturnas','5 min caminando desde el hotel en Shinjuku']
       ] },
     { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku', mealZone: 'shinjuku',
       poi: [
@@ -1020,7 +1027,8 @@ const dayData = [
           [['Capital del retro gaming','Varias tiendas de Akihabara se especializan solo en consolas y videojuegos descontinuados, algunos ya piezas de colección.']]],
         ['🎮','Actividad','Round1','arcade, bowling y purikura — cierre de noche'],
         ['麺','Comida','Ramen nocturno en Akihabara','cierre de noche antes de volver al hotel'],
-        ['店','Recorrido','Segunda vuelta por tiendas de anime','piso por piso, buscando ediciones limitadas']
+        ['店','Recorrido','Segunda vuelta por tiendas de anime','piso por piso, buscando ediciones limitadas'],
+        ['🚃','Traslado','Regreso a Shinjuku','línea JR Chuo/Sobu, ~20-25 min desde Akihabara']
       ],
       steps: [
         ['08:00', 'Tren a Akihabara — línea JR Chuo/Sobu, ~20-25 min desde Shinjuku'],
@@ -1043,15 +1051,17 @@ const dayData = [
         ['19:40', 'Tiendas de videojuegos usados — clásicos de importación y retro'],
         ['20:40', 'Round1 — arcade, bowling y purikura — cierre de noche'],
         ['22:10', 'Ramen nocturno en Akihabara — cierre de noche antes de volver al hotel'],
-        ['23:10', 'Segunda vuelta por tiendas de anime — piso por piso, buscando ediciones limitadas']
+        ['23:10', 'Segunda vuelta por tiendas de anime — piso por piso, buscando ediciones limitadas'],
+        ['23:35', 'Regreso a Shinjuku — línea JR Chuo/Sobu, ~20-25 min desde Akihabara']
       ],
-      route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Odaiba, Tokyo, Japan','Akihabara, Tokyo, Japan'],
+      route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Odaiba, Tokyo, Japan','Akihabara, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
         0: ['Shinjuku Station, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
         3: ['Akihabara Station, Tokyo, Japan','Azabudai Hills, Tokyo, Japan'],
         6: ['Azabudai Hills, Tokyo, Japan','Shimbashi Station, Tokyo, Japan'],
         8: ['Shimbashi Station, Tokyo, Japan','Odaiba, Tokyo, Japan'],
         12: ['Odaiba, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
+        21: ['Akihabara Station, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       },
       photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','teamLab Borderless','Tokyo City View','Hekkelun','Odaiba','Estatua de Gundam','Rainbow Bridge','Arcade retro','Round1','Ramen nocturno Akihabara','BOOKOFF Akihabara'],
       optional: [] },
@@ -1062,7 +1072,7 @@ const dayData = [
         ['🚃','Traslado','Tren a Shijo-mae','Yurikamome, 1 estación desde Shin-Toyosu, ~10 min'],
         ['🎬','Actividad','Mundo Pixar Experience','exhibición inmersiva con más de 24 personajes a tamaño real, CREVIA BASE Tokyo — entrada con horario reservado'],
         ['🚃','Traslado','Tren a Harajuku','Yurikamome + línea JR Yamanote, ~35-40 min desde Shijo-mae'],
-        ['社','Templo','Meiji Jingu','santuario dentro de un bosque urbano — sello goshuin disponible',
+        ['社','Santuario','Meiji Jingu','santuario dentro de un bosque urbano — sello goshuin disponible',
           [['Un torii de ciprés gigante','El gran torii de madera de Meiji Jingu está hecho de ciprés japonés de más de 1,500 años, uno de los más grandes de Japón.']]],
         ['森','Foto','Bosque de Meiji Jingu','100,000 árboles donados de todo Japón',
           [['Un bosque hecho a mano','Los 100,000 árboles del bosque de Meiji Jingu fueron donados y plantados por voluntarios de todo Japón en 1920.'],
@@ -1121,7 +1131,7 @@ const dayData = [
       },
       photos: ['Tren a Toyosu','teamLab Planets','Mundo Pixar Experience','Meiji Jingu','Takeshita-dori','Cruce de Shibuya','Estatua de Hachiko','Shibuya Sky','Crepes de Harajuku','Shibuya de noche'],
       optional: [
-        ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico','10 min en tren desde Harajuku']
+        ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico — sello goshuin disponible','10 min en tren desde Harajuku']
       ] },
     { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'shinjuku',
       poi: [
