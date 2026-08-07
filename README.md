@@ -18,7 +18,7 @@ Si una foto no existe, ese espacio simplemente no se muestra (no rompe nada) —
 | Día | 1.jpg | 2.jpg | 3.jpg | 4.jpg | 5.jpg | 6.jpg |
 |---|---|---|---|---|---|---|
 | **d1** | Aterrizaje en Narita | Narita Express | Llegada a Asakusa | Uniqlo Asakusa | Senso-ji de noche | Kaminarimon iluminada |
-| **d2** | Yodobashi-Akiba | Templo Senso-ji | Goshuincho | Puerta Kaminarimon | Nakamise-dori | Pokémon Café |
+| **d2** | BicCamera Akihabara | Templo Senso-ji | Goshuincho | Puerta Kaminarimon | Nakamise-dori | Pokémon Café |
 | **d3** | Tren a Kamakura | Gran Buda de Kamakura | Komachi-dori | Tsurugaoka Hachimangu | Playa de Yuigahama | Tren Enoden |
 | **d4** | Autobús a Kawaguchiko | Fuji-Q Highland | Fujiyama | Fuji desde Kawaguchiko | Teleférico Kachi Kachi | Mirador Chureito |
 | **d5** | Shinkansen a Osaka | Templo Katsuo-ji | Postal de sellos Katsuo-ji | Neones de Dotonbori | Glico Man | Shinsaibashi-suji |
