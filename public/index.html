@@ -305,7 +305,7 @@ const dayData = [
       ] },
     { key: 'd3', num: '03', place: 'Kamakura', title: 'Kamakura, Enoshima y la bahía de Yokohama', mealZone: 'asakusa',
       poi: [
-        ['🚃','Traslado','Tren a Kamakura','JR Yokosuka Line desde Tokyo Station, ~1h desde Asakusa'],
+        ['🚃','Traslado','Tren a Kamakura','JR Yokosuka Line desde Tokyo Station, ~1h20 desde Asakusa (incluye transbordo)'],
         ['仏','Templo','Templo Kotoku-in','hogar del Gran Buda de bronce al aire libre — sello goshuin disponible',
           [['Un Buda que sobrevivió un tsunami','El Gran Buda estaba originalmente dentro de un templo, pero un tsunami en 1498 arrasó el edificio; la estatua quedó en pie y desde entonces está al aire libre.'],
            ['Un Buda hueco por dentro','El Gran Buda de Kamakura es hueco: se puede entrar a su interior por una módica cuota y ver cómo fue fundido en piezas de bronce.'],
@@ -336,11 +336,11 @@ const dayData = [
         ['食','Comida','Cena en Chinatown de Yokohama','el barrio chino más grande de Japón'],
         ['🍜','Comida','Ramen de madrugada en Yokohama','última parada antes del tren de regreso'],
         ['🍸','Actividad','Bar con vista en Minato Mirai','última copa con los rascacielos iluminados'],
-        ['🚃','Traslado','Regreso a Asakusa','JR Yokosuka Line + línea Ginza, ~1h15'],
+        ['🚃','Traslado','Regreso a Asakusa','JR Yokosuka Line + línea Ginza, ~1h'],
         ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora al llegar al hotel']
       ],
       steps: [
-        ['07:00', 'Tren a Kamakura — JR Yokosuka Line desde Tokyo Station, ~1h desde Asakusa'],
+        ['06:35', 'Tren a Kamakura — JR Yokosuka Line desde Tokyo Station, ~1h20 desde Asakusa (incluye transbordo)'],
         ['08:00', 'Templo Kotoku-in — hogar del Gran Buda de bronce al aire libre — sello goshuin disponible'],
         ['08:50', 'Komachi-dori — calle comercial llena de snacks'],
         ['09:30', 'Tsurugaoka Hachimangu — el santuario más importante de Kamakura — sello goshuin disponible'],
@@ -358,8 +358,8 @@ const dayData = [
         ['18:03', 'Cena en Chinatown de Yokohama — el barrio chino más grande de Japón'],
         ['19:03', 'Ramen de madrugada en Yokohama — última parada antes del tren de regreso'],
         ['19:48', 'Bar con vista en Minato Mirai — última copa con los rascacielos iluminados'],
-        ['20:33', 'Regreso a Asakusa — JR Yokosuka Line + línea Ginza, ~1h15'],
-        ['21:48', 'Konbini nocturno antes de dormir — snacks de última hora al llegar al hotel']
+        ['20:33', 'Regreso a Asakusa — JR Yokosuka Line + línea Ginza, ~1h'],
+        ['21:33', 'Konbini nocturno antes de dormir — snacks de última hora al llegar al hotel']
       ],
       route: ['Kamakura Station, Japan','Kotoku-in Great Buddha, Kamakura, Japan','Komachi-dori, Kamakura, Japan','Tsurugaoka Hachimangu, Kamakura, Japan','Yuigahama Beach, Kamakura, Japan','Hase-dera Temple, Kamakura, Japan','Enoshima Island, Japan','Cosmo Clock 21, Yokohama, Japan','Minato Mirai, Yokohama, Japan','Yokohama Chinatown, Japan'],
       legRoutes: {
@@ -798,7 +798,7 @@ const dayData = [
            ['Símbolos en la boca de los zorros','Muchas estatuas de zorros en Fushimi Inari sostienen una llave, una bola o un rollo, símbolos ligados a la prosperidad.'],
            ['Zorros con distintos símbolos','Cada estatua de zorro en Fushimi Inari sostiene un objeto distinto en la boca, cada uno con un significado propio.']]],
         ['食','Comida','Puestos junto a Fushimi Inari','snacks e inarizushi al pie del monte'],
-        ['🚌','Traslado','Autobús a Kinkaku-ji','autobús urbano, ~45-50 min desde Fushimi Inari'],
+        ['🚌','Traslado','Tren y autobús a Kinkaku-ji','JR hasta Kyoto Station + JR Sagano hasta Enmachi + autobús urbano, ~50-55 min desde Fushimi Inari'],
         ['金','Templo','Kinkaku-ji','el Pabellón Dorado sobre su estanque — sello goshuin disponible',
           [['Un pabellón reconstruido en 1955','Kinkaku-ji fue incendiado intencionalmente en 1950 por un monje; el edificio actual es una reconstrucción fiel de 1955.'],
            ['Pan de oro auténtico','Los dos pisos superiores de Kinkaku-ji están recubiertos con láminas de pan de oro real.']]],
@@ -826,7 +826,7 @@ const dayData = [
         ['09:40', 'Vista desde la cima — panorámica de Kioto entre los toriis'],
         ['10:10', 'Estatuas de zorros — kitsune, mensajeros del dios Inari'],
         ['10:40', 'Puestos junto a Fushimi Inari — snacks e inarizushi al pie del monte'],
-        ['11:10', 'Autobús a Kinkaku-ji — autobús urbano, ~45-50 min desde Fushimi Inari'],
+        ['11:10', 'Tren y autobús a Kinkaku-ji — JR hasta Kyoto Station + JR Sagano hasta Enmachi + autobús urbano, ~50-55 min desde Fushimi Inari'],
         ['11:58', 'Kinkaku-ji — el Pabellón Dorado sobre su estanque — sello goshuin disponible'],
         ['12:48', 'Estanque del espejo — el reflejo perfecto del pabellón'],
         ['13:18', 'Jardín de Kinkaku-ji — paseo tradicional japonés'],
@@ -1004,7 +1004,7 @@ const dayData = [
           [['Torres enteras de gachapon','Akihabara tiene tiendas dedicadas solo a máquinas de cápsulas (gachapon), algunas con cientos de máquinas distintas.'],
            ['Tiendas que ocupan pisos completos','Algunas tiendas de gachapon en Akihabara tienen cientos de máquinas distintas repartidas en varios niveles.'],
            ['Pisos dedicados a una sola franquicia','Algunas tiendas destinan pisos completos a una sola serie, desde figuras coleccionables hasta cartas.']]],
-        ['🚇','Traslado','Tren a Azabudai Hills','línea Hibiya, directo desde Akihabara, ~20 min'],
+        ['🚇','Traslado','Tren a Azabudai Hills','línea Hibiya desde Akihabara + caminata final, ~30 min'],
         ['技','Actividad','teamLab Borderless','arte digital inmersivo, Azabudai Hills — entrada a las 11:00'],
         ['景','Actividad','Tokyo City View (Mori Tower)','mirador de Roppongi Hills, 10 min caminando desde Azabudai Hills',
           [['Vistas hasta el Monte Fuji','En días despejados, desde el piso 52 de Tokyo City View se puede ver el Monte Fuji al oeste de la ciudad.']]],
@@ -1039,7 +1039,7 @@ const dayData = [
         ['08:00', 'Tren a Akihabara — línea JR Yamanote, directo, ~20 min desde Ikebukuro'],
         ['08:20', 'Akihabara — el "Electric Town" de Tokio'],
         ['09:00', 'Tiendas de anime y manga — pisos enteros de figuras y coleccionables'],
-        ['10:20', 'Tren a Azabudai Hills — línea Hibiya, directo desde Akihabara, ~20 min'],
+        ['10:05', 'Tren a Azabudai Hills — línea Hibiya desde Akihabara + caminata final, ~30 min'],
         ['11:00', 'teamLab Borderless — arte digital inmersivo, Azabudai Hills — entrada a las 11:00'],
         ['12:40', 'Tokyo City View (Mori Tower) — mirador de Roppongi Hills, 10 min caminando desde Azabudai Hills'],
         ['13:35', 'Metro a Shimbashi — línea Oedo/Hibiya, ~10 min desde Roppongi'],
@@ -1080,7 +1080,7 @@ const dayData = [
       poi: [
         ['🚃','Traslado','Tren a Toyosu','línea Yurakucho, directo, ~30 min desde Ikebukuro'],
         ['技','Actividad','teamLab Planets','arte digital inmersivo, Toyosu (mañana)'],
-        ['🚃','Traslado','Tren a Shijo-mae','Yurikamome, 1 estación desde Shin-Toyosu, ~10 min'],
+        ['🚃','Traslado','Tren a Shijo-mae','Yurikamome, 1 estación desde Shin-Toyosu, ~5 min'],
         ['🎬','Actividad','Mundo Pixar Experience','exhibición inmersiva con más de 24 personajes a tamaño real, CREVIA BASE Tokyo — entrada con horario reservado'],
         ['🚃','Traslado','Tren a Harajuku','Yurikamome hasta Shimbashi + línea JR Yamanote, ~55-60 min desde Shijo-mae'],
         ['社','Santuario','Meiji Jingu','santuario dentro de un bosque urbano — sello goshuin disponible',
@@ -1115,7 +1115,7 @@ const dayData = [
       steps: [
         ['10:27', 'Tren a Toyosu — línea Yurakucho, directo, ~30 min desde Ikebukuro'],
         ['11:00', 'teamLab Planets — arte digital inmersivo, Toyosu (mañana)'],
-        ['12:40', 'Tren a Shijo-mae — Yurikamome, 1 estación desde Shin-Toyosu, ~10 min'],
+        ['12:40', 'Tren a Shijo-mae — Yurikamome, 1 estación desde Shin-Toyosu, ~5 min'],
         ['12:50', 'Mundo Pixar Experience — exhibición inmersiva con más de 24 personajes a tamaño real, CREVIA BASE Tokyo — entrada con horario reservado'],
         ['13:40', 'Tren a Harajuku — Yurikamome hasta Shimbashi + línea JR Yamanote, ~55-60 min desde Shijo-mae'],
         ['14:35', 'Meiji Jingu — santuario dentro de un bosque urbano — sello goshuin disponible'],
@@ -1146,10 +1146,8 @@ const dayData = [
       ] },
     { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'ikebukuro',
       poi: [
-        ['🚃','Traslado','Tren a Mitaka','línea JR Yamanote + Chuo Rapid (transbordo en Shinjuku) + bus comunitario hasta el museo, ~50 min desde Ikebukuro en total'],
-        ['🎨','Actividad','Museo Ghibli','Mitaka, reserva de horario fijo (mañana)'],
-        ['🚌','Traslado','Autobús a Chofu','bus directo (línea 65) desde la parada 3, salida sur de Mitaka, ~25 min'],
-        ['寺','Templo','Templo Jindaiji','Chofu, soba tradicional, cerca de Mitaka — sello goshuin disponible'],
+        ['🚃','Traslado','Tren a Chofu','línea JR Yamanote + Keio (transbordo en Shinjuku), ~40 min desde Ikebukuro'],
+        ['寺','Templo','Templo Jindaiji','Chofu, soba tradicional — sello goshuin disponible'],
         ['購','Actividad','Últimas compras','souvenirs pendientes en Ikebukuro o Shibuya'],
         ['景','Recorrido','Revisitar tu lugar favorito','volver a un sitio que te haya encantado del viaje',
           [['Un día pensado para respirar','Después de 14 días de actividades, este día libre está pensado para no correr — ya no hay pendientes por tachar.'],
@@ -1168,10 +1166,8 @@ const dayData = [
         ['灯','Recorrido','Paseo final sin rumbo por Ikebukuro','despedida sin prisa, a donde los pies lleven']
       ],
       steps: [
-        ['09:00', 'Tren a Mitaka — línea JR Yamanote + Chuo Rapid (transbordo en Shinjuku) + bus comunitario hasta el museo, ~50 min desde Ikebukuro en total'],
-        ['10:00', 'Museo Ghibli — Mitaka, reserva de horario fijo (mañana)'],
-        ['12:00', 'Autobús a Chofu — bus directo (línea 65) desde la parada 3, salida sur de Mitaka, ~25 min'],
-        ['12:25', 'Templo Jindaiji — Chofu, soba tradicional, cerca de Mitaka — sello goshuin disponible'],
+        ['09:30', 'Tren a Chofu — línea JR Yamanote + Keio (transbordo en Shinjuku), ~40 min desde Ikebukuro'],
+        ['10:10', 'Templo Jindaiji — Chofu, soba tradicional — sello goshuin disponible'],
         ['13:15', 'Últimas compras — souvenirs pendientes en Ikebukuro o Shibuya'],
         ['14:05', 'Revisitar tu lugar favorito — volver a un sitio que te haya encantado del viaje'],
         ['14:45', 'Última comida favorita — el platillo que más te gustó, una vez más'],
@@ -1186,12 +1182,11 @@ const dayData = [
         ['21:10', 'Última copa tranquila cerca del hotel — brindis de cierre de viaje, sin prisa'],
         ['21:50', 'Paseo final sin rumbo por Ikebukuro — despedida sin prisa, a donde los pies lleven']
       ],
-      route: ['Ikebukuro Station, Tokyo, Japan','Ghibli Museum, Mitaka, Japan','Jindaiji Temple, Chofu, Japan','Ikebukuro Station, Tokyo, Japan'],
+      route: ['Ikebukuro Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan','Ikebukuro Station, Tokyo, Japan'],
       legRoutes: {
-        0: ['Ikebukuro Station, Tokyo, Japan','Mitaka Station, Tokyo, Japan'],
-        2: ['Mitaka Station, Tokyo, Japan','Jindaiji Temple, Chofu, Tokyo, Japan'],
+        0: ['Ikebukuro Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan'],
       },
-      photos: ['Tren a Mitaka','Museo Ghibli','Templo Jindaiji','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
+      photos: ['Tren a Chofu','Templo Jindaiji','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
       optional: [] },
     { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'ikebukuro',
       poi: [
@@ -1507,7 +1502,6 @@ const KNOWN_PLACES = {
   'Enoshima Island, Japan': [139.4803, 35.2989],
   'Fuji-Q Highland, Fujiyoshida, Japan': [138.7998, 35.4877],
   'Fushimi Inari Taisha, Kyoto, Japan': [135.7727, 34.9671],
-  'Ghibli Museum, Mitaka, Japan': [139.5704, 35.6962],
   'Gion Corner, Kyoto, Japan': [135.7751, 35.0021],
   'Gion, Kyoto, Japan': [135.7753, 35.0037],
   'Golden Gai, Tokyo, Japan': [139.7038, 35.6938],

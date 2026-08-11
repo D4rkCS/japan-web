@@ -17,7 +17,7 @@ Si una foto no existe, ese espacio simplemente no se muestra (no rompe nada) —
 
 | Día | 1.jpg | 2.jpg | 3.jpg | 4.jpg | 5.jpg | 6.jpg |
 |---|---|---|---|---|---|---|
-| **d1** | Aterrizaje en Narita | Narita Express | Llegada a Asakusa | Uniqlo Asakusa | Senso-ji de noche | Kaminarimon iluminada |
+| **d1** | Aterrizaje en Narita | Keisei Access Express | Llegada a Asakusa | Uniqlo Asakusa | Senso-ji de noche | Kaminarimon iluminada |
 | **d2** | BicCamera Akihabara | Templo Senso-ji | Goshuincho | Puerta Kaminarimon | Nakamise-dori | Pokémon Café |
 | **d3** | Tren a Kamakura | Gran Buda de Kamakura | Komachi-dori | Tsurugaoka Hachimangu | Playa de Yuigahama | Tren Enoden |
 | **d4** | Autobús a Kawaguchiko | Fuji-Q Highland | Fujiyama | Fuji desde Kawaguchiko | Teleférico Kachi Kachi | Mirador Chureito |
@@ -31,7 +31,7 @@ Si una foto no existe, ese espacio simplemente no se muestra (no rompe nada) —
 | **d12** | Shinkansen a Tokio | Museo Snoopy | PEANUTS Café | Omoide Yokocho | Gato gigante LED | Golden Gai |
 | **d13** | Tren a Akihabara | Akihabara | Tiendas de anime | Arcade retro | teamLab Borderless | Odaiba |
 | **d14** | Tren a Toyosu | teamLab Planets | Meiji Jingu | Takeshita-dori | Cruce de Shibuya | Estatua de Hachiko |
-| **d15** | Tren a Mitaka | Museo Ghibli | Templo Jindaiji | Última compra | Lugar favorito revisitado | Última cena japonesa |
+| **d15** | Tren a Chofu | Templo Jindaiji | Última compra | Lugar favorito revisitado | Última cena japonesa |
 | **d16** | Último desayuno | Check-out del hotel | Narita Express | Terminal del aeropuerto | Duty-free | Onigiri de despedida |
 
 Ejemplo: para poner tu foto del Gran Buda de Kamakura, guárdala como `public/images/d3/2.jpg`.
