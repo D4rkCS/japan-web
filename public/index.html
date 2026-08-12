@@ -441,9 +441,9 @@ const dayData = [
         ['鞄','Traslado','Check-out en Asakusa','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Shinkansen a Osaka','Tokaido Shinkansen (Nozomi/Hikari), ~2h30, Tokio → Shin-Osaka'],
         ['宿','Traslado','Check-in en Osaka','llegada al hotel en Hommachi'],
-        ['🚌','Traslado','Bus a Katsuo-ji','Midosuji hasta Minoh-Kayano (~35 min) + bus Hankyu (~20 min), ~55 min desde Osaka'],
+        ['🚌','Traslado','Bus a Katsuo-ji','Chuo/Sakaisuji hasta Hommachi (~8 min) + Midosuji hasta Minoh-Kayano (~35 min) + bus Hankyu (~20 min), ~65 min desde el hotel'],
         ['寺','Templo','Templo Katsuo-ji','el templo de los daruma — recorres puntos de sello para armar tu propia postal personalizada — sello goshuin disponible'],
-        ['🚌','Traslado','Regreso a Osaka','~55 min de vuelta a la ciudad'],
+        ['🚌','Traslado','Regreso a Osaka','~65 min de vuelta al hotel, mismo camino en reversa'],
         ['道','Recorrido','Canal Dotonbori','primer vistazo al canal de día, antes de volver de noche',
           [['La ciudad de los comerciantes','Durante el periodo Edo, Osaka concentraba la mayor bolsa de arroz de Japón, considerada uno de los primeros mercados de futuros del mundo.'],
            ['Más puentes que Venecia','Osaka tiene más de 800 puentes sobre sus canales, herencia de su historia como centro de comercio fluvial.'],
@@ -468,31 +468,29 @@ const dayData = [
         ['食','Comida','Okonomiyaki','panqueque salado a la plancha'],
         ['灯','Foto','Hozenji Yokocho','callejón de piedra con templo cubierto de musgo'],
         ['購','Actividad','America-mura','moda urbana y tiendas vintage'],
-        ['🕹','Actividad','Arcade en Dotonbori','máquinas y UFO catchers hasta tarde'],
-        ['📸','Recorrido','Purikura con amigos','fotos instantáneas estilo japonés']
+        ['🚇','Traslado','Regreso al hotel','línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min — último tren ~00:25']
       ],
       steps: [
         ['09:00', 'Check-out en Asakusa — equipaje listo, salida del hotel'],
         ['09:20', 'Shinkansen a Osaka — Tokaido Shinkansen (Nozomi/Hikari), ~2h30, Tokio → Shin-Osaka'],
         ['11:50', 'Check-in en Osaka — llegada al hotel en Hommachi'],
-        ['12:10', 'Bus a Katsuo-ji — Midosuji hasta Minoh-Kayano (~35 min) + bus Hankyu (~20 min), ~55 min desde Osaka'],
-        ['13:05', 'Templo Katsuo-ji — el templo de los daruma — recorres puntos de sello para armar tu propia postal personalizada — sello goshuin disponible'],
-        ['14:55', 'Regreso a Osaka — ~55 min de vuelta a la ciudad'],
-        ['15:50', 'Canal Dotonbori — primer vistazo al canal de día, antes de volver de noche'],
-        ['16:25', 'Shinsaibashi-suji — arcada de compras techada, 600m'],
-        ['17:10', 'Santuario Namba Yasaka — escenario con forma de cabeza de león — sello goshuin disponible'],
-        ['17:40', 'Tren a Umeda — línea Midosuji, ~15 min desde Namba'],
-        ['17:55', 'Umeda Sky Building — mirador flotante entre dos torres, vista al atardecer y de noche sobre Osaka'],
-        ['18:50', 'Regreso a Namba — línea Midosuji, ~15 min'],
-        ['19:05', 'Mercado Kuromon Ichiba — "la cocina de Osaka" — wagyu, fruta y bocados callejeros para probar de pie'],
-        ['19:50', 'Glico Man — el letrero más fotografiado de Osaka, iluminado de noche'],
-        ['20:10', 'Crucero por Dotonbori — el canal desde el agua, al anochecer'],
-        ['20:40', 'Takoyaki callejero — bolitas de pulpo, receta local desde 1935'],
-        ['21:20', 'Okonomiyaki — panqueque salado a la plancha'],
-        ['22:15', 'Hozenji Yokocho — callejón de piedra con templo cubierto de musgo'],
-        ['22:45', 'America-mura — moda urbana y tiendas vintage'],
-        ['23:25', 'Arcade en Dotonbori — máquinas y UFO catchers hasta tarde'],
-        ['00:15', 'Purikura con amigos — fotos instantáneas estilo japonés']
+        ['12:10', 'Bus a Katsuo-ji — Chuo/Sakaisuji hasta Hommachi (~8 min) + Midosuji hasta Minoh-Kayano (~35 min) + bus Hankyu (~20 min), ~65 min desde el hotel'],
+        ['13:15', 'Templo Katsuo-ji — el templo de los daruma — recorres puntos de sello para armar tu propia postal personalizada — sello goshuin disponible'],
+        ['15:05', 'Regreso a Osaka — ~65 min de vuelta al hotel, mismo camino en reversa'],
+        ['16:10', 'Canal Dotonbori — primer vistazo al canal de día, antes de volver de noche'],
+        ['16:45', 'Shinsaibashi-suji — arcada de compras techada, 600m'],
+        ['17:30', 'Santuario Namba Yasaka — escenario con forma de cabeza de león — sello goshuin disponible'],
+        ['18:00', 'Tren a Umeda — línea Midosuji, ~15 min desde Namba'],
+        ['18:15', 'Umeda Sky Building — mirador flotante entre dos torres, vista al atardecer y de noche sobre Osaka'],
+        ['19:10', 'Regreso a Namba — línea Midosuji, ~15 min'],
+        ['19:25', 'Mercado Kuromon Ichiba — "la cocina de Osaka" — wagyu, fruta y bocados callejeros para probar de pie'],
+        ['20:10', 'Glico Man — el letrero más fotografiado de Osaka, iluminado de noche'],
+        ['20:30', 'Crucero por Dotonbori — el canal desde el agua, al anochecer'],
+        ['21:00', 'Takoyaki callejero — bolitas de pulpo, receta local desde 1935'],
+        ['21:40', 'Okonomiyaki — panqueque salado a la plancha'],
+        ['22:35', 'Hozenji Yokocho — callejón de piedra con templo cubierto de musgo'],
+        ['23:05', 'America-mura — moda urbana y tiendas vintage'],
+        ['23:45', 'Regreso al hotel — línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min — último tren ~00:25']
       ],
       route: ['Asakusa, Tokyo, Japan','Shin-Osaka Station, Japan','Katsuo-ji Temple, Minoh, Japan','Dotonbori, Osaka, Japan','Shinsaibashi-suji, Osaka, Japan','Namba Yasaka Shrine, Osaka, Japan','Umeda Sky Building, Osaka, Japan','Kuromon Ichiba Market, Osaka, Japan','Hozenji Yokocho, Osaka, Japan'],
       legRoutes: {
@@ -508,6 +506,7 @@ const dayData = [
       ] },
     { key: 'd6', num: '06', place: 'Osaka', title: 'Nara y el Castillo de Osaka', mealZone: 'namba',
       poi: [
+        ['🚇','Traslado','Traslado a Namba','línea Sakaisuji hasta Nipponbashi + caminata de conexión, ~20-25 min desde el hotel'],
         ['🚃','Traslado','Tren a Nara','línea JR o Kintetsu desde Namba, ~45-50 min'],
         ['鹿','Naturaleza','Parque de Nara','cientos de venados sagrados en libertad'],
         ['寺','Templo','Todai-ji','alberga el Gran Buda de bronce más grande de Japón — sello goshuin disponible'],
@@ -539,9 +538,11 @@ const dayData = [
         ['🎮','Actividad','Round1 Namba','arcade, bowling y karaoke, abierto 24h'],
         ['📸','Recorrido','Purikura en Namba','fotos instantáneas estilo japonés'],
         ['道','Recorrido','Último paseo nocturno por Dotonbori','últimas luces antes de dejar Osaka mañana'],
-        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora'],
+        ['🚇','Traslado','Regreso al hotel','línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min']
       ],
       steps: [
+        ['05:45', 'Traslado a Namba — línea Sakaisuji hasta Nipponbashi + caminata de conexión, ~20-25 min desde el hotel'],
         ['06:10', 'Tren a Nara — línea JR o Kintetsu desde Namba, ~45-50 min'],
         ['07:00', 'Parque de Nara — cientos de venados sagrados en libertad'],
         ['08:00', 'Todai-ji — alberga el Gran Buda de bronce más grande de Japón — sello goshuin disponible'],
@@ -560,12 +561,13 @@ const dayData = [
         ['18:30', 'Round1 Namba — arcade, bowling y karaoke, abierto 24h'],
         ['19:20', 'Purikura en Namba — fotos instantáneas estilo japonés'],
         ['19:50', 'Último paseo nocturno por Dotonbori — últimas luces antes de dejar Osaka mañana'],
-        ['20:20', 'Konbini nocturno antes de dormir — snacks de última hora']
+        ['20:20', 'Konbini nocturno antes de dormir — snacks de última hora'],
+        ['20:35', 'Regreso al hotel — línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min']
       ],
       route: ['Namba Station, Osaka, Japan','Nara Park, Japan','Todai-ji Temple, Nara, Japan','Kasuga Taisha, Nara, Japan','Kofuku-ji Temple, Nara, Japan','Nakatanidou, Nara, Japan','Osaka Castle, Japan','Shinsekai, Osaka, Japan','Dotonbori, Osaka, Japan'],
       legRoutes: {
-        0: ['Namba Station, Osaka, Japan','Nara Park, Japan'],
-        6: ['Nara Park, Japan','Namba Station, Osaka, Japan'],
+        1: ['Namba Station, Osaka, Japan','Nara Park, Japan'],
+        7: ['Nara Park, Japan','Namba Station, Osaka, Japan'],
       },
       photos: ['Venados de Nara','Todai-ji','Kasuga Taisha','Mochi de Nakatanidou','Castillo de Osaka','Shinsekai de noche'],
       optional: [
@@ -573,6 +575,7 @@ const dayData = [
       ] },
     { key: 'd7', num: '07', place: 'Osaka', title: 'Un día de película en Universal Studios Japan', mealZone: 'namba',
       poi: [
+        ['🚇','Traslado','Traslado a Namba','línea Sakaisuji hasta Nipponbashi + caminata de conexión, ~20-25 min desde el hotel'],
         ['🚃','Traslado','Tren a USJ','línea JR Yumesaki (vía Nishikujo) desde Namba, ~20 min'],
         ['界','Actividad','Super Nintendo World','Mario Kart con visor de realidad aumentada',
           [['Realidad aumentada sobre ruedas','Mario Kart: Koopa\'s Challenge usa visores de RA para mostrar monedas y obstáculos virtuales sobre el recorrido real.'],
@@ -604,9 +607,11 @@ const dayData = [
         ['🕹','Actividad','Segunda vuelta de arcade en CityWalk','más rondas antes de volver al hotel'],
         ['🚃','Traslado','Regreso a Namba','línea JR Yumesaki, ~20 min'],
         ['🍜','Comida','Ramen de madrugada en Namba','última parada antes de dormir'],
-        ['購','Recorrido','Compras nocturnas en Don Quijote Namba','abierto 24h']
+        ['購','Recorrido','Compras nocturnas en Don Quijote Namba','abierto 24h'],
+        ['🚇','Traslado','Regreso al hotel','línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min']
       ],
       steps: [
+        ['08:05', 'Traslado a Namba — línea Sakaisuji hasta Nipponbashi + caminata de conexión, ~20-25 min desde el hotel'],
         ['08:30', 'Tren a USJ — línea JR Yumesaki (vía Nishikujo) desde Namba, ~20 min'],
         ['08:50', 'Super Nintendo World — Mario Kart con visor de realidad aumentada'],
         ['09:40', 'Mundo de Harry Potter — Hogsmeade y el castillo de Hogwarts'],
@@ -625,12 +630,13 @@ const dayData = [
         ['20:40', 'Segunda vuelta de arcade en CityWalk — más rondas antes de volver al hotel'],
         ['21:30', 'Regreso a Namba — línea JR Yumesaki, ~20 min'],
         ['21:50', 'Ramen de madrugada en Namba — última parada antes de dormir'],
-        ['22:20', 'Compras nocturnas en Don Quijote Namba — abierto 24h']
+        ['22:20', 'Compras nocturnas en Don Quijote Namba — abierto 24h'],
+        ['22:50', 'Regreso al hotel — línea Sakaisuji desde Nipponbashi + caminata, ~20-25 min']
       ],
       route: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan','Universal CityWalk Osaka, Japan','Namba Station, Osaka, Japan'],
       legRoutes: {
-        0: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan'],
-        16: ['Universal Studios Japan, Osaka, Japan','Namba Station, Osaka, Japan'],
+        1: ['Namba Station, Osaka, Japan','Universal Studios Japan, Osaka, Japan'],
+        17: ['Universal Studios Japan, Osaka, Japan','Namba Station, Osaka, Japan'],
       },
       photos: ['Tren a USJ','Super Nintendo World','Mundo de Harry Potter','Jurassic Park The Ride','Minion Park','CityWalk','Universal Wonderland','Castillo iluminado de noche'],
       optional: [] },
