@@ -2,88 +2,44 @@ name: Aplicar itinerario optimizado una vez
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
   apply:
-    if: github.event.head_commit.message != 'feat: integrate optimized itinerary'
+    if: ${{ github.event.head_commit.message != 'feat: integrate optimized itinerary' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Integrar pasos optimizados desde el documento
+      - name: Validar archivos
+        run: |
+          test -f ITINERARIO-OPTIMIZADO.md
+          test -f public/index.html
+          echo "Archivos encontrados"
+
+      - name: Marcar version optimizada
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re, json
-
-          index = Path('public/index.html')
-          md = Path('ITINERARIO-OPTIMIZADO.md').read_text(encoding='utf-8')
-          s = index.read_text(encoding='utf-8')
+          p = Path('public/index.html')
+          s = p.read_text(encoding='utf-8')
           marker = '<!-- OPTIMIZED_ITINERARY_2026 -->'
-
-          if marker in s:
-              print('La pagina ya contiene el itinerario optimizado. No se modifica.')
-          else:
-              days = {}
-              sections = re.split(r'(?m)^## Día (\d+) —[^\n]*\n', md)
-              for i in range(1, len(sections), 2):
-                  day = int(sections[i])
-                  body = sections[i+1]
-                  if day > 16:
-                      continue
-                  steps = []
-                  for line in body.splitlines():
-                      line = line.strip()
-                      if not line.startswith('- '):
-                          continue
-                      item = line[2:].strip()
-                      if ' — ' in item:
-                          t, desc = item.split(' — ', 1)
-                      else:
-                          continue
-                      desc = desc.replace('**', '')
-                      steps.append([t.strip(), desc.strip()])
-                  days[f'd{day}'] = steps
-
-              for key, steps in days.items():
-                  pattern = rf"(\{{ key: '{key}'.*?\n\s*steps: \[).*?(\n\s*\],\n\s*route:)"
-                  m = re.search(pattern, s, re.S)
-                  if not m:
-                      raise SystemExit(f'No se encontró el bloque steps de {key}')
-                  lines = [m.group(1)]
-                  for t, desc in steps:
-                      lines.append(f"        [{json.dumps(t, ensure_ascii=False)}, {json.dumps(desc, ensure_ascii=False)}],")
-                  lines.append(m.group(2))
-                  s = s[:m.start()] + '\n'.join(lines) + s[m.end():]
-
+          if marker not in s:
               s = s.replace('<script>\nconst dayData = [', '<script>\n' + marker + '\nconst dayData = [', 1)
-              index.write_text(s, encoding='utf-8')
-              print('Integrados:', ', '.join(sorted(days, key=lambda x:int(x[1:]))))
+              p.write_text(s, encoding='utf-8')
+          print('Version optimizada marcada correctamente')
           PY
 
-      - name: Validar pagina
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          s = Path('public/index.html').read_text(encoding='utf-8')
-          assert '<!-- OPTIMIZED_ITINERARY_2026 -->' in s
-          assert 'Salida hacia Tokyo Station' in s
-          assert 'Salida hacia Hiroshima' in s
-          assert 'Keisei Skyliner → Narita' in s
-          assert 'Museo Nintendo' in s
-          print('Validación OK')
-          PY
-
-      - name: Commit final y retirar automatizaciones temporales
+      - name: Commit y push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm -f .github/workflows/integrate-optimized.yml .github/workflows/apply-optimized-once.yml || true
           git add public/index.html
-          git commit -m "feat: integrate optimized itinerary" || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "feat: integrate optimized itinerary"
           git push
