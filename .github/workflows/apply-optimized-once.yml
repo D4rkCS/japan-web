@@ -72,10 +72,10 @@ jobs:
           from pathlib import Path
           s = Path('public/index.html').read_text(encoding='utf-8')
           assert '<!-- OPTIMIZED_ITINERARY_2026 -->' in s
-          assert 'Salida de Asakusa' in s
-          assert 'Salida Kioto → Hiroshima' in s
-          assert 'Keisei Skyliner desde Nippori/Ueno' in s
-          assert 'Museo Nintendo — entrada con horario fijo' in s
+          assert 'Salida hacia Tokyo Station' in s
+          assert 'Salida hacia Hiroshima' in s
+          assert 'Keisei Skyliner → Narita' in s
+          assert 'Museo Nintendo' in s
           print('Validación OK')
           PY
 
