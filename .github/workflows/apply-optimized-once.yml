@@ -151,10 +151,10 @@ jobs:
           }
 
           def replace_steps_for_day(src, day, steps):
-              marker = re.search(r"\{\s*key:\s*'d%d'\b" % day, src)
+              marker = re.search(r"\{\s*key:\s*'d%d'" % day, src)
               if not marker:
                   raise SystemExit(f'No se encontró d{day}')
-              block_end = re.search(r"\n\s*\{\s*key:\s*'d\d+'\b", src[marker.end():])
+              block_end = re.search(r"\n\s*\{\s*key:\s*'d\d+'", src[marker.end():])
               end = marker.end() + block_end.start() if block_end else src.find('\n];', marker.end())
               block = src[marker.start():end]
               m = re.search(r"\bsteps:\s*\[", block)
