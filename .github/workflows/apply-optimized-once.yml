@@ -10,30 +10,215 @@ permissions:
 
 jobs:
   apply:
-    if: ${{ github.event.head_commit.message != 'feat: integrate optimized itinerary' }}
+    if: ${{ github.event.head_commit.message != 'feat: apply optimized itinerary' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validar archivos
+      - name: Aplicar horarios optimizados
+        shell: python
         run: |
-          test -f ITINERARIO-OPTIMIZADO.md
-          test -f public/index.html
-          echo "Archivos encontrados"
-
-      - name: Marcar version optimizada
-        run: |
-          python - <<'PY'
           from pathlib import Path
-          p = Path('public/index.html')
-          s = p.read_text(encoding='utf-8')
+          import json
+          import re
+
+          path = Path('public/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          optimized = {
+            3: [
+              ['06:30', 'Salida de Asakusa hacia Kamakura'],
+              ['08:00', 'Llegada a Kamakura'],
+              ['08:15–09:15', 'Kotoku-in / Gran Buda'],
+              ['09:30–10:30', 'Hase-dera'],
+              ['10:45–12:00', 'Tsurugaoka Hachimangu'],
+              ['12:00–13:00', 'Komachi-dori + comida'],
+              ['13:00–13:30', 'Yuigahama / traslado'],
+              ['13:30–14:00', 'Enoden hacia Enoshima'],
+              ['14:00–17:00', 'Enoshima, santuario y miradores'],
+              ['17:30/18:00', 'Traslado a Yokohama'],
+              ['18:30–20:30', 'Minato Mirai + Cosmo Clock + Chinatown'],
+              ['20:30/21:00', 'Regreso a Asakusa'],
+            ],
+            4: [
+              ['06:15', 'Salida hacia Shinjuku'],
+              ['07:00', 'Bus a Kawaguchiko/Fuji-Q'],
+              ['09:00–14:00', 'Fuji-Q Highland — priorizar las atracciones que realmente quieran hacer'],
+              ['14:00', 'Traslado a Kawaguchiko'],
+              ['14:30–15:30', 'Lago Kawaguchiko / Oishi Park'],
+              ['15:45–16:45', 'Kachi Kachi Ropeway si las condiciones son buenas'],
+              ['17:00', 'Regreso hacia la zona de la estación'],
+              ['17:30', 'Hoto'],
+              ['18:30/19:00', 'Regreso a Tokio'],
+            ],
+            5: [
+              ['07:30', 'Desayuno y preparación'],
+              ['08:00', 'Check-out'],
+              ['08:15', 'Salida hacia Tokyo Station'],
+              ['09:00 aprox.', 'Shinkansen a Shin-Osaka'],
+              ['11:30–12:00', 'Llegada a Shin-Osaka'],
+              ['12:00', 'Traslado a Katsuo-ji'],
+              ['13:00–14:30', 'Katsuo-ji'],
+              ['15:30', 'Llegada/check-in en Osaka'],
+              ['16:30', 'Namba / Dotonbori / Shinsaibashi'],
+              ['18:30', 'Umeda Sky Building si tienen energía y el clima acompaña'],
+              ['20:00', 'Kuromon / Dotonbori'],
+              ['21:00', 'Glico + crucero Dotonbori si tienen reserva'],
+              ['22:00', 'Cena y regreso'],
+            ],
+            6: [
+              ['06:00', 'Salida hacia Nara'],
+              ['07:00', 'Nara Park'],
+              ['08:00', 'Todai-ji'],
+              ['09:15', 'Kasuga Taisha'],
+              ['10:15', 'Kofuku-ji si el ritmo lo permite'],
+              ['11:00', 'Nakatanidou / comida'],
+              ['12:00', 'Regreso a Osaka'],
+              ['13:00–14:30', 'Castillo de Osaka y jardines'],
+              ['15:00', 'Shinsekai'],
+              ['16:30', 'Dotonbori / Shinsaibashi'],
+              ['Noche', 'Cena, compras y Round1 opcional'],
+            ],
+            9: [
+              ['07:00', 'Arashiyama'],
+              ['07:15–08:15', 'Bamboo Forest'],
+              ['08:15–09:15', 'Tenryu-ji'],
+              ['09:30', 'Togetsukyo'],
+              ['10:00–11:00', 'Otagi Nenbutsu-ji'],
+              ['11:15–12:45', 'Iwatayama Monkey Park'],
+              ['13:00', 'Comida en Arashiyama'],
+              ['13:45', 'Salida hacia Kioto/Uji'],
+              ['14:45/15:00', 'Llegada a la zona del museo'],
+              ['16:00', 'Museo Nintendo'],
+              ['Hasta el cierre', 'Museo + tienda/café'],
+              ['Noche', 'Regreso a Kioto'],
+            ],
+            11: [
+              ['06:30', 'Salida hacia Hiroshima'],
+              ['08:15', 'Genbaku Dome'],
+              ['08:45', 'Peace Memorial Park'],
+              ['09:30', 'Peace Memorial Museum'],
+              ['11:15', 'Hiroshima Castle / exterior y parque'],
+              ['12:00', 'Comida / okonomiyaki'],
+              ['13:00', 'Tren + ferry a Miyajima'],
+              ['14:00', 'Itsukushima Shrine'],
+              ['15:00', 'Omotesando + momiji manju'],
+              ['15:45', 'Daisho-in'],
+              ['17:00', 'Paseo por Miyajima / marea / fotos'],
+              ['18:00', 'Regreso a Hiroshima'],
+              ['19:00', 'Cena'],
+              ['20:30/21:00', 'Shinkansen a Kioto'],
+            ],
+            12: [
+              ['07:30', 'Desayuno'],
+              ['08:00', 'Check-out'],
+              ['08:30/09:00', 'Shinkansen Kioto → Tokio'],
+              ['11:00', 'Palacio Imperial / zona exterior'],
+              ['12:00', 'Traslado a Machida'],
+              ['13:00', 'Snoopy Museum'],
+              ['14:30', 'PEANUTS Café si la reserva encaja'],
+              ['15:30', 'Regreso a Tokio'],
+              ['16:30', 'Check-in en el hotel de Tokio'],
+              ['17:30', 'Sunshine City/Ikebukuro si siguen con energía'],
+              ['19:00', 'Shinjuku'],
+              ['19:30', 'Omoide Yokocho'],
+              ['20:15', 'Kabukicho / gato 3D'],
+              ['21:00', 'Golden Gai'],
+              ['22:00', 'Regreso al hotel'],
+            ],
+            14: [
+              ['Mañana', 'teamLab Planets, según hora reservada'],
+              ['12:00', 'Mundo Pixar, según hora reservada'],
+              ['14:00', 'Traslado a Harajuku'],
+              ['14:45', 'Meiji Jingu'],
+              ['16:00', 'Takeshita-dori'],
+              ['17:00', 'Harajuku → Shibuya'],
+              ['18:00', 'Shibuya Crossing / Hachiko'],
+              ['18:30', 'Shibuya Sky, según reserva'],
+              ['20:00', 'Cena en Shibuya'],
+              ['Noche', 'Compras / regreso'],
+            ],
+            16: [
+              ['06:00', 'Desayuno y preparación del equipaje'],
+              ['06:30', 'Check-out y salida del hotel'],
+              ['06:45', 'Keisei Skyliner → Narita si el hotel está en Nippori/Ueno'],
+              ['07:30/08:00', 'Llegada prevista a Narita'],
+              ['08:00–08:30', 'Objetivo: estar ya en la terminal con margen'],
+              ['08:30–10:30', 'Check-in → seguridad → migración → duty-free → puerta'],
+              ['11:30', 'Vuelo Narita → Houston'],
+            ],
+          }
+
+          def replace_steps_for_day(src, day, steps):
+              marker = re.search(r"\{\s*key:\s*'d%d'\b" % day, src)
+              if not marker:
+                  raise SystemExit(f'No se encontró d{day}')
+              block_end = re.search(r"\n\s*\{\s*key:\s*'d\d+'\b", src[marker.end():])
+              end = marker.end() + block_end.start() if block_end else src.find('\n];', marker.end())
+              block = src[marker.start():end]
+              m = re.search(r"\bsteps:\s*\[", block)
+              if not m:
+                  raise SystemExit(f'No se encontró steps de d{day}')
+              start = m.end() - 1
+              depth = 0
+              quote = None
+              escape = False
+              close = None
+              for i in range(start, len(block)):
+                  ch = block[i]
+                  if quote:
+                      if escape:
+                          escape = False
+                      elif ch == '\\':
+                          escape = True
+                      elif ch == quote:
+                          quote = None
+                      continue
+                  if ch in "'\"`":
+                      quote = ch
+                  elif ch == '[':
+                      depth += 1
+                  elif ch == ']':
+                      depth -= 1
+                      if depth == 0:
+                          close = i
+                          break
+              if close is None:
+                  raise SystemExit(f'No se pudo cerrar steps de d{day}')
+              indent = '        '
+              rendered = 'steps: [\n' + ''.join(
+                  indent + json.dumps([t, desc], ensure_ascii=False) + ',\n'
+                  for t, desc in steps
+              ) + '      ]'
+              new_block = block[:m.start()] + rendered + block[close+1:]
+              return src[:marker.start()] + new_block + src[end:]
+
+          for day, steps in optimized.items():
+              text = replace_steps_for_day(text, day, steps)
+
           marker = '<!-- OPTIMIZED_ITINERARY_2026 -->'
-          if marker not in s:
-              s = s.replace('<script>\nconst dayData = [', '<script>\n' + marker + '\nconst dayData = [', 1)
-              p.write_text(s, encoding='utf-8')
-          print('Version optimizada marcada correctamente')
-          PY
+          if marker not in text:
+              text = text.replace('<script>\nconst dayData = [', '<script>\n' + marker + '\nconst dayData = [', 1)
+
+          path.write_text(text, encoding='utf-8')
+          print('Días optimizados:', ', '.join(f'd{d}' for d in optimized))
+
+      - name: Validar resultado
+        shell: python
+        run: |
+          from pathlib import Path
+          s = Path('public/index.html').read_text(encoding='utf-8')
+          required = [
+              'Keisei Skyliner → Narita',
+              'Museo Nintendo',
+              'Shinkansen a Kioto',
+              'Shibuya Sky, según reserva',
+          ]
+          for item in required:
+              if item not in s:
+                  raise SystemExit(f'Falta texto esperado: {item}')
+          print('Validación del itinerario optimizado: OK')
 
       - name: Commit y push
         run: |
@@ -41,5 +226,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/index.html
           git diff --cached --quiet && exit 0
-          git commit -m "feat: integrate optimized itinerary"
+          git commit -m "feat: apply optimized itinerary"
           git push
