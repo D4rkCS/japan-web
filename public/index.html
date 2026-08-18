@@ -1655,25 +1655,11 @@ async function renderDayMap(d){
       style: 'mapbox://styles/mapbox/light-v11',
       center: stops[0].coord,
       zoom: 10,
-      pitch: 65,
-      bearing: -20,
     });
     currentDayMap = map;
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: true, visualizePitch: true }), 'top-right');
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
     map.on('load', () => {
-      const labelLayer = map.getStyle().layers.find(l => l.type === 'symbol' && l.layout && l.layout['text-field']);
-      map.addLayer({
-        id: '3d-buildings', source: 'composite', 'source-layer': 'building',
-        filter: ['==', 'extrude', 'true'], type: 'fill-extrusion', minzoom: 12,
-        paint: {
-          'fill-extrusion-color': '#c9bfa8',
-          'fill-extrusion-height': ['interpolate', ['linear'], ['zoom'], 12, 0, 15.5, ['get', 'height']],
-          'fill-extrusion-base': ['interpolate', ['linear'], ['zoom'], 12, 0, 15.5, ['get', 'min_height']],
-          'fill-extrusion-opacity': 0.75,
-        },
-      }, labelLayer ? labelLayer.id : undefined);
-
       if (routeGeo) {
         map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: routeGeo, properties: {} } });
         map.addLayer({
@@ -1699,13 +1685,6 @@ async function renderDayMap(d){
         bounds.extend(s.coord);
       });
       map.fitBounds(bounds, { padding: 40, maxZoom: 16 });
-
-      const hint = document.createElement('div');
-      hint.textContent = 'Arrastra con el botón derecho (o dos dedos) para rotar el mapa';
-      hint.style.cssText = 'position:absolute;left:8px;bottom:8px;z-index:1;padding:4px 8px;font-size:11px;line-height:1.2;color:#fff;background:rgba(21,16,13,.65);border-radius:6px;pointer-events:none;transition:opacity .6s ease;max-width:80%;';
-      container.style.position = 'relative';
-      container.appendChild(hint);
-      setTimeout(() => { hint.style.opacity = '0'; setTimeout(() => hint.remove(), 600); }, 3500);
     });
   } catch (err) {
     console.error('No se pudo cargar el mapa de Mapbox', err);
