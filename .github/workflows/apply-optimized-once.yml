@@ -212,7 +212,7 @@ jobs:
           required = [
               'Keisei Skyliner → Narita',
               'Museo Nintendo',
-              'Shinkansen a Kioto',
+              'Shinkansen Kioto → Tokio',
               'Shibuya Sky, según reserva',
           ]
           for item in required:
