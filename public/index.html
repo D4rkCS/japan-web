@@ -1135,7 +1135,7 @@ const dayData = [
       optional: [
         ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico — sello goshuin disponible','10 min en tren desde Harajuku']
       ] },
-    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'ikebukuro',
+    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'ueno',
       poi: [
         ['🚃','Traslado','Tren a Chofu','línea JR Yamanote + Keio (transbordo en Shinjuku), ~40 min desde Ikebukuro'],
         ['寺','Templo','Templo Jindaiji','Chofu, soba tradicional — sello goshuin disponible'],
@@ -1183,7 +1183,7 @@ const dayData = [
       },
       photos: ['Tren a Chofu','Templo Jindaiji','teamLab Borderless','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Check-in en Ueno','Cena con vista en Tokio'],
       optional: [] },
-    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'ikebukuro',
+    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'ueno',
       poi: [
         ['宿','Actividad','Último desayuno','rápido, antes del check-out'],
         ['鞄','Actividad','Check-out del hotel','MONday Apart Premium Ueno, equipaje listo desde la noche anterior'],
@@ -1383,6 +1383,36 @@ const MEAL_ZONES = {
       ['Torikizoku Ikebukuro (cena)', 'Izakaya de yakitori económico, buena opción de cena informal.', 'Torikizoku Ikebukuro Tokyo'],
       ['Katsugyu Ikebukuro', 'Gyukatsu (res empanizada) para cocinar tú mismo en la mesa.', 'Katsugyu Ikebukuro Tokyo'],
       ['CoCo Ichibanya Ikebukuro (cena)', 'Curry japonés personalizable, práctico para cerrar el día.', 'CoCo Ichibanya Ikebukuro Tokyo'],
+    ],
+  },
+  ueno: {
+    label: 'Ueno',
+    breakfast: [
+      ['Café Madonna', 'Cafetería con ambiente retro de la era Showa, a 2 min de la estación — set de tostada, ensalada y bebida, 8:00-11:00.', 'Cafe Madonna Ueno Tokyo'],
+      ['Coffee Ojo', 'Kissaten tradicional cerca de Ameyoko, ideal para un café con calma antes del vuelo.', 'Coffee Ojo Ueno Ameyoko Tokyo'],
+      ['Usagiya Café', 'Pancakes de la mañana, disponibles solo a las 9:00.', 'Usagiya Cafe Ueno Tokyo'],
+      ['Doutor Coffee Ueno', 'Café y sándwiches rápidos y económicos, junto a la estación.', 'Doutor Coffee Ueno Tokyo'],
+      ['Excelsior Caffe Ueno', 'Café con pastelería estilo italiano, buena opción rápida.', 'Excelsior Caffe Ueno Tokyo'],
+      ['Sukiya Ueno', 'Gyudon (res sobre arroz) rápido y económico, abierto desde temprano.', 'Sukiya Ueno Tokyo'],
+      ['Puestos de Ameyoko', 'Algunos puestos del mercado abren temprano, fruta y snacks para llevar.', 'Ameyoko Market Ueno Tokyo'],
+    ],
+    lunch: [
+      ['Ichiran Ramen Atre Ueno', 'Tonkotsu ramen estilo Fukuoka, abierto 24 horas, en la salida Yamashita de la estación.', 'Ichiran Ramen Atre Ueno Tokyo'],
+      ['Uogashi Nihon-ichi (Ameyoko)', 'Barra de sushi de pie, rápida y económica, con derecho de subasta en el antiguo mercado de Tsukiji.', 'Uogashi Nihon-ichi Ameyoko Ueno Tokyo'],
+      ['Ueno Yabusoba', 'Soba artesanal desde 1892, en un callejón de Ameyoko — uno de los tres grandes estilos yabu de Edo.', 'Ueno Yabusoba Tokyo'],
+      ['CoCo Ichibanya Ueno', 'Curry japonés a tu gusto, opción rápida y segura.', 'CoCo Ichibanya Ueno Tokyo'],
+      ['Saboten Tonkatsu Ueno', 'Tonkatsu empanizado crujiente, sets con arroz y sopa miso.', 'Saboten Tonkatsu Ueno Tokyo'],
+      ['Puestos de Ameyoko', 'Yakitori, karaage y fruta fresca para comer caminando por el mercado.', 'Ameyoko Market Ueno Tokyo'],
+      ['Torikizoku Ueno', 'Yakitori casual y económico, buena opción de comida rápida.', 'Torikizoku Ueno Tokyo'],
+    ],
+    dinner: [
+      ['Izuei Umegawatei', 'Restaurante de unagi con más de 300 años de historia, en un rincón tranquilo de Ueno Park — buena cena de despedida.', 'Izuei Umegawatei Ueno Park Tokyo'],
+      ['Ichiran Ramen Ueno (cena)', 'Tonkotsu ramen 24 horas, última parada fácil antes de dormir.', 'Ichiran Ramen Atre Ueno Tokyo'],
+      ['Izakayas de Ameyoko', 'Hilera de pequeños izakayas y bares de pie bajo las vías, ambiente informal de despedida.', 'Ameyoko izakaya Ueno Tokyo'],
+      ['Gyu-Kaku Ueno', 'Yakiniku (parrilla) para compartir, cadena confiable.', 'Gyu-Kaku Ueno Tokyo'],
+      ['Torikizoku Ueno (cena)', 'Izakaya de yakitori económico, buena opción de cena informal.', 'Torikizoku Ueno Tokyo'],
+      ['Sukiya Ueno (cena)', 'Gyudon económico, práctico si querés dormir temprano antes del vuelo.', 'Sukiya Ueno Tokyo'],
+      ['CoCo Ichibanya Ueno (cena)', 'Curry japonés personalizable, práctico para cerrar el viaje.', 'CoCo Ichibanya Ueno Tokyo'],
     ],
   },
 };
