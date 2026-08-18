@@ -1147,13 +1147,14 @@ const dayData = [
           [['Un día pensado para respirar','Después de 14 días de actividades, este día libre está pensado para no correr — ya no hay pendientes por tachar.'],
            ['Volver siempre sabe distinto','Muchos viajeros dicen que revisitar un lugar al final del viaje se siente distinto: ya lo conoces, y lo disfrutas con más calma.']]],
         ['食','Comida','Última comida favorita','el platillo que más te gustó, una vez más'],
-        ['鞄','Actividad','Empacar con calma','dejar la maleta lista antes de dormir'],
-        ['📦','Actividad','Enviar equipaje (opcional)','servicio takuhaibin, si quieres viajar ligero mañana',
-          [['El servicio que libera tus manos','El takuhaibin permite enviar tu maleta directo al aeropuerto un día antes, para caminar ligero tu última tarde en Tokio.']]],
-        ['灯','Recorrido','Último paseo de la tarde por Tokio','despedida caminando por tu zona favorita'],
+        ['鞄','Actividad','Empacar con calma','dejar la maleta lista antes del check-out en Ikebukuro'],
+        ['🏨','Traslado','Check-out en Ikebukuro','última noche es en Ueno, más cerca de Narita — ORI Ikebukuro'],
+        ['🚃','Traslado','Traslado a Ueno','línea JR Yamanote, ~15-20 min desde Ikebukuro'],
+        ['🏨','Traslado','Check-in en Ueno','MONday Apart Premium Ueno, última noche antes del vuelo'],
+        ['灯','Recorrido','Último paseo de la tarde por Ueno','Ueno Park y Ameyoko, cerca del hotel'],
         ['食','Comida','Cena con vista en Tokio','restaurante en algún piso alto para la despedida'],
-        ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir'],
-        ['灯','Recorrido','Paseo final por Ikebukuro de noche','despedida caminando entre los neones']
+        ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir, en Ueno'],
+        ['灯','Recorrido','Paseo final por Ueno de noche','despedida caminando cerca del hotel']
       ],
       steps: [
         ['09:30', 'Tren a Chofu — línea JR Yamanote + Keio (transbordo en Shinjuku), ~40 min desde Ikebukuro'],
@@ -1164,27 +1165,29 @@ const dayData = [
         ['14:30', 'Últimas compras — souvenirs pendientes en Ikebukuro o Shibuya'],
         ['15:20', 'Revisitar tu lugar favorito — volver a un sitio que te haya encantado del viaje'],
         ['16:00', 'Última comida favorita — el platillo que más te gustó, una vez más'],
-        ['17:00', 'Empacar con calma — dejar la maleta lista antes de dormir'],
-        ['17:30', 'Enviar equipaje (opcional) — servicio takuhaibin, si quieres viajar ligero mañana'],
-        ['17:45', 'Último paseo de la tarde por Tokio — despedida caminando por tu zona favorita'],
-        ['18:25', 'Cena con vista en Tokio — restaurante en algún piso alto para la despedida'],
-        ['19:25', 'Última copa cerca del hotel — cierre tranquilo antes de dormir'],
-        ['20:15', 'Paseo final por Ikebukuro de noche — despedida caminando entre los neones']
+        ['17:00', 'Empacar con calma — dejar la maleta lista antes del check-out en Ikebukuro'],
+        ['17:30', 'Check-out en Ikebukuro — última noche es en Ueno, más cerca de Narita — ORI Ikebukuro'],
+        ['17:45', 'Traslado a Ueno — línea JR Yamanote, ~15-20 min desde Ikebukuro'],
+        ['18:05', 'Check-in en Ueno — MONday Apart Premium Ueno, última noche antes del vuelo'],
+        ['18:20', 'Último paseo de la tarde por Ueno — Ueno Park y Ameyoko, cerca del hotel'],
+        ['19:00', 'Cena con vista en Tokio — restaurante en algún piso alto para la despedida'],
+        ['20:00', 'Última copa cerca del hotel — cierre tranquilo antes de dormir, en Ueno'],
+        ['20:50', 'Paseo final por Ueno de noche — despedida caminando cerca del hotel']
       ],
-      route: ['Ikebukuro Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan','Ikebukuro Station, Tokyo, Japan'],
+      route: ['Ikebukuro Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan','Ikebukuro Station, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
       legRoutes: {
         0: ['Ikebukuro Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan'],
         2: ['Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan'],
         4: ['Azabudai Hills, Tokyo, Japan','Ikebukuro Station, Tokyo, Japan'],
+        10: ['Ikebukuro Station, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
       },
-      photos: ['Tren a Chofu','Templo Jindaiji','teamLab Borderless','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Última noche en Tokio','Cena con vista en Tokio'],
+      photos: ['Tren a Chofu','Templo Jindaiji','teamLab Borderless','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Check-in en Ueno','Cena con vista en Tokio'],
       optional: [] },
     { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'ikebukuro',
-      note: 'Para esta última noche conviene reservar el hotel pensando en Narita: cerca del aeropuerto o en una zona con acceso directo al Keisei Skyliner (ej. Nippori/Ueno), en vez de Ikebukuro, para reducir el traslado la mañana del vuelo. Ese cambio de reserva se hace aparte, no está reflejado en el itinerario.',
       poi: [
         ['宿','Actividad','Último desayuno','rápido, antes del check-out'],
-        ['鞄','Actividad','Check-out del hotel','equipaje listo desde la noche anterior'],
-        ['🚄','Traslado','Narita Express a Narita','~90 minutos desde Ikebukuro',
+        ['鞄','Actividad','Check-out del hotel','MONday Apart Premium Ueno, equipaje listo desde la noche anterior'],
+        ['🚄','Traslado','Keisei Skyliner a Narita','~44-50 min desde Keisei-Ueno — acceso directo, sin transbordos',
           [['Un aeropuerto pensado para el viajero','Narita ha sido reconocido varias veces entre los aeropuertos más limpios y puntuales del mundo.']]],
         ['✈','Trámite','Facturación de equipaje','check-in con la aerolínea'],
         ['購','Actividad','Compras de último minuto','tiendas de la terminal'],
@@ -1196,19 +1199,19 @@ const dayData = [
         ['機','Actividad','Vuelo de regreso','ZG016, Narita → Houston, 11:30 AM']
       ],
       steps: [
-        ['06:25', 'Último desayuno — rápido, antes del check-out'],
-        ['06:45', 'Check-out del hotel — equipaje listo desde la noche anterior'],
-        ['07:00', 'Narita Express a Narita — ~90 minutos desde Ikebukuro'],
-        ['08:30', 'Facturación de equipaje — check-in con la aerolínea'],
-        ['09:00', 'Compras de último minuto — tiendas de la terminal'],
-        ['09:25', 'Duty-free — snacks y regalos para el vuelo'],
-        ['09:45', 'Onigiri para el vuelo — último sabor japonés antes de partir'],
-        ['10:00', 'Migración y seguridad — con tiempo antes del embarque'],
-        ['10:40', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
+        ['07:00', 'Último desayuno — rápido, antes del check-out'],
+        ['07:20', 'Check-out del hotel — MONday Apart Premium Ueno, equipaje listo desde la noche anterior'],
+        ['07:35', 'Keisei Skyliner a Narita — ~44-50 min desde Keisei-Ueno — acceso directo, sin transbordos'],
+        ['08:25', 'Facturación de equipaje — check-in con la aerolínea'],
+        ['08:55', 'Compras de último minuto — tiendas de la terminal'],
+        ['09:20', 'Duty-free — snacks y regalos para el vuelo'],
+        ['09:40', 'Onigiri para el vuelo — último sabor japonés antes de partir'],
+        ['09:55', 'Migración y seguridad — con tiempo antes del embarque'],
+        ['10:35', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
       ],
-      route: ['Ikebukuro Station, Tokyo, Japan','Narita International Airport, Japan'],
-      legRoutes: { 2: ['Ikebukuro Station, Tokyo, Japan','Narita International Airport, Japan'] },
-      photos: ['Último desayuno','Check-out del hotel','Narita Express','Terminal del aeropuerto','Duty-free','Onigiri de despedida'],
+      route: ['Ueno Station, Tokyo, Japan','Narita International Airport, Japan'],
+      legRoutes: { 2: ['Ueno Station, Tokyo, Japan','Narita International Airport, Japan'] },
+      photos: ['Último desayuno','Check-out del hotel','Keisei Skyliner','Terminal del aeropuerto','Duty-free','Onigiri de despedida'],
       optional: [] }
   ];
 
@@ -1216,7 +1219,8 @@ const HOTELS = [
   { name:"CROSS Suites TOKYO ASAKUSA", place:"Asakusa", tag:"TOKIO", checkin:"2026-08-27", checkout:"2026-08-31", label:"27 ago – 31 ago (4 noches)" },
   { name:"Miyako City Osaka Hommachi", place:"Osaka", tag:"OSAKA", checkin:"2026-08-31", checkout:"2026-09-03", label:"31 ago – 3 sept (3 noches)" },
   { name:"Onyado Nono Kyoto Shichijo Natural Hot Spring", place:"Kioto", tag:"KIOTO", checkin:"2026-09-03", checkout:"2026-09-07", label:"3 sept – 7 sept (4 noches)" },
-  { name:"ORI Ikebukuro", place:"Ikebukuro", tag:"TOKIO", checkin:"2026-09-07", checkout:"2026-09-11", label:"7 sept – 11 sept (4 noches)" },
+  { name:"ORI Ikebukuro", place:"Ikebukuro", tag:"TOKIO", checkin:"2026-09-07", checkout:"2026-09-10", label:"7 sept – 10 sept (3 noches)" },
+  { name:"MONday Apart Premium Ueno", place:"Ueno", tag:"TOKIO", checkin:"2026-09-10", checkout:"2026-09-11", label:"10 sept – 11 sept (1 noche)" },
 ];
 
 const DATES = {
