@@ -911,18 +911,18 @@ const dayData = [
       optional: [
         ['塔','Orizuru Tower','mirador con vista al Domo Genbaku, cerca del Parque de la Paz','5 min caminando desde el Parque Memorial de la Paz']
       ] },
-    { key: 'd12', num: '12', place: 'Tokio', title: 'Regreso a Tokio, vía Machida', mealZone: 'ueno',
+    { key: 'd12', num: '12', place: 'Tokio', title: 'Regreso a Tokio, vía Machida', mealZone: 'shinjuku',
       poi: [
         ['鞄','Traslado','Check-out en Kioto','equipaje listo, salida del hotel'],
         ['🚄','Traslado','Shinkansen a Tokio','Tokaido Shinkansen (Nozomi/Hikari), ~2h15, Kioto → Tokio'],
         ['🚃','Traslado','Tren a Machida','línea JR vía Shin-Yokohama (el Odakyu no pasa por Tokyo Station), ~45 min'],
         ['🐶','Actividad','Museo Snoopy','Machida — entrada por turnos cada 30 min, tomamos el de las 12:00'],
         ['🍰','Comida','PEANUTS Café','junto al museo, postres temáticos'],
-        ['🚃','Traslado','Traslado a Ueno','línea Odakyu hasta Shinjuku + JR Yamanote hasta Ueno, ~65 min'],
-        ['宿','Traslado','Check-in en Ueno','MONday Apart Premium Ueno, llegada antes de salir de noche'],
-        ['🚃','Traslado','Tren a Sunshine City','línea JR Yamanote hasta Ikebukuro + caminata, ~25-30 min desde el hotel'],
+        ['🚃','Traslado','Traslado a Shinjuku','línea Odakyu, directo, ~33 min'],
+        ['宿','Traslado','Check-in en Shinjuku','WPÜ HOTEL Shinjuku, llegada antes de salir de noche'],
+        ['🚃','Traslado','Tren a Sunshine City','línea JR Yamanote hasta Ikebukuro, ~8 min desde el hotel'],
         ['店','Recorrido','Sunshine City','tiendas de anime y ambiente otaku'],
-        ['🚃','Traslado','Tren a Shinjuku','línea JR Yamanote, directo, ~20 min desde Sunshine City, incluye caminata a la estación'],
+        ['🚃','Traslado','Tren a Shinjuku','línea JR Yamanote, directo, ~8 min desde Sunshine City, incluye caminata a la estación'],
         ['光','Foto','Shinjuku','pantallas y neones del distrito, primer vistazo de tarde',
           [['Brillo bajo regulación','La ciudad regula el brillo y horario de algunas pantallas gigantes de Shinjuku y Shibuya para reducir contaminación lumínica.']]],
         ['店','Comida','Omoide Yokocho','callejones diminutos con brochetas'],
@@ -942,8 +942,7 @@ const dayData = [
         ['麺','Comida','Última ronda en Omoide Yokocho','yakitori y cerveza para cerrar la noche'],
         ['🕹','Actividad','Arcade en Kabukicho','máquinas hasta la madrugada'],
         ['🍜','Comida','Ramen de madrugada','último antojo antes de dormir'],
-        ['🚃','Traslado','Regreso a Ueno','línea JR Yamanote, ~30 min desde Kabukicho/Shinjuku, incluye caminata a la estación'],
-        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora']
+        ['店','Recorrido','Konbini nocturno antes de dormir','snacks de última hora, cerca del hotel']
       ],
       steps: [
         ['07:45', 'Check-out en Kioto — equipaje listo, salida del hotel'],
@@ -951,11 +950,11 @@ const dayData = [
         ['10:45', 'Tren a Machida — línea JR vía Shin-Yokohama (el Odakyu no pasa por Tokyo Station), ~45 min'],
         ['12:00', 'Museo Snoopy — Machida — entrada por turnos cada 30 min, tomamos el de las 12:00'],
         ['13:30', 'PEANUTS Café — junto al museo, postres temáticos'],
-        ['14:15', 'Traslado a Ueno — línea Odakyu hasta Shinjuku + JR Yamanote hasta Ueno, ~65 min'],
-        ['15:20', 'Check-in en Ueno — MONday Apart Premium Ueno, llegada antes de salir de noche'],
-        ['15:35', 'Tren a Sunshine City — línea JR Yamanote hasta Ikebukuro + caminata, ~25-30 min desde el hotel'],
+        ['14:15', 'Traslado a Shinjuku — línea Odakyu, directo, ~33 min'],
+        ['15:20', 'Check-in en Shinjuku — WPÜ HOTEL Shinjuku, llegada antes de salir de noche'],
+        ['15:35', 'Tren a Sunshine City — línea JR Yamanote hasta Ikebukuro, ~8 min desde el hotel'],
         ['16:05', 'Sunshine City — tiendas de anime y ambiente otaku'],
-        ['16:35', 'Tren a Shinjuku — línea JR Yamanote, directo, ~20 min desde Sunshine City, incluye caminata a la estación'],
+        ['16:35', 'Tren a Shinjuku — línea JR Yamanote, directo, ~8 min desde Sunshine City, incluye caminata a la estación'],
         ['16:55', 'Shinjuku — pantallas y neones del distrito, primer vistazo de tarde'],
         ['17:25', 'Omoide Yokocho — callejones diminutos con brochetas'],
         ['18:25', 'Gato gigante de Shinjuku — pantalla LED 3D hiperrealista'],
@@ -966,26 +965,24 @@ const dayData = [
         ['21:15', 'Última ronda en Omoide Yokocho — yakitori y cerveza para cerrar la noche'],
         ['22:15', 'Arcade en Kabukicho — máquinas hasta la madrugada'],
         ['23:00', 'Ramen de madrugada — último antojo antes de dormir'],
-        ['23:30', 'Regreso a Ueno — línea JR Yamanote, ~30 min desde Kabukicho/Shinjuku, incluye caminata a la estación'],
-        ['00:00', 'Konbini nocturno antes de dormir — snacks de última hora']
+        ['23:15', 'Konbini nocturno antes de dormir — snacks de última hora, cerca del hotel']
       ],
-      route: ['Kyoto Station, Japan','Tokyo Station, Japan','Snoopy Museum, Machida, Tokyo, Japan','Ueno Station, Tokyo, Japan','Sunshine City, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Omoide Yokocho, Shinjuku, Tokyo, Japan','Kabukicho, Tokyo, Japan','Golden Gai, Tokyo, Japan'],
+      route: ['Kyoto Station, Japan','Tokyo Station, Japan','Snoopy Museum, Machida, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Sunshine City, Tokyo, Japan','Shinjuku Station, Tokyo, Japan','Omoide Yokocho, Shinjuku, Tokyo, Japan','Kabukicho, Tokyo, Japan','Golden Gai, Tokyo, Japan'],
       legRoutes: {
         1: ['Kyoto Station, Japan','Tokyo Station, Japan'],
         2: ['Tokyo Station, Japan','Machida Station, Tokyo, Japan'],
-        5: ['Machida Station, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
-        7: ['Ueno Station, Tokyo, Japan','Sunshine City, Tokyo, Japan'],
+        5: ['Machida Station, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
+        7: ['Shinjuku Station, Tokyo, Japan','Sunshine City, Tokyo, Japan'],
         9: ['Sunshine City, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
-        20: ['Shinjuku Station, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
       },
       photos: ['Shinkansen a Tokio','Museo Snoopy','PEANUTS Café','Omoide Yokocho','Gato gigante LED','Golden Gai','Kabukicho','Estación de Shinjuku','Sunshine City'],
       optional: [
         ['寺','Zojo-ji','templo justo a los pies de Tokyo Tower — sello goshuin disponible','5 min caminando desde Tokyo Tower'],
         ['社','Hanazono Shrine','santuario escondido entre los bares de Kabukicho — sello goshuin disponible, visítalo de día antes de las rondas nocturnas','muy cerca de Kabukicho, en el mismo recorrido nocturno']
       ] },
-    { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku', mealZone: 'ueno',
+    { key: 'd13', num: '13', place: 'Tokio', title: 'El Tokio más tecnológico y otaku', mealZone: 'shinjuku',
       poi: [
-        ['🚃','Traslado','Tren a Akihabara','línea JR Yamanote/Keihin-Tohoku, directo, ~8 min desde Ueno'],
+        ['🚃','Traslado','Tren a Akihabara','línea JR Chuo-Sobu, directo, ~19 min desde Shinjuku'],
         ['電','Recorrido','Akihabara','el "Electric Town" de Tokio',
           [['El "Electric Town" de posguerra','Akihabara nació como mercado de repuestos electrónicos tras la Segunda Guerra Mundial, antes de volverse el centro otaku que es hoy.'],
            ['De radios a videojuegos','Antes de ser el centro otaku actual, Akihabara era conocida por vender radios y electrodomésticos en los años 60 y 70.'],
@@ -1024,10 +1021,10 @@ const dayData = [
         ['🎮','Actividad','Round1','arcade, bowling y purikura — cierre de noche'],
         ['麺','Comida','Ramen nocturno en Akihabara','cierre de noche antes de volver al hotel'],
         ['店','Recorrido','Segunda vuelta por tiendas de anime','piso por piso, buscando ediciones limitadas'],
-        ['🚃','Traslado','Regreso a Ueno','línea JR Yamanote/Keihin-Tohoku, directo, ~8 min desde Akihabara']
+        ['🚃','Traslado','Regreso a Shinjuku','línea JR Chuo-Sobu, directo, ~19 min desde Akihabara']
       ],
       steps: [
-        ['08:10', 'Tren a Akihabara — línea JR Yamanote/Keihin-Tohoku, directo, ~8 min desde Ueno'],
+        ['08:10', 'Tren a Akihabara — línea JR Chuo-Sobu, directo, ~19 min desde Shinjuku'],
         ['08:20', 'Akihabara — el "Electric Town" de Tokio'],
         ['09:00', 'Tiendas de anime y manga — pisos enteros de figuras y coleccionables'],
         ['10:05', 'Tren a Azabudai Hills — línea Hibiya desde Akihabara + caminata final, ~30 min'],
@@ -1052,24 +1049,24 @@ const dayData = [
         ['22:25', 'Round1 — arcade, bowling y purikura — cierre de noche'],
         ['23:40', 'Ramen nocturno en Akihabara — cierre de noche antes de volver al hotel'],
         ['00:25', 'Segunda vuelta por tiendas de anime — piso por piso, buscando ediciones limitadas'],
-        ['00:45', 'Regreso a Ueno — línea JR Yamanote/Keihin-Tohoku, directo, ~8 min desde Akihabara']
+        ['00:45', 'Regreso a Shinjuku — línea JR Chuo-Sobu, directo, ~19 min desde Akihabara']
       ],
-      route: ['Ueno Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Pokemon Cafe, Nihonbashi, Tokyo, Japan','Odaiba, Tokyo, Japan','Akihabara, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
+      route: ['Shinjuku Station, Tokyo, Japan','Akihabara, Tokyo, Japan','Azabudai Hills, Tokyo, Japan','Pokemon Cafe, Nihonbashi, Tokyo, Japan','Odaiba, Tokyo, Japan','Akihabara, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
-        0: ['Ueno Station, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
+        0: ['Shinjuku Station, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
         3: ['Akihabara Station, Tokyo, Japan','Azabudai Hills, Tokyo, Japan'],
         6: ['Azabudai Hills, Tokyo, Japan','Shimbashi Station, Tokyo, Japan'],
         8: ['Shimbashi Station, Tokyo, Japan','Nihonbashi, Tokyo, Japan'],
         11: ['Nihonbashi, Tokyo, Japan','Shimbashi Station, Tokyo, Japan'],
         12: ['Shimbashi Station, Tokyo, Japan','Odaiba, Tokyo, Japan'],
         16: ['Odaiba, Tokyo, Japan','Akihabara Station, Tokyo, Japan'],
-        25: ['Akihabara Station, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
+        25: ['Akihabara Station, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       },
       photos: ['Tren a Akihabara','Akihabara','Tiendas de anime','Azabudai Hills Garden Plaza','Tokyo City View','Hekkelun','Pokémon Café','Odaiba','Estatua de Gundam','Rainbow Bridge','Arcade retro','Round1','Ramen nocturno Akihabara','BOOKOFF Akihabara'],
       optional: [] },
-    { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora', mealZone: 'ueno',
+    { key: 'd14', num: '14', place: 'Tokio', title: 'Cruce de Shibuya & compras de última hora', mealZone: 'shinjuku',
       poi: [
-        ['🚃','Traslado','Tren a Toyosu','línea Hibiya hasta Hibiya + transbordo a la línea Yurakucho, ~35-40 min desde Ueno'],
+        ['🚃','Traslado','Tren a Toyosu','línea JR Sobu hasta Ichigaya + transbordo a la línea Yurakucho, ~25-27 min desde Shinjuku'],
         ['技','Actividad','teamLab Planets','arte digital inmersivo, Toyosu (mañana)'],
         ['🚃','Traslado','Tren a Shijo-mae','Yurikamome, 1 estación desde Shin-Toyosu, ~5 min'],
         ['🎬','Actividad','Mundo Pixar Experience','exhibición inmersiva con más de 24 personajes a tamaño real, CREVIA BASE Tokyo — entrada con horario reservado'],
@@ -1101,10 +1098,11 @@ const dayData = [
         ['灯','Recorrido','Shibuya de noche','luces de neón y ambiente nocturno'],
         ['🍸','Actividad','Bar de cócteles con vista en Shibuya','coctelería en un rooftop de la zona'],
         ['購','Recorrido','Compras nocturnas en Don Quijote Shibuya','abierto hasta tarde, todo tipo de souvenirs'],
-        ['🕹','Actividad','Arcade en Shibuya','última parada de la noche']
+        ['🕹','Actividad','Arcade en Shibuya','última parada de la noche'],
+        ['🚃','Traslado','Regreso al hotel','línea JR Yamanote, directo, ~5-7 min desde Shibuya']
       ],
       steps: [
-        ['09:45', 'Tren a Toyosu — línea Hibiya hasta Hibiya + transbordo a la línea Yurakucho, ~35-40 min desde Ueno'],
+        ['09:45', 'Tren a Toyosu — línea JR Sobu hasta Ichigaya + transbordo a la línea Yurakucho, ~25-27 min desde Shinjuku'],
         ['10:30', 'teamLab Planets — arte digital inmersivo, Toyosu (mañana)'],
         ['12:15', 'Tren a Shijo-mae — Yurikamome, 1 estación desde Shin-Toyosu, ~5 min — llegas con margen antes de la entrada reservada'],
         ['12:50', 'Mundo Pixar Experience — exhibición inmersiva con más de 24 personajes a tamaño real, CREVIA BASE Tokyo — entrada con horario reservado'],
@@ -1123,64 +1121,66 @@ const dayData = [
         ['21:45', 'Shibuya de noche — luces de neón y ambiente nocturno'],
         ['22:25', 'Bar de cócteles con vista en Shibuya — coctelería en un rooftop de la zona'],
         ['23:15', 'Compras nocturnas en Don Quijote Shibuya — abierto hasta tarde, todo tipo de souvenirs'],
-        ['23:55', 'Arcade en Shibuya — última parada de la noche']
+        ['23:55', 'Arcade en Shibuya — última parada de la noche'],
+        ['00:35', 'Regreso al hotel — línea JR Yamanote, directo, ~5-7 min desde Shibuya']
       ],
-      route: ['Toyosu, Tokyo, Japan','CREVIA BASE Tokyo, Toyosu, Japan','Meiji Jingu, Tokyo, Japan','Takeshita Street, Harajuku, Tokyo, Japan','Shibuya Crossing, Tokyo, Japan','Hachiko Statue, Shibuya, Tokyo, Japan','Shibuya Sky, Tokyo, Japan'],
+      route: ['Shinjuku Station, Tokyo, Japan','Toyosu, Tokyo, Japan','CREVIA BASE Tokyo, Toyosu, Japan','Meiji Jingu, Tokyo, Japan','Takeshita Street, Harajuku, Tokyo, Japan','Shibuya Crossing, Tokyo, Japan','Hachiko Statue, Shibuya, Tokyo, Japan','Shibuya Sky, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
-        0: ['Ueno Station, Tokyo, Japan','Toyosu, Tokyo, Japan'],
+        0: ['Shinjuku Station, Tokyo, Japan','Toyosu, Tokyo, Japan'],
         2: ['Toyosu, Tokyo, Japan','Shijo-mae Station, Tokyo, Japan'],
         4: ['Shijo-mae Station, Tokyo, Japan','Harajuku Station, Tokyo, Japan'],
+        20: ['Shibuya Station, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       },
       photos: ['Tren a Toyosu','teamLab Planets','Mundo Pixar Experience','Meiji Jingu','Takeshita-dori','Cruce de Shibuya','Estatua de Hachiko','Shibuya Sky','Crepes de Harajuku','Shibuya de noche'],
       optional: [
         ['社','Nezu Shrine','cientos de toriis en miniatura, poco turístico — sello goshuin disponible','10 min en tren desde Harajuku']
       ] },
-    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'ueno',
+    { key: 'd15', num: '15', place: 'Tokio', title: 'Último día libre en Tokio', mealZone: 'shinjuku',
       poi: [
-        ['🚃','Traslado','Tren a Chofu','línea JR Yamanote hasta Shinjuku + Keio, ~50 min desde Ueno'],
+        ['🚃','Traslado','Tren a Chofu','línea Keio, directo, ~18 min desde Shinjuku'],
         ['寺','Templo','Templo Jindaiji','Chofu, soba tradicional — sello goshuin disponible'],
-        ['🚇','Traslado','Tren a Azabudai Hills','vía Shinjuku, ~50 min desde Chofu'],
+        ['🚇','Traslado','Tren a Azabudai Hills','vía Shinjuku, ~38 min desde Chofu'],
         ['技','Actividad','teamLab Borderless','arte digital inmersivo, Azabudai Hills'],
-        ['🚇','Traslado','Tren a Ueno','línea Hibiya, directo desde Kamiyacho (Azabudai Hills), ~30 min'],
-        ['購','Actividad','Últimas compras','souvenirs pendientes en Ameyoko y alrededores de Ueno'],
+        ['🚇','Traslado','Tren a Shinjuku','línea de metro (Hibiya/Namboku) vía Roppongi, directo desde Kamiyacho (Azabudai Hills), ~20 min'],
+        ['購','Actividad','Últimas compras','souvenirs pendientes en Shinjuku (Don Quijote, Yodobashi Camera, Bic Camera), cerca del hotel'],
         ['景','Recorrido','Revisitar tu lugar favorito','volver a un sitio que te haya encantado del viaje',
           [['Un día pensado para respirar','Después de 14 días de actividades, este día libre está pensado para no correr — ya no hay pendientes por tachar.'],
            ['Volver siempre sabe distinto','Muchos viajeros dicen que revisitar un lugar al final del viaje se siente distinto: ya lo conoces, y lo disfrutas con más calma.']]],
         ['食','Comida','Última comida favorita','el platillo que más te gustó, una vez más'],
         ['鞄','Actividad','Empacar con calma','dejar la maleta lista con calma, sin check-out hasta mañana'],
-        ['灯','Recorrido','Último paseo de la tarde por Ueno','Ueno Park y Ameyoko, cerca del hotel'],
+        ['灯','Recorrido','Último paseo de la tarde por Shinjuku','callejones y alrededores de la estación, cerca del hotel'],
         ['食','Comida','Cena con vista en Tokio','restaurante en algún piso alto para la despedida'],
-        ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir, en Ueno'],
-        ['灯','Recorrido','Paseo final por Ueno de noche','despedida caminando cerca del hotel']
+        ['酒','Actividad','Última copa cerca del hotel','cierre tranquilo antes de dormir, en Shinjuku'],
+        ['灯','Recorrido','Paseo final por Shinjuku de noche','despedida caminando cerca del hotel']
       ],
       steps: [
-        ['09:20', 'Tren a Chofu — línea JR Yamanote hasta Shinjuku + Keio, ~50 min desde Ueno'],
+        ['09:20', 'Tren a Chofu — línea Keio, directo, ~18 min desde Shinjuku'],
         ['10:10', 'Templo Jindaiji — Chofu, soba tradicional — sello goshuin disponible'],
-        ['11:40', 'Tren a Azabudai Hills — vía Shinjuku, ~50 min desde Chofu'],
+        ['11:40', 'Tren a Azabudai Hills — vía Shinjuku, ~38 min desde Chofu'],
         ['12:30', 'teamLab Borderless — arte digital inmersivo, Azabudai Hills'],
-        ['14:00', 'Tren a Ueno — línea Hibiya, directo desde Kamiyacho (Azabudai Hills), ~30 min'],
-        ['14:30', 'Últimas compras — souvenirs pendientes en Ameyoko y alrededores de Ueno'],
+        ['14:00', 'Tren a Shinjuku — línea de metro (Hibiya/Namboku) vía Roppongi, directo desde Kamiyacho (Azabudai Hills), ~20 min'],
+        ['14:30', 'Últimas compras — souvenirs pendientes en Shinjuku (Don Quijote, Yodobashi Camera, Bic Camera), cerca del hotel'],
         ['15:20', 'Revisitar tu lugar favorito — volver a un sitio que te haya encantado del viaje'],
         ['16:00', 'Última comida favorita — el platillo que más te gustó, una vez más'],
         ['17:00', 'Empacar con calma — dejar la maleta lista con calma, sin check-out hasta mañana'],
-        ['17:30', 'Último paseo de la tarde por Ueno — Ueno Park y Ameyoko, cerca del hotel'],
+        ['17:30', 'Último paseo de la tarde por Shinjuku — callejones y alrededores de la estación, cerca del hotel'],
         ['18:10', 'Cena con vista en Tokio — restaurante en algún piso alto para la despedida'],
-        ['19:10', 'Última copa cerca del hotel — cierre tranquilo antes de dormir, en Ueno'],
-        ['20:00', 'Paseo final por Ueno de noche — despedida caminando cerca del hotel']
+        ['19:10', 'Última copa cerca del hotel — cierre tranquilo antes de dormir, en Shinjuku'],
+        ['20:00', 'Paseo final por Shinjuku de noche — despedida caminando cerca del hotel']
       ],
-      route: ['Ueno Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
+      route: ['Shinjuku Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       legRoutes: {
-        0: ['Ueno Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan'],
+        0: ['Shinjuku Station, Tokyo, Japan','Jindaiji Temple, Chofu, Japan'],
         2: ['Jindaiji Temple, Chofu, Japan','Azabudai Hills, Tokyo, Japan'],
-        4: ['Azabudai Hills, Tokyo, Japan','Ueno Station, Tokyo, Japan'],
+        4: ['Azabudai Hills, Tokyo, Japan','Shinjuku Station, Tokyo, Japan'],
       },
-      photos: ['Tren a Chofu','Templo Jindaiji','teamLab Borderless','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Ameyoko','Cena con vista en Tokio'],
+      photos: ['Tren a Chofu','Templo Jindaiji','teamLab Borderless','Última compra','Lugar favorito revisitado','Última comida favorita','Maleta lista','Shinjuku de noche','Cena con vista en Tokio'],
       optional: [] },
-    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'ueno',
+    { key: 'd16', num: '16', place: 'Tokio', title: 'Vuelo de regreso', mealZone: 'shinjuku',
       poi: [
         ['宿','Actividad','Último desayuno','rápido, antes del check-out'],
-        ['鞄','Actividad','Check-out del hotel','MONday Apart Premium Ueno, equipaje listo desde la noche anterior'],
-        ['🚄','Traslado','Keisei Skyliner a Narita','~44-50 min desde Keisei-Ueno — acceso directo, sin transbordos',
+        ['鞄','Actividad','Check-out del hotel','WPÜ HOTEL Shinjuku, equipaje listo desde la noche anterior'],
+        ['🚄','Traslado','Narita Express (N\'EX) a Narita','directo desde Shinjuku Station, sin transbordos, ~90-100 min',
           [['Un aeropuerto pensado para el viajero','Narita ha sido reconocido varias veces entre los aeropuertos más limpios y puntuales del mundo.']]],
         ['✈','Trámite','Facturación de equipaje','check-in con la aerolínea'],
         ['購','Actividad','Compras de último minuto','tiendas de la terminal'],
@@ -1192,18 +1192,18 @@ const dayData = [
         ['機','Actividad','Vuelo de regreso','ZG016, Narita → Houston, 11:30 AM']
       ],
       steps: [
-        ['07:00', 'Último desayuno — rápido, antes del check-out'],
-        ['07:20', 'Check-out del hotel — MONday Apart Premium Ueno, equipaje listo desde la noche anterior'],
-        ['07:35', 'Keisei Skyliner a Narita — ~44-50 min desde Keisei-Ueno — acceso directo, sin transbordos'],
-        ['08:25', 'Facturación de equipaje — check-in con la aerolínea'],
-        ['08:55', 'Compras de último minuto — tiendas de la terminal'],
-        ['09:20', 'Duty-free — snacks y regalos para el vuelo'],
-        ['09:40', 'Onigiri para el vuelo — último sabor japonés antes de partir'],
-        ['09:55', 'Migración y seguridad — con tiempo antes del embarque'],
-        ['10:35', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
+        ['06:45', 'Último desayuno — rápido, antes del check-out'],
+        ['07:00', 'Check-out del hotel — WPÜ HOTEL Shinjuku, equipaje listo desde la noche anterior'],
+        ['07:10', 'Narita Express (N\'EX) a Narita — directo desde Shinjuku Station, sin transbordos, ~90-100 min'],
+        ['08:45', 'Facturación de equipaje — check-in con la aerolínea'],
+        ['09:10', 'Compras de último minuto — tiendas de la terminal'],
+        ['09:35', 'Duty-free — snacks y regalos para el vuelo'],
+        ['09:55', 'Onigiri para el vuelo — último sabor japonés antes de partir'],
+        ['10:10', 'Migración y seguridad — con tiempo antes del embarque'],
+        ['10:50', 'Vuelo de regreso — ZG016, Narita → Houston, 11:30 AM']
       ],
-      route: ['Ueno Station, Tokyo, Japan','Narita International Airport, Japan'],
-      legRoutes: { 2: ['Ueno Station, Tokyo, Japan','Narita International Airport, Japan'] },
+      route: ['Shinjuku Station, Tokyo, Japan','Narita International Airport, Japan'],
+      legRoutes: { 2: ['Shinjuku Station, Tokyo, Japan','Narita International Airport, Japan'] },
       photos: ['Último desayuno','Check-out del hotel','Keisei Skyliner','Terminal del aeropuerto','Duty-free','Onigiri de despedida'],
       optional: [] }
   ];
@@ -1212,7 +1212,7 @@ const HOTELS = [
   { name:"CROSS Suites TOKYO ASAKUSA", place:"Asakusa", tag:"TOKIO", checkin:"2026-08-27", checkout:"2026-08-31", label:"27 ago – 31 ago (4 noches)" },
   { name:"Miyako City Osaka Hommachi", place:"Osaka", tag:"OSAKA", checkin:"2026-08-31", checkout:"2026-09-03", label:"31 ago – 3 sept (3 noches)" },
   { name:"Onyado Nono Kyoto Shichijo Natural Hot Spring", place:"Kioto", tag:"KIOTO", checkin:"2026-09-03", checkout:"2026-09-07", label:"3 sept – 7 sept (4 noches)" },
-  { name:"MONday Apart Premium Ueno", place:"Ueno", tag:"TOKIO", checkin:"2026-09-07", checkout:"2026-09-11", label:"7 sept – 11 sept (4 noches)" },
+  { name:"WPÜ HOTEL Shinjuku", place:"Shinjuku", tag:"TOKIO", checkin:"2026-09-07", checkout:"2026-09-11", label:"7 sept – 11 sept (4 noches)" },
 ];
 
 const DATES = {
