@@ -1228,15 +1228,19 @@ const DATES = {
 };
 
 // Lugares guardados desde TikTok, por ciudad. Cada entrada: { url, desc, place }
-// url = link del TikTok, desc = tu descripción del lugar, place = nombre/dirección para el enlace de Google Maps.
+// url = link CANÓNICO del TikTok (https://www.tiktok.com/@usuario/video/ID o /photo/ID — no uses links cortos
+//   tipo vt.tiktok.com: la API de oEmbed de TikTok los rechaza con error 400 y el embed queda como
+//   "video currently unavailable"). Los posts tipo /photo/ (modo carrusel de fotos) tampoco son embebibles
+//   por TikTok (oEmbed también los rechaza) — para esos se muestra una tarjeta con link directo en vez de un embed.
+// desc = tu descripción del lugar, place = nombre/dirección para el enlace de Google Maps.
 const CITY_VIDEOS = {
   tokio: [
-    { url: 'https://vt.tiktok.com/ZSVPPFSWT/', desc: 'cas:pace — tienda de cases para celular en Jingumae, Shibuya.', place: 'cas:pace, 3 Chome-24-3 Jingumae, Shibuya, Tokyo 150-0001, Japan' },
-    { url: 'https://vt.tiktok.com/ZSVPPxtWY/', desc: 'Daruma Jeans — pantalones de mezclilla custom.', place: 'Daruma Jeans, HARAJUKU TW BUILDING 4F, 1 Chome-14-24 Jingumae, Shibuya, Tokyo 150-0001, Japan' },
+    { url: 'https://www.tiktok.com/@sjbrame/photo/7652859162359057686', desc: 'cas:pace — tienda de cases para celular en Jingumae, Shibuya.', place: 'cas:pace, 3 Chome-24-3 Jingumae, Shibuya, Tokyo 150-0001, Japan' },
+    { url: 'https://www.tiktok.com/@darumadiaries/video/7655181327871823111', desc: 'Daruma Jeans — pantalones de mezclilla custom.', place: 'Daruma Jeans, HARAJUKU TW BUILDING 4F, 1 Chome-14-24 Jingumae, Shibuya, Tokyo 150-0001, Japan' },
   ],
   osaka: [],
   kioto: [
-    { url: 'https://vt.tiktok.com/ZSVP5hUJT/', desc: 'Amam Dacotan Kyoto — panadería con varios postres salados y dulces.', place: 'Amam Dacotan Kyoto, 141 Honeya-cho, Rokkaku-dori Muromachi Higashi-iru, Nakagyo Ward, Kyoto 604-8164, Japan' },
+    { url: 'https://www.tiktok.com/@hiromizunoc/video/7671333041825975570', desc: 'Amam Dacotan Kyoto — panadería con varios postres salados y dulces.', place: 'Amam Dacotan Kyoto, 141 Honeya-cho, Rokkaku-dori Muromachi Higashi-iru, Nakagyo Ward, Kyoto 604-8164, Japan' },
   ],
 };
 
@@ -1788,21 +1792,47 @@ function photoBento(d){
 
 const CITY_LABELS = { tokio: 'Tokio', osaka: 'Osaka', kioto: 'Kioto' };
 
+// TikTok solo soporta embeber posts de tipo "video" (blockquote + embed.js).
+// Los posts de tipo "photo" (modo carrusel de fotos) no son embebibles vía oEmbed:
+// para esos mostramos una tarjeta con enlace directo a TikTok en vez de un embed roto.
+function parseTikTokUrl(url){
+  const m = (url || '').match(/\/(video|photo)\/(\d+)/);
+  return m ? { type: m[1], id: m[2] } : null;
+}
+
+function tiktokCardHtml(v){
+  const info = parseTikTokUrl(v.url);
+  const mapsLink = v.place ? `<a href="${mapsSearchUrl(v.place)}" target="_blank" rel="noopener" class="text-[11px] font-bold text-secondary">📍 Ver en Google Maps</a>` : '';
+  if (info && info.type === 'video') {
+    return `
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+      <blockquote class="tiktok-embed" cite="${v.url}" data-video-id="${info.id}" style="max-width: 100%; min-width: 100%; margin: 0;">
+        <section></section>
+      </blockquote>
+      <div class="p-4">
+        <p class="text-sm text-on-surface-variant">${v.desc || ''}</p>
+        ${mapsLink}
+      </div>
+    </div>`;
+  }
+  // Post de tipo "photo" (o formato no reconocido) — TikTok no permite embeberlo, mostramos tarjeta con link.
+  return `
+    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-4">
+      <a href="${v.url}" target="_blank" rel="noopener" class="flex items-center gap-3 mb-2">
+        <span class="material-symbols-outlined text-secondary !text-2xl">play_circle</span>
+        <span class="text-sm font-bold text-on-surface">Ver en TikTok ↗</span>
+      </a>
+      <p class="text-sm text-on-surface-variant">${v.desc || ''}</p>
+      ${mapsLink}
+    </div>`;
+}
+
 function renderCityVideos(city){
   const wrap = document.getElementById('dayContent');
   const items = CITY_VIDEOS[city] || [];
   const label = CITY_LABELS[city] || city;
 
-  const cards = items.length ? items.map(v => `
-    <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
-      <blockquote class="tiktok-embed" cite="${v.url}" style="max-width: 100%; min-width: 100%; margin: 0;">
-        <section></section>
-      </blockquote>
-      <div class="p-4">
-        <p class="text-sm text-on-surface-variant">${v.desc || ''}</p>
-        ${v.place ? `<a href="${mapsSearchUrl(v.place)}" target="_blank" rel="noopener" class="text-[11px] font-bold text-secondary">📍 Ver en Google Maps</a>` : ''}
-      </div>
-    </div>`).join('') : `
+  const cards = items.length ? items.map(tiktokCardHtml).join('') : `
     <div class="px-6 py-10 text-center text-sm text-on-surface-variant">
       Aún no hay videos guardados para ${label}.
     </div>`;
@@ -1822,7 +1852,8 @@ function renderCityVideos(city){
   // Recarga el script de embeds de TikTok para que procese los nuevos blockquotes insertados.
   const oldScript = document.getElementById('tiktokEmbedScript');
   if (oldScript) oldScript.remove();
-  if (items.length) {
+  const hasVideoEmbed = items.some(v => { const info = parseTikTokUrl(v.url); return info && info.type === 'video'; });
+  if (hasVideoEmbed) {
     const s = document.createElement('script');
     s.id = 'tiktokEmbedScript';
     s.async = true;
